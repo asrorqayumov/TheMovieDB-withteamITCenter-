@@ -4,6 +4,10 @@
     box-sizing: border-box;
    
 }
+section {
+    height:min-content;
+
+}
 header {
     position: fixed;
     width: 100%;
@@ -90,8 +94,8 @@ header .ul2 .a2 {
     background-color: rgb(145, 91, 132);
 }
 .det1 {
-    min-width: 260px;
-    width: 260px;
+    min-width: 240px;
+    width: 240px;
     border: 1px solid #e3e3e3;
     border-radius: var(--imageBorderRadius);
     display: flex;
@@ -151,15 +155,10 @@ p {
 
 
 
-.buttons button {
-    border-radius: 15px;
-    padding: 5px 15px;
-    margin: 3px ;
-    border: 1px solid gray;
-}
+
 .det2 {
-    min-width: 260px;
-    width: 260px;
+    min-width: 240px;
+    width: 240px;
     border: 1px solid #e3e3e3;
     border-radius: var(--imageBorderRadius);
     display: flex;
@@ -178,18 +177,14 @@ details .search {
     border-top: 2px solid rgb(183, 180, 180);
    margin-top: 10px;
 }
-
-form .btn-box {
-    margin: auto;
-}
 form .search-btn {
     background: rgb(42, 184, 255);
-    padding: 10px 95px;
+    padding: 10px 88px;
     color: white;
     font-size: 20px;
     border-radius: 10px;
     border: none;
-    margin: 10px;
+    margin: 10px 0px;
     
 }
 .search input {
@@ -202,7 +197,12 @@ form {
     display: flex;
     flex-direction: column;
 }
-
+.buttons button {
+    border-radius: 15px;
+    padding: 5px 15px;
+    margin: 3px ;
+    border: 1px solid gray;
+}
 .bottom:hover {
     background-color:#208ef5;
     transition: 1s;
@@ -503,4 +503,24 @@ footer .coll {
     background-color: aliceblue;
     float: left;
     margin-bottom: 7px;
+}
+
+@media (max-width: 1100px) {
+    .container {
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .load-btn {
+        background-color: rgb(42, 184, 255);
+      
+        padding: 10px 88px;
+        color: white;
+        font-size: 20px;
+        border-radius: 10px;
+        border: none;
+        margin: 10px 0px;
+    }
+    
+   
 }
