@@ -151,7 +151,7 @@ p {
 
 
 
-.buttons button {
+.buttons .form__select__button {
     border-radius: 15px;
     padding: 5px 15px;
     margin: 3px ;
@@ -203,9 +203,13 @@ form {
     flex-direction: column;
 }
 
-.bottom:hover {
+.form__select__button:hover {
     background-color:#208ef5;
     transition: 1s;
+    color: white;
+}
+.bg-blue{
+    background-color:#208ef5;
     color: white;
 }
 .latest-box {
