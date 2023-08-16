@@ -1,269 +1,321 @@
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
 }
 
 .tab {
-    padding-left: 40px;
-    padding-right: 40px;
-    overflow: hidden;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
 }
 
 .tab h2 {
-    margin-right: 30px;
-    white-space: nowrap;
+  margin-right: 30px;
+  white-space: nowrap;
 }
 
 h2 {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 .tab .tab-header {
-    position: relative;
-    width: 14%;
-    display: flex;
-    align-items: center;
-    height: 28px;
-    z-index: 2;
-    border-radius: 40px;
-    border: 1px solid rgb(0, 37, 139);
+  position: relative;
+  width: 14%;
+  display: flex;
+  align-items: center;
+  height: 28px;
+  z-index: 2;
+  border-radius: 40px;
+  border: 1px solid rgb(0, 37, 139);
 }
 
 .tab button {
-    background-color: #fff;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 0px 32.6px 0px 20px;
-    transition: 0.5s;
-    font-size: 13px;
-    border-radius: 40px;
+  background-color: #fff;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0px 32.6px 0px 20px;
+  transition: 0.5s;
+  font-size: 13px;
+  border-radius: 40px;
 }
-
 
 .tab button.active {
-    background-color: rgb(0, 37, 139);
-    color: rgb(0, 251, 255);
-    padding: 5.5px 25.9px;
+  background-color: rgb(0, 37, 139);
+  color: rgb(0, 251, 255);
+  padding: 5.5px 25.9px;
 }
 
-
 .card {
-    animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
 }
 
 @keyframes fadeEffect {
-    from {
-        opacity: 0;
-    }
+  from {
+    opacity: 0;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
-#this-week{
-    display: none;
+#this-week {
+  display: none;
 }
 
 .latest .card .card_box .latest-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-    margin: 20px 10px;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 150px;
-    background-color: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  margin: 20px 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 150px;
+  background-color: none;
 }
 
 .latest .card .card_box .latest-box .latest-b-img {
-    width: 100%;
-    height: 230px;
+  width: 100%;
+  height: 230px;
 }
 
 .latest .card .card_box .latest-box .latest-b-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .latest .card .card_box .latest-box .latest-b-text {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .latest .card .card_box .latest-box .latest-b-text a strong {
-    font-weight: bold;
-    color: black;
-    margin: 0px;
+  font-weight: bold;
+  color: black;
+  margin: 0px;
 }
 
 .latest .card .card_box .latest-box .latest-b-text a strong:hover {
-    color: blue;
+  color: blue;
 }
 
 .latest .card .card_box .latest-box .latest-b-text {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 10px;
-    background-color: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px;
+  background-color: none;
 }
 
 .latest .card .card_box .latest-box .latest-b-text p {
-    color: rgb(105, 105, 105);
-    margin: 0px;
+  color: rgb(105, 105, 105);
+  margin: 0px;
 }
 
 .latest .card {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-    display: flex;
-    flex-direction: row;
-    overflow-x: scroll;
-    background-color: transparent;
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  background-color: transparent;
 }
 
-
-
 .latest .card .card_box .latest-box .percentage-container {
-    height: 100%;
-    display: flex;
-    margin-right: 90px;
-    margin-top: -20px;
-    align-items: center;
-    justify-content: center;
+  height: 100%;
+  display: flex;
+  margin-right: 90px;
+  margin-top: -20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .latest .card .card_box .latest-box .percentage-container .skill {
-    position: relative;
+  position: relative;
 }
 
 .latest .card .card_box .latest-box .percentage-container .skill .outer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    padding: 5px;
-    background: black;
-    box-shadow: 6px 6px 10px -1px rgba(0 0 0/.15), -6px -6px 10px -1px rgba(255 255 255 /.7);
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  padding: 5px;
+  background: black;
+  box-shadow: 6px 6px 10px -1px rgba(0 0 0/0.15),
+    -6px -6px 10px -1px rgba(255 255 255 /0.7);
 }
 
 .latest .card .card_box .latest-box .percentage-container .skill .outer .inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    box-sizing: inset 4px 4px 6px -1px rgba(0 0 0/.2), inset -4px -4px 6px -1px rgba(255 255 255/.7),
-        -.5px -.5px 0px rgba(225 255 255/1), .5px .5px 0px rgba(0 0 0/.15), 0px 12px 10px -10px rgba(0 0 0/0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  box-sizing: inset 4px 4px 6px -1px rgba(0 0 0/0.2),
+    inset -4px -4px 6px -1px rgba(255 255 255/0.7),
+    -0.5px -0.5px 0px rgba(225 255 255/1), 0.5px 0.5px 0px rgba(0 0 0/0.15),
+    0px 12px 10px -10px rgba(0 0 0/0.05);
 }
 
-.latest .card .card_box .latest-box .percentage-container .skill .outer .inner .number {
-    font-size: 0.8em;
-    font-weight: 900;
-    padding: 10px;
-    color: white;
+.latest
+  .card
+  .card_box
+  .latest-box
+  .percentage-container
+  .skill
+  .outer
+  .inner
+  .number {
+  font-size: 0.8em;
+  font-weight: 900;
+  padding: 10px;
+  color: white;
 }
 
 .latest .card .card_box .latest-box circle {
-    fill: none;
-    stroke-width: 2px;
-    stroke-dasharray: 118;
-    stroke-dashoffset: 118;
-    transition: 1s linear;
+  fill: none;
+  stroke-width: 2px;
+  stroke-dasharray: 118;
+  stroke-dashoffset: 118;
+  transition: 1s linear;
 }
 
 .latest .card .card_box .latest-box svg {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .latest .card .card_box .latest-box .percentage-container .skill circle {
-    stroke: rgb(7, 223, 122);
+  stroke: rgb(7, 223, 122);
 }
 
 .dropbtn {
-
-    position: absolute;
-    display: inline;
-    border-radius: 50%;
-    opacity: 0.8;
-    background-color: #fff;
-    color: rgb(179, 178, 178);
-    padding: 3px 5px;
-    font-size: 0.7rem;
-    border: none;
-    cursor: pointer;
+  position: absolute;
+  display: inline;
+  border-radius: 50%;
+  opacity: 0.8;
+  background-color: #fff;
+  color: rgb(179, 178, 178);
+  padding: 3px 5px;
+  font-size: 0.7rem;
+  border: none;
+  cursor: pointer;
 }
 
 .dropbtn:hover,
 .dropbtn:focus {
-    background-color: #2980B9;
+  background-color: #2980b9;
 }
 
 .dropdown {
-    position: absolute;
-    display: inline-block;
-    top: 60px;
-    left: 145px;
+  position: absolute;
+  display: inline-block;
+  top: 60px;
+  left: 145px;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 25px;
-    left: -60px;
-    background-color: #f1f1f1;
-    min-width: 140px;
-    overflow: auto;
-    border-radius: 5px;
-    border: 1px solid #d3d1d1;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+  display: none;
+  position: absolute;
+  top: 25px;
+  left: -60px;
+  background-color: #f1f1f1;
+  min-width: 140px;
+  overflow: auto;
+  border-radius: 5px;
+  border: 1px solid #d3d1d1;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .dropdown-content a {
-    color: black;
-    padding: 10px 16px;
-    border-bottom: 1px solid #d3d1d1;
-    text-decoration: none;
-    display: block;
-    margin: 5px;
-    font-size: 0.8rem;
+  color: black;
+  padding: 10px 16px;
+  border-bottom: 1px solid #d3d1d1;
+  text-decoration: none;
+  display: block;
+  margin: 5px;
+  font-size: 0.8rem;
 }
 
-.dropdown-content a:last-child{
-    border-bottom: none;
+.dropdown-content a:last-child {
+  border-bottom: none;
 }
 
-.dropdown-content a span{
-    padding-right: 10px;
+.dropdown-content a span {
+  padding-right: 10px;
 }
 
 .dropdown a:hover {
-    background-color: rgb(6, 20, 59);
-    color: white;
+  background-color: rgb(6, 20, 59);
+  color: white;
 }
 
 .show {
-    display: block;
+  display: block;
+}
+
+
+ /* Card percentage  */
+@keyframes growProgressBar {
+  0%,
+  33% {
+    --pgPercentage: 0;
+  }
+  100% {
+    --pgPercentage: var(--value);
+  }
+}
+@property --pgPercentage {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+.circle-progressbar div[role="progressbar"] {
+  --size: 2.5rem;
+  --bg: #081c22;
+  --fg: rgba(20, 193, 20, 0.757);
+  --pgPercentage: var(--value);
+  animation: growProgressBar 3s 1 forwards;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(
+      closest-side,
+      #081c22 80%,
+      transparent 0 99.9%,
+      white 0
+    ),
+    conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 3.5);
+  color: white;
+}
+.circle-progressbar div[role="progressbar"]::before {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) "%";
+}
+.circle-progressbar {
+  position: relative;
+  margin-top: -30px;
+  margin-right: 100px;
 }

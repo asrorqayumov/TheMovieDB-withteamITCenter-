@@ -21,10 +21,10 @@ numbers.forEach((number, index) => {
 
 function openCity(evt, cityName) {
     let i, card, tablinks;
-    card = document.getElementsByClassName("card");
-    for (i = 0; i < card.length; i++) {
-      card[i].style.display = "none";
-    }
+    // card = document.getElementsByClassName("card");
+    // for (i = 0; i < card.length; i++) {
+    //   card[i].style.display = "none";
+    // }
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
