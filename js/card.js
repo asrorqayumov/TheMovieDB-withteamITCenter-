@@ -32,3 +32,15 @@ function openCity(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
   }
+
+
+  
+  let cardBtns = document.querySelectorAll('.dropbtn');
+  let cardBtnsArr = Array.from(cardBtns)
+  for (let i = 0; i < cardBtnsArr.length; i++) {
+    
+    cardBtnsArr[i].addEventListener('click',(e)=>{
+
+      e.target.nextElementSibling.classList.toggle("show");
+    })
+  }

@@ -6,7 +6,6 @@
     box-sizing: border-box;
 }
 
-
 .tab {
     padding-left: 40px;
     padding-right: 40px;
@@ -44,7 +43,7 @@ h2 {
     outline: none;
     cursor: pointer;
     padding: 0px 32.6px 0px 20px;
-    transition: 0.3s;
+    transition: 0.5s;
     font-size: 13px;
     border-radius: 40px;
 }
@@ -71,6 +70,9 @@ h2 {
     }
 }
 
+#this-week{
+    display: none;
+}
 
 .latest .card .card_box .latest-box {
     display: flex;
@@ -148,7 +150,6 @@ h2 {
 
 .latest .card .card_box .latest-box .percentage-container .skill {
     position: relative;
-    /* margin: 40px; */
 }
 
 .latest .card .card_box .latest-box .percentage-container .skill .outer {
@@ -200,37 +201,69 @@ h2 {
     stroke: rgb(7, 223, 122);
 }
 
-.latest .card .card_box .latest-b-img span i {
-    font-size: 0.8rem;
-    color: rgb(172, 172, 172);
-    opacity: 0.9;
-    position: absolute;
-    top: 4px;
-    left: 4px;
+.dropbtn {
 
-}
-
-.latest .card .card_box .latest-box .latest-b-img span {
     position: absolute;
-    display: flex;
-    flex-direction: row;
-    left: 140px;
-    margin: 8px;
-    filter: blur(0.5px);
-    background-color: white;
+    display: inline;
     border-radius: 50%;
-    height: 20px;
-    width: 20px;
+    opacity: 0.8;
+    background-color: #fff;
+    color: rgb(179, 178, 178);
+    padding: 3px 5px;
+    font-size: 0.7rem;
+    border: none;
+    cursor: pointer;
 }
 
-.latest .card .card_box .latest-box .latest-b-img span:hover {
-    background-color: rgb(65, 98, 207);
-    opacity: 0.9;
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    top: 60px;
+    left: 145px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 25px;
+    left: -60px;
+    background-color: #f1f1f1;
+    min-width: 140px;
+    overflow: auto;
+    border-radius: 5px;
+    border: 1px solid #d3d1d1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
     color: black;
-    font-weight: bold;
+    padding: 10px 16px;
+    border-bottom: 1px solid #d3d1d1;
+    text-decoration: none;
+    display: block;
+    margin: 5px;
+    font-size: 0.8rem;
 }
 
-.latest .card .card_box .latest-box .latest-b-img span:hover i {
+.dropdown-content a:last-child{
+    border-bottom: none;
+}
+
+.dropdown-content a span{
+    padding-right: 10px;
+}
+
+.dropdown a:hover {
+    background-color: rgb(6, 20, 59);
     color: white;
-    font-weight: bold;
+}
+
+.show {
+    display: block;
 }
