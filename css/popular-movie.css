@@ -155,7 +155,6 @@ p {
 
 
 
-
 .det2 {
     min-width: 240px;
     width: 240px;
@@ -197,15 +196,22 @@ form {
     display: flex;
     flex-direction: column;
 }
+
 .buttons button {
     border-radius: 15px;
     padding: 5px 15px;
     margin: 3px ;
     border: 1px solid gray;
 }
-.bottom:hover {
+
+.form__select__button:hover {
+
     background-color:#208ef5;
     transition: 1s;
+    color: white;
+}
+.bg-blue{
+    background-color:#208ef5;
     color: white;
 }
 .latest-box {
