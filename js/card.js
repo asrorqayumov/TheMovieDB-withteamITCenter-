@@ -20,27 +20,24 @@ numbers.forEach((number, index) => {
 
 
 function openCity(evt, cityName) {
-    let i, card, tablinks;
-    // card = document.getElementsByClassName("card");
-    // for (i = 0; i < card.length; i++) {
-    //   card[i].style.display = "none";
-    // }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
+  let i, tablinks;
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
 
 
+
+let cardBtns = document.querySelectorAll('.dropbtn');
+let cardBtnsArr = Array.from(cardBtns)
+for (let i = 0; i < cardBtnsArr.length; i++) {
   
-  let cardBtns = document.querySelectorAll('.dropbtn');
-  let cardBtnsArr = Array.from(cardBtns)
-  for (let i = 0; i < cardBtnsArr.length; i++) {
-    
-    cardBtnsArr[i].addEventListener('click',(e)=>{
+  cardBtnsArr[i].addEventListener('click',(e)=>{
 
-      e.target.nextElementSibling.classList.toggle("show");
-    })
-  }
+    e.target.nextElementSibling.classList.toggle("show");
+  })
+}
+

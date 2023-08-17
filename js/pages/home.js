@@ -15,7 +15,7 @@ async function displayTodayTrendingMovies() {
         <div class="latest-box">
           <div class="latest-b-img">
             <div class="dropdown">
-              <span class="dropbtn"><i class="fa fa-bars"></i></span>
+              <span class="dropbtn"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></span>
               <div id="myDropdown" class="dropdown-content">
                 <a href="#"
                   ><span
@@ -40,6 +40,9 @@ async function displayTodayTrendingMovies() {
                     ><i class="fa fa-star" aria-hidden="true"></i
                   ></span>
                   Rayting
+                  <div id="rayting-dropdown" class="rayting-dropdown">
+                
+                  </div>
                 </a>
               </div>
             </div>
