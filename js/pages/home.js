@@ -10,6 +10,7 @@ async function displayTodayTrendingMovies() {
       movie;
     let vote = Math.round(vote_average * 10);
     html += `
+    
       <div class="card">
       <div class="card_box">
         <div class="latest-box">
@@ -48,6 +49,7 @@ async function displayTodayTrendingMovies() {
             </div>
             <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" />
           </div>
+          <div class="circle-text">
           <div class="circle-progressbar">
           <div
             role="progressbar"
@@ -60,6 +62,7 @@ async function displayTodayTrendingMovies() {
           <div class="latest-b-text">
             <a href="#"><strong>${original_title}</strong></a>
             <p>${release_date}</p>
+          </div>
           </div>
         </div>
       </div>

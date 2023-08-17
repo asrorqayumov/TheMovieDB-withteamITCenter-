@@ -34,7 +34,6 @@ h2 {
   height: 28px;
   z-index: 2;
   border-radius: 40px;
-  /* border: 1px solid rgb(0, 37, 139); */
 }
 
 .tab button {
@@ -55,45 +54,21 @@ h2 {
   padding: 5.5px 25.9px;
 }
 
-.latest .card__wrapper{
+.latest .card__wrapper {
   min-height: 0;
-    height: auto;
-  position: relative;
-  display: inline-block;
-  left: 80px;
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  /* overflow-x: auto; */
-  overflow-x: scroll;
-    overflow-y: hidden;
-    transition: height .5s linear;
-}
-/* 
-.latest .card__list__today{
-  position: relative;
-  display: block;
+  height: auto;
   left: 80px;
   width: 90%;
   display: flex;
   flex-direction: row;
   overflow-x: auto;
+  overflow-y: hidden;
+  transition: height .5s linear;
 }
-
-.latest .card__list__week{
-  position: relative;
-  display: block;
-  left: 80px;
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-} */
 
 
 
 .latest .card {
-  position: relative;
   padding: 6px 12px;
   border-top: none;
   background-color: transparent;
@@ -101,11 +76,11 @@ h2 {
   min-height: 0px;
   height: auto;
   position: relative;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 @keyframes fadeEffect {
@@ -118,6 +93,10 @@ h2 {
   }
 }
 
+.circle-text {
+  display: flex;
+  flex-direction: column;
+}
 
 #this-week {
   display: none;
@@ -125,7 +104,6 @@ h2 {
 
 .latest .card .card_box .latest-box {
   align-items: center;
-  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
   margin: 20px 10px;
   border-radius: 10px;
   overflow: hidden;
@@ -134,11 +112,13 @@ h2 {
 }
 
 .latest .card .card_box .latest-box .latest-b-img {
+  border-radius: 10px;
   width: 100%;
-  height: 220px;
+  height: 250px;
 }
 
 .latest .card .card_box .latest-box .latest-b-img img {
+  border-radius: 10px;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -162,8 +142,8 @@ h2 {
 .latest .card .card_box .latest-box .latest-b-text {
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
   flex-direction: column;
   margin: 10px;
   background-color: none;
@@ -290,8 +270,5 @@ h2 {
 .circle-progressbar {
   position: relative;
   margin-top: -20px;
-  margin-right: 100px;
+  margin-left: 10px;
 }
-
-
-
