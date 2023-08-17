@@ -148,7 +148,7 @@ header .tm .h13 {
 }
 
 body {
-    background-color: rgb(2, 26, 56);
+    /* background-color: rgb(2, 26, 56); */
 
 }
 
@@ -219,7 +219,7 @@ footer {
     background-color: rgb(2, 26, 56);
     color: white;
     margin-top: 30px;
-    margin-left: 220px;
+    padding-left: 290px;
 }
 
 footer .h1a {
@@ -327,6 +327,7 @@ footer .coll {
 }
 
 @media (max-width: 1100px) {
+
     header h1,
     .diva {
         display: none;
@@ -709,7 +710,7 @@ header .bib {
         width: 90%;
         margin-left: 5px;
         margin-top: 130px;
-        
+
     }
 
     .topnav.responsive .mo4 {
@@ -720,7 +721,7 @@ header .bib {
         background-color: rgb(3, 34, 72);
         height: 60px;
         width: 90%;
-    }  
+    }
 
     header .bib {
         display: block;
@@ -735,7 +736,7 @@ header .bib {
         font-weight: 500;
         margin-left: 6px;
     }
-    
+
     .dropdown-content {
         display: none;
     }
