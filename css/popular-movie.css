@@ -197,12 +197,16 @@ form {
     flex-direction: column;
 }
 
-.buttons button {
-    border-radius: 15px;
-    padding: 5px 15px;
-    margin: 3px ;
-    border: 1px solid gray;
+.buttons li{
+    display: inline-flex;
+    border: 1px solid #9e9e9e;
+    border-radius: 14px;
+    padding: 4px 12px;
+    font-size: .9em;
+    margin-right: 6px;
+    margin-top: 8px;
 }
+
 
 .form__select__button:hover {
 
