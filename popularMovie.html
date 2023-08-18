@@ -6,37 +6,128 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css//popular-movie.css">
+    <link rel="stylesheet" href="./css/card.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+
     <title>movieod</title>
 </head>
-<section>
+
 <header>
-
-    <div class="togglebtn active" onclick="myFunction();">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
+    <!-- <div class="togglebtn active" onclick="myFunction();">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div> -->
 
     <h1>T M D B</h1>
     <div class="diva"></div>
-    <ul class="navbar">
-        <li class="nav-item"><a href="" class="nav-link">Movies</a></li>
-        <li class="nav-item"><a href="" class="nav-link">Series</a></li>
-        <li class="nav-item"><a href="" class="nav-link">People</a></li>
-<figcaption></figcaption>    </ul>
+    <!-- <ul class="navbar">
+          <li class="nav-item"><a href="" class="nav-link">Movies</a></li>
+          <li class="nav-item"><a href="" class="nav-link">Series</a></li>
+          <li class="nav-item"><a href="" class="nav-link">People</a></li>
+  <figcaption></figcaption>    </ul>
+  
+      <ul class="ul2">
+          <li><a class="a2" href="">C</a></li>
+          <li><i class="fa-solid fa-magnifying-glass"></i></li>
+      </ul> -->
+
+    <div class="topnav" id="myTopnav">
+        <ul>
+            <div class="dropdown">
+                <li>
+                    <a class="mo1" href="#home">Movies</a>
+                    <div class="dropdown-content">
+                        <a class="ac" href="">Popular</a><br />
+                        <a class="ac1" href="">Waching now</a><br />
+                        <a class="ac2" href="">Expected</a><br /><br />
+                        <a class="ac3" href="">Best</a>
+                    </div>
+                </li>
+            </div>
+            <br />
+
+            <div class="dropdown1">
+                <li>
+                    <a class="mo2" href="#news">Series</a>
+                    <div class="dropdown-content1">
+                        <a class="ab" href="">Popular</a><br />
+                        <a class="ab1" href="">On air today</a><br />
+                        <a class="ab2" href="">On TV</a><br /><br />
+                        <a class="ab3" href="">Best</a>
+                    </div>
+                </li>
+            </div>
+            <br />
+
+            <div class="dropdown2">
+                <li>
+                    <a class="mo3" href="#contact">People</a>
+                    <div class="dropdown-content2">
+                        <a class="" href="">Popular people</a>
+                    </div>
+                </li>
+            </div>
+            <br />
+
+            <div class="dropdown3">
+                <li>
+                    <a class="mo4" href="#contact">More</a>
+                    <div class="dropdown-content3">
+                        <a class="ad" href="">Discussions</a><br />
+                        <a class="ad1" href="">Hall of Fame</a><br />
+                        <a class="ad2" href="">Support</a><br /><br />
+                        <a class="ad3" href="">API</a>
+                    </div>
+                </li>
+            </div>
+        </ul>
+
+        <div class="bib" id="myTopnav">
+            <a href="#home"></a>
+            <a href="#home">Bible Editors</a>
+            <a href="#home">Discussions</a>
+            <a href="#news">Hall aof Fame</a>
+            <a href="#contact">API</a>
+            <a href="#contact">Support</a>
+            <a href="#contact">Info</a>
+            <a href="#contact"></a>
+            <a href="#contact">Go out</a>
+        </div>
+        <!-- <a href="#about">About</a> -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="tm">
+        <h1 class="h1a">T H E</h1>
+        <div class="div1"></div>
+        <h1 class="h1b">M</h1>
+        <div class="div2"></div>
+        <h1 class="h12">V I E</h1>
+        <div class="div3"></div>
+        <h1 class="h13">D B</h1>
+    </div>
 
     <ul class="ul2">
         <li><a class="a2" href="">C</a></li>
         <li><i class="fa-solid fa-magnifying-glass"></i></li>
     </ul>
+
+    <!--       
+        <div style="padding-left:16px">
+          <h2>Responsive Topnav Example</h2>
+          <p>Resize the browser window to see how it works.</p>
+        </div> -->
 </header>
+
 <body>
-   
-   
+
+
     <div class="container">
         <div class="selecte">
-<h1>Popular Movies</h1>
+            <h1>Popular Movies</h1>
             <form action="#">
                 <details class="det1">
                     <summary>Sort</summary>
@@ -46,10 +137,10 @@
                             <option value="red">Popularity Descending</option>
                             <option value="blue">Popularity Ascending</option>
                             <option value="green">Rating Descending</option>
-                             <option value="red">Rating Ascending</option>
+                            <option value="red">Rating Ascending</option>
                             <option value="blue">Release Date Descending</option>
                             <option value="green">Release Date Ascending</option>
-                             <option value="red">Title (A-Z)</option>
+                            <option value="red">Title (A-Z)</option>
                             <option value="blue">Title (Z-A)</option>
 
                         </select>
@@ -149,26 +240,37 @@
 
                 </details>
                 <div class="btn-box">
-                <button class="search-btn">Search</button>
-            </div>
+                    <button class="search-btn">Search</button>
+                </div>
             </form>
         </div>
-        <div class="card">
-<div class="row">
-    
-    
-    
-    <button class="load-btn">Search</button>
-</div>
-        </div>
+
+
+        <section class="latest">
+            <div class="card__wrapper card__list__today card__list__popularmovie__page" id="today">
+
+
+            </div>
+            <button class="load-btn">Search</button>
+        </section>
+
+
+
     </div>
-    <footer>
-        <h1 class="h1a">T H E</h1><div class="div1"></div>
-        <h1 class="h1b">M</h1> <div class="div2"></div><h1 class="h12">V I E</h1>
-        <div class="div3"></div><h1 class="h13">D B</h1>
-    
+    <footer class="footter">
+        <div class="foot">
+            <h1 class="h1a">T H E</h1>
+            <div class="div1"></div>
+            <h1 class="h1b">M</h1>
+            <div class="div2"></div>
+            <h1 class="h12">V I E</h1>
+            <div class="div3"></div>
+            <h1 class="h13">D B</h1>
+        </div>
+
         <button>JOIN THE COMMUNITY</button>
-    
+        <button class="hey">Hey Charos!</button>
+
         <div class="coll">
             <ul class="xxx">
                 <h1 class="bbb">MAIN</h1>
@@ -178,36 +280,35 @@
                 <li><a href="#">API</a></li>
                 <li><a href="#">System Status</a></li>
             </ul>
-    
+
             <ul class="xxx">
                 <h1 class="bbb">PARTICIPATE</h1>
                 <li><a href="#">Editors' Bible</a></li>
                 <li><a href="#">Add a new movie</a></li>
                 <li><a href="#">Add a new series</a></li>
             </ul>
-    
+
             <ul class="xxx">
                 <h1 class="bbb">COMMUNITY</h1>
                 <li><a href="#">Guide</a></li>
                 <li><a href="#">Discussion</a></li>
                 <li><a href="#">Board of Honor</a></li>
                 <li><a href="#">Twitter</a></li>
-    
             </ul>
-    
+
             <ul class="xxx">
                 <h1 class="bbb">ABOUT THE LAW</h1>
                 <li><a href="#">Terms of Use</a></li>
                 <li><a href="#">API Terms of Use</a></li>
                 <li><a href="#">Privacy policy</a></li>
                 <li><a href="#">Copyright Holder's Complaint</a></li>
-    
             </ul>
         </div>
     </footer>
-<script type="module" src="./js/pages/popular-movie.js"></script>
+    <script type="module" src="./js/pages/popular-movie.js"></script>
+    <script type="module" src="./js/pages/home.js"></script>
+    <script src="./js/card.js"></script>
 
-    
 </body>
 
 

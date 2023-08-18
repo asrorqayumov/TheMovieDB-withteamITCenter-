@@ -148,7 +148,7 @@ header .tm .h13 {
 }
 
 body {
-    background-color: rgb(2, 26, 56);
+    background-color: white;
 
 }
 
@@ -213,13 +213,21 @@ body .container .image button:hover {
     color: black;
 }
 
-footer {
+.fotter {
     padding: 15px 9%;
     transition: 0.2s;
     background-color: rgb(2, 26, 56);
     color: white;
     margin-top: 30px;
     margin-left: 220px;
+}
+.footter {
+    padding: 15px 9%;
+    transition: 0.2s;
+    background-color: rgb(2, 26, 56);
+    color: white;
+    margin-top: 30px;
+    
 }
 
 footer .h1a {
