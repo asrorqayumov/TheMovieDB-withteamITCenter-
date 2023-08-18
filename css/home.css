@@ -49,14 +49,35 @@ header h1 {
 }
 
 header ul {
+    width: 400px;
     display: flex;
 }
 
 header ul li a {
-    margin: 15px;
+    margin: 10px;
     font-size: 16px;
     list-style: none;
     color: aliceblue;
+}
+
+header ul .mo1 {
+    margin-top: -50px;
+    margin-left: 170px;
+}
+
+header ul .mo2 {
+    margin-left: 95px;
+    margin-top: 16px;
+}
+
+header ul .mo3 {
+    margin-left: 5px;
+    margin-top: 16px;
+}
+
+header ul .mo4 {
+    margin-left: 5px;
+    margin-top: 16px;
 }
 
 header ul li i {
@@ -65,7 +86,7 @@ header ul li i {
 }
 
 header .ul2 .a2 {
-    margin-left: 660px;
+    margin-left: 560px;
     color: white;
     background-color: #32b9de;
     padding-left: 13px;
@@ -327,6 +348,7 @@ footer .coll {
 }
 
 @media (max-width: 1100px) {
+
     header h1,
     .diva {
         display: none;
@@ -442,8 +464,8 @@ body {
     background-color: white;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    margin-top: 60px;
-    margin-left: -10px;
+    margin-top: -30px;
+    margin-left: 230px;
     border-radius: 5px;
     width: 180px;
     height: 130px;
@@ -494,7 +516,7 @@ body {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     margin-top: 60px;
-    margin-left: -10px;
+    margin-left: 100px;
     border-radius: 5px;
     width: 180px;
     height: 130px;
@@ -511,6 +533,7 @@ body {
 /* Show the dropdown menu on hover */
 .dropdown1:hover .dropdown-content1 {
     display: block;
+    /* background-color: white; */
 }
 
 .dropdown-content1 .ab {
@@ -545,7 +568,7 @@ body {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     margin-top: 60px;
-    margin-left: -10px;
+    margin-left: 10px;
     border-radius: 5px;
     width: 180px;
     height: 45px;
@@ -577,7 +600,7 @@ body {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     margin-top: 60px;
-    margin-left: -10px;
+    margin-left: 10px;
     border-radius: 5px;
     width: 180px;
     height: 130px;
@@ -643,6 +666,18 @@ header .bib {
         margin-top: -30px;
         margin-left: -20px;
     }
+
+    header .tm {
+        position: fixed;
+        display: block;
+        position: fixed;
+    }
+
+    header .ul2 {
+        position: fixed;
+        display: block;
+        position: fixed;
+    }
 }
 
 @media screen and (max-width: 1100px) {
@@ -683,7 +718,7 @@ header .bib {
 
     .topnav.responsive .mo1 {
         position: fixed;
-        margin-left: 5px;
+        margin-left: -140px;
         margin-top: 30px;
         font-size: 24px;
         background-color: rgb(3, 34, 72);
@@ -709,7 +744,7 @@ header .bib {
         width: 90%;
         margin-left: 5px;
         margin-top: 130px;
-        
+
     }
 
     .topnav.responsive .mo4 {
@@ -720,7 +755,7 @@ header .bib {
         background-color: rgb(3, 34, 72);
         height: 60px;
         width: 90%;
-    }  
+    }
 
     header .bib {
         display: block;
@@ -735,7 +770,7 @@ header .bib {
         font-weight: 500;
         margin-left: 6px;
     }
-    
+
     .dropdown-content {
         display: none;
     }
@@ -750,13 +785,6 @@ header .bib {
     }
 
     header .tm .h1a {
-        color: aliceblue;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 20px;
-        background: linear-gradient(40deg, #4efaa7, #01a0db);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        position: fixed;
         margin-top: -30px;
         margin-left: 110px;
         display: block;
@@ -764,9 +792,6 @@ header .bib {
     }
 
     header .tm .div1 {
-        width: 35px;
-        height: 16px;
-        border-radius: 50px;
         margin-top: -26px;
         margin-left: 155px;
         display: block;
@@ -775,17 +800,12 @@ header .bib {
 
     header .tm .h1b {
         margin-top: -13px;
-        font-size: 20px;
         margin-left: 110px;
         display: block;
         position: fixed;
     }
 
     header .tm .div2 {
-        background: linear-gradient(40deg, #4efaa7, #41b1da);
-        width: 16px;
-        height: 16px;
-        border-radius: 100px;
         margin-top: -7px;
         margin-left: 132px;
         display: block;
@@ -793,12 +813,6 @@ header .bib {
     }
 
     header .tm .h12 {
-        margin-top: -33px;
-        margin-left: 65px;
-        background: linear-gradient(40deg, #41d7da, #41b1da);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 20px;
         margin-top: -12px;
         margin-left: 148px;
         display: block;
@@ -806,10 +820,6 @@ header .bib {
     }
 
     header .tm .div3 {
-        background: linear-gradient(40deg, #4efaa7, #01a0db);
-        width: 45px;
-        height: 16px;
-        border-radius: 50px;
         margin-left: 110px;
         display: block;
         position: fixed;
@@ -819,8 +829,6 @@ header .bib {
     header .tm .h13 {
         margin-top: 5px;
         margin-left: 156px;
-        color: #41b1da;
-        font-size: 20px;
         display: block;
         position: fixed;
     }
