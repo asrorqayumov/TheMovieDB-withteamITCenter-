@@ -1,5 +1,6 @@
 import { getTrendingMoviesToday } from "../apis/homeApi.js";
 import config from "../config.js";
+import { showcard , removeClassShow} from "../card.js";
 
 async function displayTodayTrendingMovies() {
   let cardsWrapper = document.querySelector(".card__list__today");
@@ -70,6 +71,12 @@ async function displayTodayTrendingMovies() {
       `;
   });
   cardsWrapper.innerHTML = html;
+  showcard();
+  removeClassShow();
+
 }
 
 displayTodayTrendingMovies();
+
+
+
