@@ -15,9 +15,9 @@ async function displayTodayTrendingMovies() {
       <div class="card_box">
         <div class="latest-box">
           <div class="latest-b-img">
-            <div class="dropdown">
-              <span class="dropbtn"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></span>
-              <div id="myDropdown" class="dropdown-content">
+            <div class="dropdown-card">
+              <span class="dropbtn-card"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></span>
+              <div id="myDropdown-card" class="dropdown-contentcard">
                 <a href="#"
                   ><span
                     ><i class="fa fa-list" aria-hidden="true"></i

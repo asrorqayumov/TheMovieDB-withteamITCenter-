@@ -155,7 +155,7 @@ h2 {
   margin: 0px;
 }
 
-.dropbtn {
+.dropbtn-card {
   position: absolute;
   display: inline;
   border-radius: 50%;
@@ -168,19 +168,19 @@ h2 {
   cursor: pointer;
 }
 
-.dropbtn:hover,
-.dropbtn:focus {
+.dropbtn-card:hover,
+.dropbtn-card:focus {
   background-color: #1e78b3;
 }
 
-.dropdown {
+.dropdown-card {
   position: absolute;
   display: inline-block;
   top: 33px;
   left: 145px;
 }
 
-.dropdown-content {
+.dropdown-contentcard {
   display: none;
   position: absolute;
   top: -40px;
@@ -195,7 +195,7 @@ h2 {
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-contentcard a {
   color: black;
   padding: 10px 16px;
   border-bottom: 1px solid #d3d1d1;
@@ -205,15 +205,15 @@ h2 {
   font-size: 0.8rem;
 }
 
-.dropdown-content a:last-child {
+.dropdown-contentcard a:last-child {
   border-bottom: none;
 }
 
-.dropdown-content a span {
+.dropdown-contentcard a span {
   padding-right: 10px;
 }
 
-.dropdown a:hover {
+.dropdown-card a:hover {
   background-color: rgb(6, 20, 59);
   color: white;
 }
