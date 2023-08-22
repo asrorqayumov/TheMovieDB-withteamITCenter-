@@ -71,8 +71,9 @@ async function displayTodayTrendingMovies() {
       `;
   });
   cardsWrapper.innerHTML = html;
-  showcard();
-  removeClassShow();
+  // showcard();
+  // removeClassShow();
+
 
 }
 
