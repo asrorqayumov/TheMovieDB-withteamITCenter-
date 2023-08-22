@@ -99,7 +99,7 @@ h2 {
   flex-direction: column;
 }
 
-#this-week {
+.latest .card__wrapper:last-child {
   display: none;
 }
 
