@@ -1,0 +1,999 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: #5C7FB8
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.movie-card {
+    margin-top: 50px;
+    color: #A9A8A3;
+    padding: 40px 0;
+}
+
+.container-movie {
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+.hero {
+    height: 550px;
+    margin: 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-color: #1a1a1a;
+}
+
+.hero .hero-img img {
+    content: '';
+    width: 80%;
+    height: 100%;
+    margin-left: 20%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+    transform-origin: 0 0;
+    z-index: -1;
+    filter: brightness(0.4) blur(3px);
+}
+
+.hero .hero-img {
+    width: 100%;
+    height: auto;
+
+}
+
+.cover {
+    border-radius: 10px;
+    width: 300px;
+    height: 490px;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    z-index: 2;
+}
+
+.details {
+    padding: 40px 0 0 400px;
+
+
+    .title1 {
+        color: white;
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    .title1 span {
+        position: absolute;
+        margin-left: 12px;
+        color: #bcbbb6;
+        font-size: 2rem;
+        font-weight: 400;
+        padding: 0px 4px;
+    }
+
+    .title1 a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .title1 a:hover {
+        color: #A9A8A3;
+    }
+
+}
+
+.details .fa-circle {
+    font-size: 0.5rem;
+    padding: 0 8px 0 0;
+}
+
+.details span a {
+    padding: 0px 2px;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #fff;
+}
+
+.details span a:hover {
+    color: #A9A8A3;
+}
+
+.details .title2 {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+
+.circles-box {
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* Card percentage  */
+@keyframes growProgressBar {
+
+    0%,
+    33% {
+        --pgPercentage: 0;
+    }
+
+    100% {
+        --pgPercentage: var(--value);
+    }
+}
+
+@property --pgPercentage {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+}
+
+.circle-progressbar [role="progressbar"] {
+    --size: 4rem;
+    --bg: #081c22;
+    --fg: rgba(20, 193, 20, 0.757);
+    --pgPercentage: var(--value);
+    animation: growProgressBar 3s 1 forwards;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(closest-side,
+            #081c22 80%,
+            transparent 0 99.9%,
+            white 0),
+        conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) / 3.5);
+    color: white;
+}
+
+.circle-progressbar [role="progressbar"]::before {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) "%";
+}
+
+.circles-box .persenteg-title {
+    margin: 13px 0 0 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.circles-box .different-circles {
+    margin: 25px 0 0 30px;
+}
+
+.circles-box .different-circles span {
+    background-color: rgb(3, 37, 65);
+    border-radius: 50%;
+    color: #fff;
+    padding: 13px 0;
+    margin: 0 8px;
+}
+
+.circles-box .different-circles span i {
+    padding: 0 18px;
+    font-size: 0.7rem;
+
+}
+
+/* .circles-box .different-circles span .fa-star:hover {} */
+
+fieldset,
+label {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+    margin-top: 50px;
+    border: none;
+    float: left;
+}
+
+.rating>input {
+    display: none;
+}
+
+.rating>label:before {
+    margin: 5px;
+    margin-top: 0;
+    font-size: 1em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating>.half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.rating>label {
+    color: #fff;
+    float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating>input:checked~label,
+/* show gold star when clicked */
+.rating:not(:checked)>label:hover,
+/* hover current star */
+.rating:not(:checked)>label:hover~label {
+    color: #FFD700;
+}
+
+/* hover previous stars in list */
+
+.rating>input:checked+label:hover,
+/* hover current star when changing rating */
+.rating>input:checked~label:hover,
+.rating>label:hover~input:checked~label,
+/* lighten current selection */
+.rating>input:checked~label:hover~label {
+    color: #FFED85;
+}
+
+/* //tooltip stuff via: https://codepen.io/peiche/pen/JaftA */
+
+a[data-tooltip] {
+    position: relative;
+}
+
+a[data-tooltip]::before,
+a[data-tooltip]::after {
+    position: absolute;
+    display: none;
+    opacity: 0.85;
+}
+
+a[data-tooltip]::before {
+    /*
+   * using data-tooltip instead of title so we 
+   * don't have the real tooltip overlapping
+   */
+    content: attr(data-tooltip);
+    background: #000;
+    color: #fff;
+    font-size: 13px;
+    padding: 5px;
+    border-radius: 5px;
+    /* we don't want the text to wrap */
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+a[data-tooltip]::after {
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    content: '';
+}
+
+a[data-tooltip]:hover::before,
+a[data-tooltip]:hover::after {
+    display: block;
+}
+
+.details .title3 {
+    margin: 20px 0 10px 0;
+    font-size: 1.3em;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.details h2 {
+    color: #fff;
+}
+
+.details .text {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #fff;
+    width: 1050px;
+}
+
+.details .about-title {
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+}
+
+.details .about-title {
+    margin: 10px 200px 0 0;
+}
+
+.details .about-title a,
+.about-title2 a {
+    font-weight: bold;
+    color: #fff;
+}
+
+.details .about-title2 {
+    margin-top: 20px;
+    color: #fff;
+}
+
+.details .about-title a:hover,
+.about-title2 a:hover {
+    color: #A9A8A3;
+    text-decoration: none;
+}
+
+
+.description h2 {
+    margin: 0 0 15px 80px;
+    font-weight: 600;
+}
+
+.description .about-actors {
+    min-height: 0;
+    position: relative;
+    height: auto;
+    left: 80px;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    transition: height .5s linear;
+}
+
+.description .about-actors .actors-card {
+    margin: 10px 4px 40px 10px;
+    border: 1px solid #A9A8A3;
+    padding-bottom: 10px;
+    overflow: hidden;
+    min-width: 140px;
+    width: 140px;
+    background-color: #fff;
+    margin-right: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+    border: 1px solid rgba(var(--lightGrey), 1);
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.description .about-actors .actors-card .actors-name {
+    margin: 5px 10px 15px 10px;
+    background-color: transparent;
+}
+
+.description .about-actors .actors-card .actors-name h4 a {
+    color: #000;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.description .about-actors .actors-card .actors-name h4 a:hover {
+    color: #81817e;
+}
+
+.description .about-actors .actors-card .actors-name p {
+    color: #000;
+    font-size: 0.9rem;
+}
+
+.description h3 a {
+    color: #000;
+    margin: 30px 0 20px 0;
+    padding-top: 40px;
+    font-weight: 600;
+    text-decoration: none;
+    padding-bottom: 20px;
+}
+
+.description h3 a:hover {
+    color: #A9A8A3;
+}
+
+.description .about-link {
+    position: relative;
+    border-bottom: 1px solid #bcbbb6;
+    left: 80px;
+    width: 70%;
+}
+
+.description .facts {
+    position: absolute;
+    display: block;
+    flex-wrap: nowrap;
+    left: 78%;
+}
+
+.description .social_links .icons {
+    margin-top: -50px;
+}
+
+.description .social_links .icons a {
+    color: #000;
+    font-size: x-large;
+    padding: 0 17px 0 10px;
+}
+
+.description .social_links .icons a:nth-child(3) {
+    border-right: 1px solid #A9A8A3;
+}
+
+.description .facts .social_links .status {
+    margin-top: 30px;
+}
+
+.description .facts .social_links .status p {
+    margin: 0 0 20px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.description .facts .social_links .status strong {
+    font-weight: 700;
+}
+
+.description .facts .social_links .status strong {
+    font-weight: bold;
+}
+
+.description .facts .social_links .status bdi {
+    unicode-bidi: isolate;
+}
+
+.description .facts .social_links .status p strong {
+    display: block;
+    font-weight: 600;
+}
+
+.description .facts .keywords {
+    border-bottom: 1px solid #d7d7d7;
+    margin-bottom: 30px;
+    width: 60%;
+}
+
+.description .facts .keywords:last-of-type {
+    margin-bottom: 0;
+}
+
+.description .facts .keywords h4 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.description .facts .keywords h4 bdi {
+    unicode-bidi: isolate;
+}
+
+.description .facts .keywords ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style-type: none;
+}
+
+.description .facts .keywords ul li {
+    margin-right: 5px;
+    margin-bottom: 10px;
+    line-height: 24px;
+    font-size: .9em;
+    box-sizing: border-box;
+    white-space: nowrap;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.description .facts .keywords ul li a {
+    background-color: rgba(0, 0, 0, .1);
+    border: 1px solid #d7d7d7;
+    color: #000;
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: #000;
+    background: 0 0;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+
+.panel {
+    width: 90%;
+    position: relative;
+    top: 100px;
+    left: 50px;
+    display: block;
+    padding: 30px 0;
+}
+
+.panel h3 {
+    font-weight: 600;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+.media_panel .menu,
+.media_panel .menu ul {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.media_panel .menu {
+    display: flex;
+    align-items: baseline;
+}
+
+.media_panel .content {
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.media_panel .menu h3 {
+    display: inline-block;
+    margin-right: 50px;
+    font-weight: 700;
+}
+
+.media_panel .menu ul .active {
+    border-bottom: 4px solid #000;
+}
+
+.rating,
+.season.card span.episode_type {
+    font-size: .9em;
+    display: inline-flex;
+    align-items: center;
+    background-color: #000;
+    border-radius: 10px;
+    border-width: 0;
+    color: #fff;
+}
+
+.media_panel .menu ul li {
+    display: inline-block;
+    margin-right: 24px;
+    padding-bottom: 5px;
+    font-size: 1.1em;
+    box-sizing: border-box;
+}
+
+.media_panel .menu ul li:last-child {
+    margin-right: 0;
+}
+
+
+.inner_content a,
+.media_panel .menu ul .active a {
+    color: #000;
+    text-decoration: none;
+}
+
+.media_panel .menu ul .active a,
+.media_panel .menu ul .view_all a {
+    color: #000;
+    text-decoration: none;
+}
+
+.rounded {
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 8px 16px;
+    transition: linear .1s;
+}
+
+.media_panel .menu ul li a {
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.inner_content a,
+.credit_group tbody .role a:hover,
+.horizontal_media_list li .title:hover {
+    color: #000;
+}
+
+
+.inner_content h3 span,
+.media_panel .menu ul li a span {
+    display: inline-flex;
+    align-items: center;
+    opacity: .6;
+    font-weight: 600;
+}
+
+.media_panel .content .original_content {
+    width: 100%;
+}
+
+.review .review_container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
+.review .review_container .content,
+.review .review_container .content .inner_content {
+    width: 100%;
+}
+
+.column_wrapper .content_wrapper p:last-child {
+    margin-bottom: 0;
+}
+
+.panel p:last-of-type,
+.split_column :last-of-type {
+    margin-bottom: 0;
+}
+
+.leaderboard p,
+.media_panel p {
+    font-size: 1em;
+}
+
+.review .review_container .card {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #A9A8A3;
+    border-radius: 10px;
+}
+
+.card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+    border: 1px solid #A9A8A3;
+    background-color: #fff;
+}
+
+.review .review_container .grouped {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+
+.review .review_container .avatar {
+    width: 48px;
+    margin-right: 16px;
+    /* margin-top: 0px; */
+}
+
+.review .review_container .info {
+    width: 100%;
+}
+
+.review .review_container .avatar a {
+    display: block;
+    text-decoration: none;
+}
+
+.review img.avatar {
+    width: 45px;
+    height: 45px;
+    display: block;
+}
+
+img.avatar {
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.review .review_container .inner_content h3 {
+    display: inline-block;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-size: 1.3em;
+    line-height: 1em;
+    font-weight: 700;
+}
+
+.review_container .inner_content h3 a {
+    color: #000;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.inner_content .info h3 a:hover {
+    color: #81817e;
+}
+
+.rating {
+    padding: 1px 8px 1px 6px;
+    margin-right: 8px;
+    margin-top: 0;
+    font-weight: 600;
+    align-content: center;
+    justify-content: center;
+    border-color: #000;
+}
+
+.episode_title span.episode_type,
+.rating,
+.season.card span.episode_type {
+    font-size: .9em;
+    display: inline-flex;
+    align-items: center;
+    background-color: #000;
+    border-radius: 10px;
+    border-width: 0;
+    color: #fff;
+}
+
+.rating span.star {
+    margin-right: 2px;
+}
+
+.glyphicons_v2 .fa-star {
+    color: #fff;
+}
+
+.svg.invert {
+    filter: invert(1);
+}
+
+.glyphicons_v2 {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1em;
+    min-height: 1em;
+    width: 1em;
+    height: 1em;
+    line-height: inherit;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: inherit;
+    box-sizing: border-box;
+}
+
+.review .review_container .inner_content .flex h5 {
+    font-weight: 300;
+    font-size: .9em;
+    margin-bottom: 0;
+}
+
+.review .review_container .inner_content .flex h5 a {
+    font-weight: 500;
+}
+
+.review .review_container .inner_content .flex h5 a:hover {
+    color: #81817e;
+}
+
+.review .review_container .inner_content .teaser a {
+    color: #000;
+    border-bottom: 2px solid #000;
+}
+
+.review .review_container .inner_content .teaser a:hover {
+    color: #81817e;
+}
+
+.review .review_container .inner_content .teaser {
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.review .review_container .teaser:before {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.leaderboard p,
+.media_panel p {
+    font-size: 1em;
+}
+
+.new_button {
+    margin: 20px 0 0;
+    display: inline-block;
+}
+
+.new_button a {
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.new_button a:hover {
+    color: #81817e;
+}
+
+.panel:last-of-type {
+    padding-bottom: 0;
+}
+
+.panel:last-child {
+    margin-bottom: 80px;
+    width: 90%;
+    display: block;
+    padding: 30px 0;
+    border-top: 1px solid #d7d7d7;
+}
+
+.recommendations h3 {
+    font-weight: 600;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+.recommendations .scroller_wrap,
+.ott_providers li a img {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.recommendations .scroller {
+    /* -webkit-overflow-scrolling: touch; */
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+}
+
+
+.recommendations div.scroller div.item {
+    display: inline-block;
+    float: none;
+}
+
+div.item.mini.backdrop {
+    width: 250px;
+    margin: 0 15px 0 0;
+}
+
+div.item.backdrop {
+    width: 445px;
+}
+
+div.item.mini.backdrop div.image_content {
+    border-radius: 10px;
+    width: 250px;
+    height: 141px;
+}
+
+div.item div.image_content {
+    overflow: hidden;
+}
+
+.recommendations div.scroller div.item p a {
+    margin-top: 5px;
+    text-decoration: none;
+    color: #000;
+}
+
+.recommendations div.scroller div.item a {
+    font-weight: 400;
+    font-size: 1em;
+}
+
+div.item p a.title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 110px;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+div.image_content a div.meta {
+    visibility: hidden;
+    background-color: rgba(255, 255, 255, .9);
+    position: relative;
+    top: -40px;
+    left: 0;
+    height: 40px;
+    width: 100%;
+    z-index: 1;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.recommendations div.scroller div.item span.release_date {
+    font-size: 1em;
+    display: inline-flex;
+    align-items: center;
+}
+
+.facts ul li img,
+.recommendations div.scroller div.item span.glyphicons_v2 {
+    margin-right: 4px;
+}
+
+.glyphicons_v2.calendar {
+    background-image: url(/assets/2/v4/glyphicons/basic/glyphicons-basic-46-calendar-3e0931d….svg);
+}
+
+.glyphicons_v2 {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1em;
+    min-height: 1em;
+    width: 1em;
+    height: 1em;
+    line-height: inherit;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: inherit;
+    box-sizing: border-box;
+}
+
+.facts ul li img,
+.recommendations div.scroller div.item span.glyphicons_v2 {
+    margin-right: 4px;
+}
+
+div.item span.rating {
+    top: 0;
+    padding-left: 4px;
+    color: #000;
+    line-height: 0;
+}
+
+.glyphicons_v2.star {
+    background-image: url(/assets/2/v4/glyphicons/basic/glyphicons-basic-49-star-67a24f6….svg);
+}
+
+.right {
+    float: right;
+}
+
+.glyphicons_v2.heart {
+    background-image: url(/assets/2/v4/glyphicons/basic/glyphicons-basic-13-heart-28c7c34….svg);
+}
+
+.hide {
+    display: none;
+}
+
+.glyphicons_v2.bookmark {
+    background-image: url(/assets/2/v4/glyphicons/basic/glyphicons-basic-73-bookmark-696996f….svg);
+}
