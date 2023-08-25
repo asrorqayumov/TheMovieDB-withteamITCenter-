@@ -148,7 +148,8 @@ header .tm .h13 {
 }
 
 body {
-    background-color: white;
+    /* background-color: rgb(2, 26, 56); */
+
 }
 
 body .container {
@@ -213,21 +214,12 @@ body .container .image button:hover {
 }
 
 footer {
-    padding: 180px 15%;
-    transition: 0.2s;
-    background-color: rgb(2, 26, 56);
-    color: white;
-    margin-top: 30px;
-    padding-left: 290px;
-}
-.footter {
     padding: 15px 9%;
     transition: 0.2s;
     background-color: rgb(2, 26, 56);
     color: white;
     margin-top: 30px;
-    width: 100%;
-    
+    padding-left: 290px;
 }
 
 footer .h1a {
@@ -237,7 +229,6 @@ footer .h1a {
     background: linear-gradient(40deg, #4efaa7, #01a0db);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-top: -150px;
 }
 
 footer .div1 {
@@ -409,7 +400,7 @@ footer .coll {
     footer .coll .xxx {
         margin: 30px;
         width: 250px;
-        margin-left: -250px;
+        margin-left: -230px;
     }
 
     footer button {
@@ -418,8 +409,8 @@ footer .coll {
 
     footer .hey {
         display: block;
-        margin-top: -140px;
-        margin-left: -250px;
+        margin-top: -5px;
+        margin-left: -230px;
     }
 }
 
@@ -667,10 +658,9 @@ header .bib {
 
     .topnav.responsive .icon {
         position: fixed;
-        right: 363px;
+        right: 325px;
         top: 0;
         margin-top: 10px;
-        /* margin-left: -100px; */
         font-size: 25px;
         background-color: rgb(2, 26, 56);
         height: 50px;
@@ -682,8 +672,7 @@ header .bib {
         display: block;
         text-align: left;
         background-color: rgb(3, 34, 72);
-        width: 85%;
-        margin-left: 0px;
+        width: 90%;
     }
 
     .topnav.responsive ul li {
@@ -700,17 +689,17 @@ header .bib {
         font-size: 24px;
         background-color: rgb(3, 34, 72);
         height: 60px;
-        width: 85%;
+        width: 90%;
     }
 
     .topnav.responsive .mo2 {
         position: fixed;
+        margin-left: 5px;
         margin-top: 80px;
         font-size: 24px;
         background-color: rgb(3, 34, 72);
         height: 60px;
-        width: 85%;
-        margin-left: 0px;
+        width: 90%;
     }
 
     .topnav.responsive .mo3 {
@@ -718,17 +707,20 @@ header .bib {
         font-size: 24px;
         background-color: rgb(3, 34, 72);
         height: 60px;
-        width: 85%;
+        width: 90%;
+        margin-left: 5px;
         margin-top: 130px;
+
     }
 
     .topnav.responsive .mo4 {
         position: fixed;
         font-size: 24px;
+        margin-left: 5px;
         margin-top: 180px;
         background-color: rgb(3, 34, 72);
         height: 60px;
-        width: 85%;
+        width: 90%;
     }
 
     header .bib {
@@ -1662,5 +1654,3 @@ header .bib {
         position: fixed;
     }
 }
-
-
