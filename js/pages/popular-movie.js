@@ -1,11 +1,20 @@
 import { getPopularMoviesWeek } from "../apis/popularApi.js";
+import { filterMovies } from "../apis/popularApi.js";
 import config from "../config.js";
+let formHandler = document.querySelector('.form__search');
+
+
+formHandler.addEventListener('submit',async (e)=>{
+  e.preventDefault();
+console.log(e.target.sortBy.value);
+filterMovies(e.target.sortBy.value)
+
+})
 
 async function displayPopular() {
   let cardsWrapper = document.querySelector(".card__list__popularmovie__page");
   let getMovieRequest = await getPopularMoviesWeek();
   let html = "";
-  console.log(getMovieRequest);
   getMovieRequest.forEach((movie) => {
     let { original_title, release_date, vote_average, backdrop_path, id } =
       movie;
@@ -72,10 +81,8 @@ async function displayPopular() {
   });
   cardsWrapper.innerHTML = html;
 }
-
-
-
 displayPopular();
+
 
 
 
