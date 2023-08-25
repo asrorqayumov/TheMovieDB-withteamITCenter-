@@ -984,7 +984,7 @@ body .container {
 }
 
 body .container .image {
-    background-image: linear-gradient(rgb(2, 26, 56, 0.75), rgb(2, 26, 56, 0.75), rgb(2, 26, 56, 0.75)), url(../img/hidden-strike.jpg);
+    background-image: linear-gradient(rgb(2, 26, 56, 0.75), rgb(2, 26, 56, 0.75), rgb(2, 26, 56, 0.75)), url(../img-home/hidden-strike.jpg);
     height: 310px;
     width: 88%;
     margin-left: 90px;
@@ -1016,6 +1016,7 @@ body .container .image input {
     height: 50px;
     margin-left: 40px;
     margin-top: 50px;
+    padding-left: 50px;
     border-radius: 50px;
     border: none;
     font-size: 16px;
