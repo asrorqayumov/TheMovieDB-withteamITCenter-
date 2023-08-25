@@ -84,5 +84,3 @@ async function displayPopular() {
 displayPopular();
 
 
-
-
