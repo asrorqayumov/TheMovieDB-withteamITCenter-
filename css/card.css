@@ -7,7 +7,8 @@
 }
 
 .tab {
-  padding-left: 40px;
+  margin-top: 30px;
+  padding-left: 110px;
   padding-right: 40px;
   overflow: hidden;
   display: flex;
@@ -27,13 +28,12 @@ h2 {
 
 .tab .tab-header {
   position: relative;
-  width: 14%;
+  width: 20%;
   display: flex;
   align-items: center;
   height: 28px;
   z-index: 2;
   border-radius: 40px;
-  border: 1px solid rgb(0, 37, 139);
 }
 
 .tab button {
@@ -54,8 +54,36 @@ h2 {
   padding: 5.5px 25.9px;
 }
 
-.card {
+.latest .card__wrapper {
+  min-height: 0;
+  position: relative;
+  height: auto;
+  left: 80px;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  transition: height .5s linear;
+}
+
+
+
+.latest .card {
+  padding: 6px 12px;
+  border-top: none;
+  background-color: transparent;
   animation: fadeEffect 1s;
+  width: 180px;
+  min-height: 0px;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+ 
 }
 
 @keyframes fadeEffect {
@@ -68,16 +96,18 @@ h2 {
   }
 }
 
-#this-week {
+.circle-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.latest .card__wrapper:last-child {
   display: none;
 }
 
 .latest .card .card_box .latest-box {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-  margin: 20px 10px;
+  margin: 30px 10px;
   border-radius: 10px;
   overflow: hidden;
   width: 150px;
@@ -85,11 +115,13 @@ h2 {
 }
 
 .latest .card .card_box .latest-box .latest-b-img {
+  border-radius: 10px;
   width: 100%;
-  height: 230px;
+  height: 250px;
 }
 
 .latest .card .card_box .latest-box .latest-b-img img {
+  border-radius: 10px;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -100,6 +132,7 @@ h2 {
 }
 
 .latest .card .card_box .latest-box .latest-b-text a strong {
+  font-size: 0.9rem;
   font-weight: bold;
   color: black;
   margin: 0px;
@@ -112,8 +145,8 @@ h2 {
 .latest .card .card_box .latest-box .latest-b-text {
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
   flex-direction: column;
   margin: 10px;
   background-color: none;
@@ -124,128 +157,47 @@ h2 {
   margin: 0px;
 }
 
-.latest .card {
-  display: none;
-  padding: 6px 12px;
-  border-top: none;
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-  background-color: transparent;
-}
-
-.latest .card .card_box .latest-box .percentage-container {
-  height: 100%;
-  display: flex;
-  margin-right: 90px;
-  margin-top: -20px;
-  align-items: center;
-  justify-content: center;
-}
-
-.latest .card .card_box .latest-box .percentage-container .skill {
-  position: relative;
-}
-
-.latest .card .card_box .latest-box .percentage-container .skill .outer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  padding: 5px;
-  background: black;
-  box-shadow: 6px 6px 10px -1px rgba(0 0 0/0.15),
-    -6px -6px 10px -1px rgba(255 255 255 /0.7);
-}
-
-.latest .card .card_box .latest-box .percentage-container .skill .outer .inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  box-sizing: inset 4px 4px 6px -1px rgba(0 0 0/0.2),
-    inset -4px -4px 6px -1px rgba(255 255 255/0.7),
-    -0.5px -0.5px 0px rgba(225 255 255/1), 0.5px 0.5px 0px rgba(0 0 0/0.15),
-    0px 12px 10px -10px rgba(0 0 0/0.05);
-}
-
-.latest
-  .card
-  .card_box
-  .latest-box
-  .percentage-container
-  .skill
-  .outer
-  .inner
-  .number {
-  font-size: 0.8em;
-  font-weight: 900;
-  padding: 10px;
-  color: white;
-}
-
-.latest .card .card_box .latest-box circle {
-  fill: none;
-  stroke-width: 2px;
-  stroke-dasharray: 118;
-  stroke-dashoffset: 118;
-  transition: 1s linear;
-}
-
-.latest .card .card_box .latest-box svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.latest .card .card_box .latest-box .percentage-container .skill circle {
-  stroke: rgb(7, 223, 122);
-}
-
-.dropbtn {
+.dropbtn-card {
   position: absolute;
   display: inline;
   border-radius: 50%;
   opacity: 0.8;
   background-color: #fff;
-  color: rgb(179, 178, 178);
-  padding: 3px 5px;
+  color: rgb(156, 156, 156);
+  padding: 2px 5px;
   font-size: 0.7rem;
   border: none;
   cursor: pointer;
 }
 
-.dropbtn:hover,
-.dropbtn:focus {
-  background-color: #2980b9;
+.dropbtn-card:hover,
+.dropbtn-card:focus {
+  background-color: #1e78b3;
 }
 
-.dropdown {
+.dropdown-card {
   position: absolute;
   display: inline-block;
-  top: 60px;
+  top: 33px;
   left: 145px;
 }
 
-.dropdown-content {
+.dropdown-contentcard {
   display: none;
   position: absolute;
-  top: 25px;
+  top: -40px;
   left: -60px;
   background-color: #f1f1f1;
-  min-width: 140px;
-  overflow: auto;
+  height: auto;
+  min-width: 80px;
+  overflow: hidden;
   border-radius: 5px;
   border: 1px solid #d3d1d1;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-contentcard a {
   color: black;
   padding: 10px 16px;
   border-bottom: 1px solid #d3d1d1;
@@ -255,15 +207,15 @@ h2 {
   font-size: 0.8rem;
 }
 
-.dropdown-content a:last-child {
+.dropdown-contentcard a:last-child {
   border-bottom: none;
 }
 
-.dropdown-content a span {
+.dropdown-contentcard a span {
   padding-right: 10px;
 }
 
-.dropdown a:hover {
+.dropdown-card a:hover {
   background-color: rgb(6, 20, 59);
   color: white;
 }
@@ -273,21 +225,25 @@ h2 {
 }
 
 
- /* Card percentage  */
+/* Card percentage  */
 @keyframes growProgressBar {
+
   0%,
   33% {
     --pgPercentage: 0;
   }
+
   100% {
     --pgPercentage: var(--value);
   }
 }
+
 @property --pgPercentage {
   syntax: "<number>";
   inherits: false;
   initial-value: 0;
 }
+
 .circle-progressbar div[role="progressbar"] {
   --size: 2.5rem;
   --bg: #081c22;
@@ -299,23 +255,23 @@ h2 {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: radial-gradient(
-      closest-side,
+  background: radial-gradient(closest-side,
       #081c22 80%,
       transparent 0 99.9%,
-      white 0
-    ),
+      white 0),
     conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
   font-family: Helvetica, Arial, sans-serif;
   font-size: calc(var(--size) / 3.5);
   color: white;
 }
+
 .circle-progressbar div[role="progressbar"]::before {
   counter-reset: percentage var(--value);
   content: counter(percentage) "%";
 }
+
 .circle-progressbar {
   position: relative;
-  margin-top: -30px;
-  margin-right: 100px;
+  margin-top: -20px;
+  margin-left: 10px;
 }
