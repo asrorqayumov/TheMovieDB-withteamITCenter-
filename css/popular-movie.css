@@ -10,6 +10,7 @@
     height: 90%;
   
 }
+
 .container{
     margin: auto;
     display: flex;
@@ -220,7 +221,7 @@ form {
 .load-btn {
     background-color: rgb(42, 184, 255);
   
-    padding: 10px 400px;
+    padding: 10px 460px;
     color: white;
     font-size: 20px;
     border-radius: 10px;
@@ -252,4 +253,5 @@ form {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    gap: 25px;
 }

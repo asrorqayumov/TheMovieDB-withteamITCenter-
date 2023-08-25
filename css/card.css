@@ -74,7 +74,7 @@ h2 {
   border-top: none;
   background-color: transparent;
   animation: fadeEffect 1s;
-  width: 220px;
+  width: 180px;
   min-height: 0px;
   height: auto;
   position: relative;
@@ -83,6 +83,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
+ 
 }
 
 @keyframes fadeEffect {
@@ -106,7 +107,7 @@ h2 {
 
 .latest .card .card_box .latest-box {
   align-items: center;
-  margin: 20px 10px;
+  margin: 30px 10px;
   border-radius: 10px;
   overflow: hidden;
   width: 150px;
