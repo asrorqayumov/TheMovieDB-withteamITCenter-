@@ -164,7 +164,7 @@ async function displayTodayTrendingMoviestv() {
   let getMovieRequest = await getTrendingMoviesTV();
   let html = "";
   getMovieRequest.forEach((movie) => {
-    let { original_title, release_date, vote_average, backdrop_path, id } =
+    let { original_name, first_air_date, vote_average, backdrop_path, id } =
       movie;
     let vote = Math.round(vote_average * 10);
     html += `
@@ -218,8 +218,8 @@ async function displayTodayTrendingMoviestv() {
           ></div>
         </div>
           <div class="latest-b-text">
-            <a href="#"><strong>${original_title}</strong></a>
-            <p>${release_date}</p>
+            <a href="#"><strong>${original_name}</strong></a>
+            <p>${first_air_date}</p>
           </div>
           </div>
         </div>
@@ -240,8 +240,9 @@ async function displayTodayTrendingMoviestheater() {
   let getMovieRequest = await getTrendingMoviesTheater();
   let html = "";
   getMovieRequest.forEach((movie) => {
-    let { original_title, release_date, vote_average, backdrop_path, id } =
+    let { original_name, first_air_date, vote_average, backdrop_path, id } =
       movie;
+      console.log(id);
     let vote = Math.round(vote_average * 10);
     html += `
     
@@ -294,8 +295,8 @@ async function displayTodayTrendingMoviestheater() {
           ></div>
         </div>
           <div class="latest-b-text">
-            <a href="#"><strong>${original_title}</strong></a>
-            <p>${release_date}</p>
+            <a href="#"><strong>${original_name}</strong></a>
+            <p>${first_air_date}</p>
           </div>
           </div>
         </div>
