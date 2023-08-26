@@ -1,13 +1,30 @@
 import {
   displayTodayTrendingMovies,
   displayTodayTrendingMoviesweek,
+  displayTvSeriesListMoviesTv,
+  displayTvSeriesListMoviesTheater
 } from "./pages/home.js";
 import { getTrendingMoviesToday } from "./apis/homeApi.js";
+import { getTrendingMoviesWeek } from "./apis/homeApi.js";
+import { getTvSeriesListMoviesTv } from "./apis/homeApi.js";
+import { getTvSeriesListMoviesTheater } from "./apis/homeApi.js";
 
 document.addEventListener("DOMContentLoaded", async (e) => {
   if (location.pathname == "index.html" || location.pathname == "/") {
-    let getMovieRequest = await getTrendingMoviesToday();
-    displayTodayTrendingMovies(getMovieRequest).then(()=>{
+    let getMovieRequestToday = await getTrendingMoviesToday();
+    displayTodayTrendingMovies(getMovieRequestToday).then(()=>{
+        let cards = document.querySelectorAll('.card__img__poster');
+        cards.forEach((card)=>{
+            card.addEventListener('click', (e)=>{
+                let id = e.target.id;
+                history.pushState({id}, null, 'movie.html');
+                location.reload()
+            })
+        })
+    })
+
+    let getMovieRequestWeek = await getTrendingMoviesWeek();
+    displayTodayTrendingMoviesweek(getMovieRequestWeek).then(()=>{
         let cards = document.querySelectorAll('.card__img__poster');
         cards.forEach((card)=>{
             card.addEventListener('click', (e)=>{
@@ -18,7 +35,34 @@ document.addEventListener("DOMContentLoaded", async (e) => {
         })
     })
  
-  } else if (location.pathname == "popularMovie.html") {
+    let getMovieRequestOnTv = await getTvSeriesListMoviesTv();
+    displayTvSeriesListMoviesTv(getMovieRequestOnTv).then(()=>{
+        let cards = document.querySelectorAll('.card__img__poster');
+        cards.forEach((card)=>{
+            card.addEventListener('click', (e)=>{
+                let id = e.target.id;
+                history.pushState({id}, null, 'movie.html');
+                location.reload()
+            })
+        })
+    })
+
+    let getMovieRequestTheater = await getTvSeriesListMoviesTheater();
+    displayTvSeriesListMoviesTheater(getMovieRequestTheater).then(()=>{
+        let cards = document.querySelectorAll('.card__img__poster');
+        cards.forEach((card)=>{
+            card.addEventListener('click', (e)=>{
+                let id = e.target.id;
+                history.pushState({id}, null, 'movie.html');
+                location.reload()
+            })
+        })
+    })
+
+  } 
+    
+
+  else if (location.pathname == "popularMovie.html") {
     // ...
   } else if (location.pathname == "/movie.html") {
     // ...
