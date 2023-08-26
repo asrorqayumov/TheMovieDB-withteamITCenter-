@@ -2,19 +2,17 @@ import { getTrendingMoviesToday } from "../apis/homeApi.js";
 import { getTrendingMoviesWeek } from "../apis/homeApi.js";
 import { getTrendingMoviesTV } from "../apis/homeApi.js";
 import { getTrendingMoviesTheater } from "../apis/homeApi.js";
-import config from "../config.js";
+import config from "../tools/config.js";
 // import { showcard , removeClassShow} from "../card.js";
 
-async function displayTodayTrendingMovies() {
+export  async function displayTodayTrendingMovies(getMovieRequest) {
   let cardsWrapper = document.querySelector(".card__list__today");
-  let getMovieRequest = await getTrendingMoviesToday();
   let html = "";
   getMovieRequest.forEach((movie) => {
     let { original_title, release_date, vote_average, backdrop_path, id } =
       movie;
     let vote = Math.round(vote_average * 10);
     html += `
-    
       <div class="card">
       <div class="card_box">
         <div class="latest-box">
@@ -51,7 +49,7 @@ async function displayTodayTrendingMovies() {
                 </a>
               </div>
             </div>
-            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" />
+            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" id="${id}" class="card__img__poster" />
           </div>
           <div class="circle-text">
           <div class="circle-progressbar">
@@ -80,11 +78,7 @@ async function displayTodayTrendingMovies() {
 
 }
 
-displayTodayTrendingMovies();
-
-
-
-async function displayTodayTrendingMoviesweek() {
+export  async function displayTodayTrendingMoviesweek() {
   let cardsWrapper = document.querySelector(".card__list__week");
   let getMovieRequest = await getTrendingMoviesWeek();
   let html = "";
@@ -155,11 +149,7 @@ async function displayTodayTrendingMoviesweek() {
   cardsWrapper.innerHTML = html;
 }
 
-displayTodayTrendingMoviesweek();
-
-
-
-async function displayTodayTrendingMoviestv() {
+export  async function displayTodayTrendingMoviestv() {
   let cardsWrapper = document.querySelector(".card__list__tv");
   let getMovieRequest = await getTrendingMoviesTV();
   let html = "";
@@ -230,12 +220,7 @@ async function displayTodayTrendingMoviestv() {
   cardsWrapper.innerHTML = html;
 }
 
-displayTodayTrendingMoviestv();
-
-
-
-
-async function displayTodayTrendingMoviestheater() {
+export  async function displayTodayTrendingMoviestheater() {
   let cardsWrapper = document.querySelector(".card__list__theater");
   let getMovieRequest = await getTrendingMoviesTheater();
   let html = "";
@@ -306,5 +291,3 @@ async function displayTodayTrendingMoviestheater() {
   });
   cardsWrapper.innerHTML = html;
 }
-
-displayTodayTrendingMoviestheater();
