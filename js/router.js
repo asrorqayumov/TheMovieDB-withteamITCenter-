@@ -5,7 +5,7 @@ import {
     displayTvSeriesListMoviesTheater
 } from "./pages/home.js";
 import { displayPopular } from "./pages/popular-movie.js";
-
+import { FilteredMovies } from "./pages/popular-movie.js";
 
 import { getPopularMoviesWeek } from "./apis/popularApi.js";
 import { getTrendingMoviesToday } from "./apis/homeApi.js";
@@ -67,6 +67,8 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 
 
     else if (location.pathname == "/popularMovie.html" || location.pathname == "popularMovie.html") {
+        let formHandler = document.querySelector('.form__search');
+        FilteredMovies(formHandler)
         getPopularMoviesWeek()
             .then((data) => {
                 displayPopular(data);
@@ -86,7 +88,6 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 
     else if (location.pathname == "/movie.html") {
         // ...
-        console.log(history.state.id);
     }
 });
 
