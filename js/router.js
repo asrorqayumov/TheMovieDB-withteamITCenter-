@@ -9,8 +9,8 @@ import { getTrendingMoviesWeek } from "./apis/homeApi.js";
 import { getTvSeriesListMoviesTv } from "./apis/homeApi.js";
 import { getTvSeriesListMoviesTheater } from "./apis/homeApi.js";
 
-document.addEventListener("DOMContentLoaded", async (e) => {
-  if (location.pathname == "index.html" || location.pathname == "/") {
+document.addEventListener("DOMContentLoaded", async () => {
+  if (location.pathname == "/index.html" || location.pathname == "/") {
     let getMovieRequestToday = await getTrendingMoviesToday();
     displayTodayTrendingMovies(getMovieRequestToday).then(()=>{
         let cards = document.querySelectorAll('.card__img__poster');
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
             })
         })
     })
-
+  console.log('hello');
   } 
     
 
@@ -69,3 +69,5 @@ document.addEventListener("DOMContentLoaded", async (e) => {
     console.log(history.state.id);
   }
 });
+
+
