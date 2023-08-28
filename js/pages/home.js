@@ -1,14 +1,14 @@
 import { getTrendingMoviesToday } from "../apis/homeApi.js";
 import { getTrendingMoviesWeek } from "../apis/homeApi.js";
-import { getTrendingMoviesTV } from "../apis/homeApi.js";
-import { getTrendingMoviesTheater } from "../apis/homeApi.js";
+import { getTvSeriesListMoviesTv } from "../apis/homeApi.js";
+import { getTvSeriesListMoviesTheater } from "../apis/homeApi.js";
 import config from "../tools/config.js";
 // import { showcard , removeClassShow} from "../card.js";
 
-export  async function displayTodayTrendingMovies(getMovieRequest) {
+export  async function displayTodayTrendingMovies(getMovieRequestToday) {
   let cardsWrapper = document.querySelector(".card__list__today");
   let html = "";
-  getMovieRequest.forEach((movie) => {
+  getMovieRequestToday.forEach((movie) => {
     let { original_title, release_date, vote_average, backdrop_path, id } =
       movie;
     let vote = Math.round(vote_average * 10);
@@ -78,11 +78,10 @@ export  async function displayTodayTrendingMovies(getMovieRequest) {
 
 }
 
-export  async function displayTodayTrendingMoviesweek() {
+export  async function displayTodayTrendingMoviesweek(getMovieRequestWeek) {
   let cardsWrapper = document.querySelector(".card__list__week");
-  let getMovieRequest = await getTrendingMoviesWeek();
   let html = "";
-  getMovieRequest.forEach((movie) => {
+  getMovieRequestWeek.forEach((movie) => {
     let { original_title, release_date, vote_average, backdrop_path, id } =
       movie;
     let vote = Math.round(vote_average * 10);
@@ -124,7 +123,7 @@ export  async function displayTodayTrendingMoviesweek() {
                 </a>
               </div>
             </div>
-            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" />
+            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" id="${id}" class="card__img__poster" />
           </div>
           <div class="circle-text">
           <div class="circle-progressbar">
@@ -149,11 +148,10 @@ export  async function displayTodayTrendingMoviesweek() {
   cardsWrapper.innerHTML = html;
 }
 
-export  async function displayTodayTrendingMoviestv() {
+export  async function displayTvSeriesListMoviesTv(getMovieRequestOnTv) {
   let cardsWrapper = document.querySelector(".card__list__tv");
-  let getMovieRequest = await getTrendingMoviesTV();
   let html = "";
-  getMovieRequest.forEach((movie) => {
+  getMovieRequestOnTv.forEach((movie) => {
     let { original_name, first_air_date, vote_average, backdrop_path, id } =
       movie;
     let vote = Math.round(vote_average * 10);
@@ -195,7 +193,7 @@ export  async function displayTodayTrendingMoviestv() {
                 </a>
               </div>
             </div>
-            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" />
+            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" id="${id}" class="card__img__poster" />
           </div>
           <div class="circle-text">
           <div class="circle-progressbar">
@@ -220,11 +218,10 @@ export  async function displayTodayTrendingMoviestv() {
   cardsWrapper.innerHTML = html;
 }
 
-export  async function displayTodayTrendingMoviestheater() {
+export  async function displayTvSeriesListMoviesTheater(getMovieRequestTheater) {
   let cardsWrapper = document.querySelector(".card__list__theater");
-  let getMovieRequest = await getTrendingMoviesTheater();
   let html = "";
-  getMovieRequest.forEach((movie) => {
+  getMovieRequestTheater.forEach((movie) => {
     let { original_name, first_air_date, vote_average, backdrop_path, id } =
       movie;
       console.log(id);
@@ -267,7 +264,7 @@ export  async function displayTodayTrendingMoviestheater() {
                 </a>
               </div>
             </div>
-            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" />
+            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" id="${id}" class="card__img__poster" />
           </div>
           <div class="circle-text">
           <div class="circle-progressbar">
