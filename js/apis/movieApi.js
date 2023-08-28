@@ -10,7 +10,7 @@ export async function getMoviesID() {
             },
         };
         let request = await fetch(
-            `${Config.BASE_URL}id="${id}"`,
+            `${Config.BASE_URL}history.state.id`,
             options
         );
 
