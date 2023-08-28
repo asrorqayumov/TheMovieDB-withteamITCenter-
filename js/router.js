@@ -4,6 +4,10 @@ import {
   displayTvSeriesListMoviesTv,
   displayTvSeriesListMoviesTheater
 } from "./pages/home.js";
+import { displayPopular } from "./pages/popular-movie.js";
+import { FilteredMovies } from "./pages/popular-movie.js";
+
+import { getPopularMoviesWeek } from "./apis/popularApi.js";
 import { getTrendingMoviesToday } from "./apis/homeApi.js";
 import { getTrendingMoviesWeek } from "./apis/homeApi.js";
 import { getTvSeriesListMoviesTv } from "./apis/homeApi.js";
@@ -66,14 +70,27 @@ document.addEventListener("DOMContentLoaded", async (e) => {
   }
 
 
-  else if (location.pathname == "popularMovie.html") {
-   
-  }
+    else if (location.pathname == "/popularMovie.html" || location.pathname == "popularMovie.html") {
+        let formHandler = document.querySelector('.form__search');
+        FilteredMovies(formHandler)
+        getPopularMoviesWeek()
+            .then((data) => {
+                displayPopular(data);
+            })
+            .then((data) => {
+                let cards = document.querySelectorAll('.card__img__poster');
+                cards.forEach((card) => {
+                    card.addEventListener('click', (e) => {
+                        let id = e.target.id;
+                        history.pushState({ id }, null, 'movie.html');
+                        location.reload()
+                    })
+                })
+            })
+    }
 
 
-
-  else if (location.pathname == "movie.html") {
-    // ...
-    console.log(history.state.id);
-  }
+    else if (location.pathname == "/movie.html") {
+        // ...
+    }
 });
