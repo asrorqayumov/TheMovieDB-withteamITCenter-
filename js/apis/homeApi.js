@@ -46,8 +46,7 @@ export async function getTrendingMoviesWeek() {
 
 
 
-
-export async function getTrendingMoviesTV() {
+export async function getTvSeriesListMoviesTv() {
   try {
     const options = {
       headers: {
@@ -70,7 +69,7 @@ export async function getTrendingMoviesTV() {
 
 
 
-export async function getTrendingMoviesTheater() {
+export async function getTvSeriesListMoviesTheater() {
   try {
     const options = {
       headers: {
