@@ -1,6 +1,6 @@
 import { getPopularMoviesWeek } from "../apis/popularApi.js";
 import { filterMovies } from "../apis/popularApi.js";
-import config from "../config.js";
+import config from "../tools/config.js";
 let formHandler = document.querySelector('.form__search');
 
 
@@ -83,11 +83,10 @@ async function displayform() {
 
 })
 
-async function displayPopular() {
+export   function displayPopular(getPopularMoviesWeek) {
   let cardsWrapper = document.querySelector(".card__list__popularmovie__page");
-  let getMovieRequest = await getPopularMoviesWeek();
   let html = "";
-  getMovieRequest.forEach((movie) => {
+  getPopularMoviesWeek.forEach((movie) => {
     let { original_title, release_date, vote_average, backdrop_path, id } =
       movie;
     let vote = Math.round(vote_average * 10);
@@ -129,7 +128,7 @@ async function displayPopular() {
                 </a>
               </div>
             </div>
-            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" />
+            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" class="card__img__poster" />
           </div>
           <div class="circle-text">
           <div class="circle-progressbar">
@@ -153,5 +152,5 @@ async function displayPopular() {
   });
   cardsWrapper.innerHTML = html;
 }
-displayPopular();
+
 
