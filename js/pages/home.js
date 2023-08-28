@@ -1,9 +1,5 @@
-import { getTrendingMoviesToday } from "../apis/homeApi.js";
-import { getTrendingMoviesWeek } from "../apis/homeApi.js";
-import { getTvSeriesListMoviesTv } from "../apis/homeApi.js";
-import { getTvSeriesListMoviesTheater } from "../apis/homeApi.js";
 import config from "../tools/config.js";
-// import { showcard , removeClassShow} from "../card.js";
+
 
 export  async function displayTodayTrendingMovies(getMovieRequestToday) {
   let cardsWrapper = document.querySelector(".card__list__today");
@@ -49,7 +45,7 @@ export  async function displayTodayTrendingMovies(getMovieRequestToday) {
                 </a>
               </div>
             </div>
-            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" id="${id}" class="card__img__poster" />
+            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" id="${id}" class="card__img__poster img-fluid" />
           </div>
           <div class="circle-text">
           <div class="circle-progressbar">
@@ -123,7 +119,7 @@ export  async function displayTodayTrendingMoviesweek(getMovieRequestWeek) {
                 </a>
               </div>
             </div>
-            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" id="${id}" class="card__img__poster" />
+            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" id="${id}" class="card__img__poster img-fluid " />
           </div>
           <div class="circle-text">
           <div class="circle-progressbar">
@@ -224,7 +220,6 @@ export  async function displayTvSeriesListMoviesTheater(getMovieRequestTheater) 
   getMovieRequestTheater.forEach((movie) => {
     let { original_name, first_air_date, vote_average, backdrop_path, id } =
       movie;
-      console.log(id);
     let vote = Math.round(vote_average * 10);
     html += `
     

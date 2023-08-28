@@ -3,7 +3,7 @@ import { filterMovies } from "../apis/popularApi.js";
 import config from "../tools/config.js";
 let formHandler = document.querySelector('.form__search');
 
-export function filteredmovie (formHandler) {
+export function filteredmovie (filterMovies) {
  formHandler.addEventListener('submit',async (e)=>{
   e.preventDefault();
 console.log(e.target.sortBy.value);
@@ -54,7 +54,7 @@ async function displayform() {
                 </a>
               </div>
             </div>
-            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" class="card__img__poster" />
+            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt=""  />
           </div>
           <div class="circle-text">
           <div class="circle-progressbar">
