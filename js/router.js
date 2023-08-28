@@ -81,6 +81,21 @@ document.addEventListener("DOMContentLoaded", async (e) => {
                     })
                 })
             })
+            filterMovies()
+            .then((data) => {
+                filteredmovie(data);
+            })
+            .then((data) => {
+                let cards = document.querySelectorAll('.card__img__poster');
+                cards.forEach((card) => {
+                    card.addEventListener('click', (e) => {
+                        let id = e.target.id;
+                        history.pushState({ id }, null, 'movie.html');
+                        location.reload()
+                    })
+                })
+            })
+
     }
 
 

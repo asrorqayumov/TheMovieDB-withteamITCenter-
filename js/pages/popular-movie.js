@@ -3,8 +3,8 @@ import { filterMovies } from "../apis/popularApi.js";
 import config from "../tools/config.js";
 let formHandler = document.querySelector('.form__search');
 
-
-formHandler.addEventListener('submit',async (e)=>{
+export function filteredmovie (formHandler) {
+ formHandler.addEventListener('submit',async (e)=>{
   e.preventDefault();
 console.log(e.target.sortBy.value);
 filterMovies(e.target.sortBy.value)
@@ -54,7 +54,7 @@ async function displayform() {
                 </a>
               </div>
             </div>
-            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" />
+            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" class="card__img__poster" />
           </div>
           <div class="circle-text">
           <div class="circle-progressbar">
@@ -82,8 +82,9 @@ async function displayform() {
 
 
 })
-
+}
 export   function displayPopular(getPopularMoviesWeek) {
+
   let cardsWrapper = document.querySelector(".card__list__popularmovie__page");
   let html = "";
   getPopularMoviesWeek.forEach((movie) => {

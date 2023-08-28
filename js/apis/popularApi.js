@@ -36,8 +36,7 @@ export async function filterMovies(value) {
       options
     );
     let response = await request.json();
-    console.log(response);
-    // return response.results;
+    return response.results;
   } catch (error) {
     console.log(error);
   }
