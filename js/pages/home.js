@@ -1,9 +1,5 @@
-import { getTrendingMoviesToday } from "../apis/homeApi.js";
-import { getTrendingMoviesWeek } from "../apis/homeApi.js";
-import { getTvSeriesListMoviesTv } from "../apis/homeApi.js";
-import { getTvSeriesListMoviesTheater } from "../apis/homeApi.js";
 import config from "../tools/config.js";
-// import { showcard , removeClassShow} from "../card.js";
+
 
 export  async function displayTodayTrendingMovies(getMovieRequestToday) {
   let cardsWrapper = document.querySelector(".card__list__today");
