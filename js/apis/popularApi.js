@@ -1,4 +1,4 @@
-import Config from "../config.js";
+import Config from "../tools/config.js";
 
 export async function getPopularMoviesWeek() {
   try {
@@ -36,8 +36,8 @@ export async function filterMovies(value) {
       options
     );
     let response = await request.json();
-    
-    return response.results;
+    console.log(response);
+    // return response.results;
   } catch (error) {
     console.log(error);
   }
