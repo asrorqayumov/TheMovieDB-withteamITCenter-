@@ -61,4 +61,5 @@ document.addEventListener("DOMContentLoaded", async (e) => {
   } else if (location.pathname == "/movie.html") {
     // ...
   }
+
 });
