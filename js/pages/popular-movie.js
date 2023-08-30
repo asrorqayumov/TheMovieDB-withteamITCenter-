@@ -87,7 +87,7 @@ export function FilteredMovies (formHandler) {
 export   function displayPopular(getPopularMoviesWeek) {
   let cardsWrapper = document.querySelector(".card__list__popularmovie__page");
   let html = "";
-  getMovieRequestPopular.forEach((movie) => {
+  getPopularMoviesWeek.forEach((movie) => {
     let { original_title, release_date, vote_average, backdrop_path, id } =
       movie;
     let vote = Math.round(vote_average * 10);
@@ -153,6 +153,5 @@ export   function displayPopular(getPopularMoviesWeek) {
   });
   cardsWrapper.innerHTML = html;
 }
-// displayPopular();
 
 

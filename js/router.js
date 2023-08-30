@@ -12,13 +12,14 @@ import { getTrendingMoviesToday } from "./apis/homeApi.js";
 import { getTrendingMoviesWeek } from "./apis/homeApi.js";
 import { getTvSeriesListMoviesTv } from "./apis/homeApi.js";
 import { getTvSeriesListMoviesTheater } from "./apis/homeApi.js";
+import { getMovieDetails } from "./apis/movieApi.js";
 
 window.addEventListener('popstate', (e)=>{
     location.reload()
 })
 
 document.addEventListener("DOMContentLoaded", async (e) => {
-  if (location.pathname == "index.html" || location.pathname == "/") {
+  if (location.pathname == "/index.html" || location.pathname == "/") {
     Promise.all([
       getTrendingMoviesToday(),
       getTrendingMoviesWeek(),
@@ -60,5 +61,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       });
   } else if (location.pathname == "/movie.html") {
     // ...
+     getMovieDetails(history.state.id)
+  
   }
 });

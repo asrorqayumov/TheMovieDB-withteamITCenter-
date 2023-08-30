@@ -1,6 +1,6 @@
 import config from "../tools/config.js";
 
-export  async function displayMoviesPeople(getMovieRequestPeople) {
+export function displayMoviesPeople(getMovieRequestPeople) {
   let cardsWrapper = document.querySelector("");
   let html = "";
   getMovieRequestPeople.forEach((movie) => {

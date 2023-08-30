@@ -1,6 +1,6 @@
 import Config from "../tools/config.js";
 
-export async function getMoviesID() {
+export async function getMovieDetails(id) {
     try {
         const options = {
             headers: {
@@ -10,12 +10,12 @@ export async function getMoviesID() {
             },
         };
         let request = await fetch(
-            `${Config.BASE_URL}history.state.id`,
+            `${Config.BASE_URL}movie/${id}?language=en-US`,
             options
         );
 
         let response = await request.json();
-        return response.results;
+        return response;
     } catch (error) {
         console.log(error);
     }
@@ -43,7 +43,7 @@ export async function getMoviesPeoples() {
     }
 }
 
-export async function getMoviesPeoples() {
+export async function getMovieRecommandations() {
     try {
         const options = {
             headers: {
