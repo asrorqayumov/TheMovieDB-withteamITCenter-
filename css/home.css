@@ -229,6 +229,7 @@ footer .h1a {
     background: linear-gradient(40deg, #4efaa7, #01a0db);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-top: 10px;
 }
 
 footer .div1 {
@@ -244,6 +245,7 @@ footer .h1b {
     background: linear-gradient(40deg, #4efaa7, #41b1da);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-top: -10px;
 }
 
 footer .div2 {
@@ -256,7 +258,7 @@ footer .div2 {
 }
 
 footer .h12 {
-    margin-top: -33px;
+    margin-top: -53px;
     margin-left: 65px;
     background: linear-gradient(40deg, #41d7da, #41b1da);
     -webkit-background-clip: text;
@@ -268,6 +270,7 @@ footer .div3 {
     width: 75px;
     height: 26px;
     border-radius: 50px;
+    margin-top: -10px;
 }
 
 footer .h13 {
@@ -884,11 +887,14 @@ header ul li a {
     font-size: 16px;
     list-style: none;
     color: aliceblue;
+    text-decoration: none;
+
 }
 
 header ul li i {
     color: #41b1da;
     font-size: 21px;
+    text-decoration: none;
 }
 
 header .ul2 .a2 {
@@ -1137,6 +1143,7 @@ footer .coll {
 footer .xxx .bbb,
 .xxx a {
     color: white;
+    text-decoration: none;
 }
 
 footer .xxx h1:hover,
