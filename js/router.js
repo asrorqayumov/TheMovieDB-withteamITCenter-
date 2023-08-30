@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
     location.pathname == "popularMovie.html"
   ) {
     let formHandler = document.querySelector(".form__search");
-    FilteredMovies(formHandler);
+    FilteredMovies(formHandler,displayPopular);
     getPopularMoviesWeek()
       .then((data) => {
         displayPopular(data);
@@ -60,5 +60,6 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       });
   } else if (location.pathname == "/movie.html") {
     // ...
+    
   }
 });

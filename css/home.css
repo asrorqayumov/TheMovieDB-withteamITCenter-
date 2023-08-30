@@ -491,6 +491,7 @@ body {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
+    z-index: 10;
 }
 
 .dropdown-content .ac {
