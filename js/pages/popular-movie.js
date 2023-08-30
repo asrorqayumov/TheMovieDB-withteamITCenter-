@@ -3,7 +3,7 @@ import { filterMovies } from "../apis/popularApi.js";
 import config from "../tools/config.js";
 let formHandler = document.querySelector('.form__search');
 
-export function filteredmovie (filterMovies) {
+export function FilteredMovies (filterMovies) {
  formHandler.addEventListener('submit',async (e)=>{
   e.preventDefault();
 console.log(e.target.sortBy.value);
