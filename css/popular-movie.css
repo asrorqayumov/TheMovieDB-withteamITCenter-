@@ -177,6 +177,12 @@ form {
         border: none;
         margin: 10px 0px;
     }
+    .card__list__popularmovie__page{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 25px;
+    }
     
    
 }

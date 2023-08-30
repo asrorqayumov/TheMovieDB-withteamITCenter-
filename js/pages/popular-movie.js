@@ -1,5 +1,7 @@
+import { getPopularMoviesWeek } from "../apis/popularApi.js";
 import { filterMovies } from "../apis/popularApi.js";
 import config from "../tools/config.js";
+let formHandler = document.querySelector('.form__search');
 
 export function FilteredMovies(formHandler, displayPopular) {
   formHandler.addEventListener("submit", async (e) => {
