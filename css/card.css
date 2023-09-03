@@ -54,7 +54,7 @@ h2 {
   padding: 5.5px 25.9px;
 }
 
-.latest .card__wrapper {
+ .card__wrapper {
   min-height: 0;
   position: relative;
   height: auto;
@@ -69,7 +69,7 @@ h2 {
 
 
 
-.latest .card {
+ .movie__card {
   padding: 6px 12px;
   border-top: none;
   background-color: transparent;
@@ -85,7 +85,9 @@ h2 {
   align-content: flex-start;
  
 }
-
+.movie__card img{
+  width: 100%;
+}
 @keyframes fadeEffect {
   from {
     opacity: 0;
@@ -105,7 +107,7 @@ h2 {
   display: none;
 }
 
-.latest .card .card_box .latest-box {
+.latest  .card_box .latest-box {
   align-items: center;
   margin: 30px 10px;
   border-radius: 10px;
@@ -114,35 +116,34 @@ h2 {
   background-color: none;
 }
 
-.latest .card .card_box .latest-box .latest-b-img {
+ .movie__card .card_box .latest-box .latest-b-img {
   border-radius: 10px;
   width: 100%;
   height: 250px;
 }
 
-.latest .card .card_box .latest-box .latest-b-img img {
+ .movie__card .card_box .latest-box .latest-b-img img {
   border-radius: 10px;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.latest .card .card_box .latest-box .latest-b-text {
+ .movie__card .card_box .latest-box .latest-b-text {
   background-color: transparent;
 }
-
-.latest .card .card_box .latest-box .latest-b-text a strong {
+.movie__card .card_box .latest-box .latest-b-text a strong {
   font-size: 0.9rem;
   font-weight: bold;
   color: black;
   margin: 0px;
 }
 
-.latest .card .card_box .latest-box .latest-b-text a strong:hover {
+ .movie__card .card_box .latest-box .latest-b-text a strong:hover {
   color: blue;
 }
 
-.latest .card .card_box .latest-box .latest-b-text {
+ .movie__card .card_box .latest-box .latest-b-text {
   width: 100%;
   display: flex;
   justify-content: start;
@@ -152,7 +153,7 @@ h2 {
   background-color: none;
 }
 
-.latest .card .card_box .latest-box .latest-b-text p {
+ .movie__card .card_box .latest-box .latest-b-text p {
   color: rgb(105, 105, 105);
   margin: 0px;
 }
@@ -177,12 +178,12 @@ h2 {
 
 .dropdown-card {
   position: absolute;
-  display: inline-block;
+  display: none;
   top: 40px;
   left: 145px;
 }
 
-.dropdown-contentcard {
+-contentcard {
   display: none;
   position: absolute;
   top: -40px;
@@ -275,3 +276,8 @@ h2 {
   margin-top: -20px;
   margin-left: 10px;
 }
+
+.card__list__today, .card__list__week{
+  flex-wrap: nowrap !important;
+}
+

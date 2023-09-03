@@ -5,11 +5,11 @@
    
 }
 
-.selecte {
+/* .selecte {
     width: 20%;
     height: 90%;
   
-}
+} */
 
 .container{
     margin: auto;
@@ -178,13 +178,19 @@ form {
         border: none;
         margin: 10px 0px;
     }
+    .card__list__popularmovie__page{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 25px;
+    }
     
    
 }
 
-.card__list__popularmovie__page{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 25px;
+/* .card__list__popularmovie__page .movie__card {
+   width: 0px !important;
+} */
+.popularmovie__container{
+    overflow: hidden;
 }
