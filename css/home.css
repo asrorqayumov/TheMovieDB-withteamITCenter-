@@ -25,7 +25,7 @@ header {
 
 }
 
-header .diva {
+/* header .diva {
     background-color: #41b1da;
     width: 55px;
     height: 21px;
@@ -46,6 +46,11 @@ header h1 {
     background: linear-gradient(50deg, #4efaa7, #01a0db);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+} */
+
+header a img {
+    height: 30px;
+    width: 160px;
 }
 
 header ul {
@@ -222,7 +227,7 @@ footer {
     padding-left: 290px;
 }
 
-footer .h1a {
+/* footer .h1a {
     color: aliceblue;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 35px;
@@ -277,6 +282,11 @@ footer .h13 {
     margin-top: -33px;
     margin-left: 80px;
     color: #41b1da;
+} */
+
+footer .foot img {
+    height: 160px;
+    width: 170px;
 }
 
 footer button {

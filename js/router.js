@@ -18,7 +18,12 @@ window.addEventListener('popstate', (e)=>{
 })
 
 document.addEventListener("DOMContentLoaded", async (e) => {
+<<<<<<< HEAD
   if (location.pathname == "/index.html" || location.pathname == "/") {
+=======
+
+  if (location.pathname == "index.html" || location.pathname == "/") {
+>>>>>>> 0326d9596ed138d9d339c86f6608d8e31ef9b684
     Promise.all([
       getTrendingMoviesToday(),
       getTrendingMoviesWeek(),
@@ -61,4 +66,5 @@ document.addEventListener("DOMContentLoaded", async (e) => {
   } else if (location.pathname == "/movie.html") {
     // ...
   }
+
 });
