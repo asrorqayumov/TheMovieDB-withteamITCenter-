@@ -129,19 +129,14 @@
         </form>
       </div>
       <!-- Cards and Tabs  -->
+
+
+
       <div>
         <div class="tab">
           <div class="title">
             <h2>Trending</h2>
           </div>
-          <!-- <div class="tab-header">
-          <button class="tablinks active" onclick="openCity(event, 'today')">
-            Today
-          </button>
-          <button class="tablinks" onclick="openCity(event, 'this-week')">
-            This week
-          </button>
-        </div> -->
           <ul class="nav nav-pills mb-3" id="pills-tabrated" role="tablist">
             <li class="nav-item" role="presentation">
               <button
@@ -175,15 +170,6 @@
             </li>
           </ul>
         </div>
-        <!-- 
-      <section class="latest">
-        <div class="card__wrapper card__list__today" id="today">
-
-        </div>
-        <div class="card__wrapper card__list__week" id="this-week">
-
-        </div>
-      </section> -->
         <div class="tab-content" id="pills-tabRated">
           <div
             class="tab-pane fade show active"
@@ -192,11 +178,8 @@
             aria-labelledby="pills-home-tab"
           >
             <div class="container someclasss" >
-              <div class="row overflow-scroll top-rated">
-                <div
-                  class="col  card__list__today"
-                 id="today"
-                ></div>
+              <div class=" row overflow-scroll top-rated card__list__today"   id="today">
+    
               </div>
             </div>
           </div>
@@ -207,18 +190,18 @@
             aria-labelledby="pills-profile-tab"
           >
             <div class="container">
-              <div class="row overflow-scroll">
-                <div
-                  class="col  card__list__week"
-                  id="this-week"
-                ></div>
+              <div class="row overflow-scroll card__list__week"  id="this-week">
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div>
+
+
+
+
+      <!-- <div>
         <div class="tab">
           <div class="title">
             <h2>What's Popular</h2>
@@ -237,8 +220,75 @@
           <div class="card__wrapper card__list__tv" id="today"></div>
           <div class="card__wrapper card__list__theater" id="this-week"></div>
         </section>
+      </div> -->
+
+
+      <div>
+        <div class="tab">
+          <div class="title">
+            <h2>What's Popular</h2>
+          </div>
+          <ul class="nav nav-pills mb-3" id="pills-tabrated" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="pills-home-tab-tv"
+                data-bs-toggle="pill"
+                data-bs-target="#pill-home-tv"
+                style="border-radius: 20px; height: 35px"
+                type="button"
+                role="tab"
+                aria-controls="pills-home"
+                aria-selected="true"
+              >
+              On TV
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="pills-profile-tab-theater"
+                data-bs-toggle="pill"
+                data-bs-target="#pill-profile-theater"
+                style="border-radius: 20px; height: 35px"
+                type="button"
+                role="tab"
+                aria-controls="pills-profile"
+                aria-selected="false"
+              >
+              In Theaters
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content" id="pills-tabRated">
+          <div
+            class="tab-pane fade show active"
+            id="pill-home-tv"
+            role="tabpanel"
+            aria-labelledby="pills-home-tab-tv"
+          >
+            <div class="container someclasss" >
+              <div class=" row overflow-scroll top-rated card__list__tv"   id="tv">
+    
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="pill-profile-theater"
+            role="tabpanel"
+            aria-labelledby="pills-profile-tab-theater"
+          >
+            <div class="container">
+              <div class="row overflow-scroll card__list__theater"  id="this-week">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    
 
     <footer>
       <div class="foot">
