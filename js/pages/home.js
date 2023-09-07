@@ -121,7 +121,7 @@ export  async function displayTodayTrendingMoviesweek(getMovieRequestWeek) {
                 </a>
               </div>
             </div>
-            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" id="${id}" class="card__img__poster img-fluid " />
+            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" id="${id}" class="card__img__poster" />
           </div>
           <div class="circle-text">
           <div class="circle-progressbar">
@@ -223,6 +223,7 @@ export  async function displayTvSeriesListMoviesTheater(getMovieRequestTheater) 
   getMovieRequestTheater.forEach((movie) => {
     let { original_name, first_air_date, vote_average, backdrop_path, id } =
       movie;
+      console.log(id);
     let vote = Math.round(vote_average * 10);
     html += `
     
