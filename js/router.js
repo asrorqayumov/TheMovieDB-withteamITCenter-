@@ -18,6 +18,7 @@ window.addEventListener('popstate', (e)=>{
 })
 
 document.addEventListener("DOMContentLoaded", async (e) => {
+
   if (location.pathname == "/index.html" || location.pathname == "/") {
     Promise.all([
       getTrendingMoviesToday(),
