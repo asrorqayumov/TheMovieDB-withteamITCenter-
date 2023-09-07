@@ -1,5 +1,6 @@
 import config from "../tools/config.js";
 
+<<<<<<< HEAD
 export function displayMoviesDetails(getMovieRequestDetailes) {
     let cardsWrapper = document.querySelector(".movie-card");
     console.log(getMovieRequestDetailes);
@@ -18,6 +19,18 @@ export function displayMoviesDetails(getMovieRequestDetailes) {
         return html
     }
     html += `
+=======
+import { getMovieDetails } from "./apis/movieApi.js";
+
+export function displayMoviesDetails(getMovieRequestDetailes) {
+    let cardsWrapper = document.querySelector(".movie-card");
+    let html = "";
+    getMovieRequestDetailes.forEach((movie) => {
+        let { backdrop_path, name, poster_path, original_title, id, overview, popularity, origin_country } =
+            movie;
+        let vote = Math.round(vote_average * 10);
+        html += `
+>>>>>>> 57b6aab3fae8e465ed6d98b5839de073f8b2bc32
     <div class="container-movie">
 
         <a href="#"><img
@@ -30,6 +43,7 @@ export function displayMoviesDetails(getMovieRequestDetailes) {
 
             <div class="details">
 
+<<<<<<< HEAD
                 <div class="title1"><a href="#">${original_title}</a><span>(2023)</span></div>
 
                 <div class="title2"><span><i class="fa fa-picture-o" aria-hidden="true"></i></span>
@@ -38,13 +52,32 @@ export function displayMoviesDetails(getMovieRequestDetailes) {
                         </i></span>
                     <span><i class="fa fa-circle" aria-hidden="true">
                         </i>${runtime}</span>
+=======
+                <div class="title1"><a href="#">${original_title} </a><span>(2023)</span></div>
+
+                <div class="title2"><span><i class="fa fa-picture-o" aria-hidden="true"></i></span>
+                    06/16/2023${origin_country} <span><i class="fa fa-circle" aria-hidden="true">
+                            <span><a href="#">Animation,</a></span>
+                            <span><a href="#">Comedy,</a></span>
+                            <span><a href="#">Family,</a></span>
+                            <span><a href="#">Fantasy,</a></span>
+                            <span><a href="#">Romance,</a></span>
+                        </i></span>
+                    <span><i class="fa fa-circle" aria-hidden="true">
+                            <p></p>
+                        </i>p1h 42m</span>
+>>>>>>> 57b6aab3fae8e465ed6d98b5839de073f8b2bc32
                 </div>
 
                 <div class="circles-box">
                     <div class="circle-text">
                         <div class="circle-progressbar">
                             <div role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"
+<<<<<<< HEAD
                                 style="--value: ${vote}"></div>
+=======
+                                style="--value: ${popularity}"></div>
+>>>>>>> 57b6aab3fae8e465ed6d98b5839de073f8b2bc32
                         </div>
                         <div class="latest-b-text">
                             <a href="#"><strong></strong></a>
@@ -94,7 +127,11 @@ export function displayMoviesDetails(getMovieRequestDetailes) {
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <p class="title3">${tagline}</p>
+=======
+                <p class="title3">Opposites react.</p>
+>>>>>>> 57b6aab3fae8e465ed6d98b5839de073f8b2bc32
 
                 <h2>Overwiev</h2>
                 <p class="text">
@@ -102,6 +139,7 @@ export function displayMoviesDetails(getMovieRequestDetailes) {
                 </p>
 
                 <div class="about-title">
+<<<<<<< HEAD
                     <div class="about-title-name">
                         <a href="">Peter Sohn</a>
                         <p>Director story</p>
@@ -111,6 +149,17 @@ export function displayMoviesDetails(getMovieRequestDetailes) {
                         <p>Screenplay, Story</p>
                     </div>
                     <div class="about-title-name">
+=======
+                    <div>
+                        <a href="">Peter Sohn</a>
+                        <p>Director story</p>
+                    </div>
+                    <div>
+                        <a href="">John Hoberg</a>
+                        <p>Screenplay, Story</p>
+                    </div>
+                    <div>
+>>>>>>> 57b6aab3fae8e465ed6d98b5839de073f8b2bc32
                         <a href="">Kat Likkel</a>
                         <p>Screenplay, Story</p>
                     </div>
@@ -125,6 +174,7 @@ export function displayMoviesDetails(getMovieRequestDetailes) {
     </div>
 
       `;
+<<<<<<< HEAD
     cardsWrapper.innerHTML = html;
 
 
@@ -195,13 +245,18 @@ export function displayMoviesPeople(getMovieRequestPeople) {
     </div>
 </div>
       `;
+=======
+    });
+>>>>>>> 57b6aab3fae8e465ed6d98b5839de073f8b2bc32
     cardsWrapper.innerHTML = html;
 
 
 }
+displayMoviesDetails(getMovieRequestDetailes)
 
 
 
+<<<<<<< HEAD
 
 // export  function displayMoviesPeople(getMovieRequestPeople) {
 //     let cardsWrapper = document.querySelector(".discription_main");
@@ -359,3 +414,20 @@ export function displayMoviesPeople(getMovieRequestPeople) {
 
 
 
+=======
+export async function displayMoviesPeople(getMovieRequestPeople) {
+    let cardsWrapper = document.querySelector("");
+    let html = "";
+    getMovieRequestPeople.forEach((movie) => {
+        let { original_title, release_date, vote_average, backdrop_path, id } =
+            movie;
+        let vote = Math.round(vote_average * 10);
+        html += `
+       
+        `;
+    });
+    cardsWrapper.innerHTML = html;
+
+
+}
+>>>>>>> 57b6aab3fae8e465ed6d98b5839de073f8b2bc32

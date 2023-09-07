@@ -4,8 +4,12 @@ import {
   displayTvSeriesListMoviesTv,
   displayTvSeriesListMoviesTheater,
 } from "./pages/home.js";
-import { displayPopular } from "./pages/popular-movie.js";
-import { FilteredMovies } from "./pages/popular-movie.js";
+import { displayPopular,
+         FilteredMovies, 
+         selectCardsAndGivingIds,
+         } from "./pages/popular-movie.js";
+
+
 
 import { getPopularMoviesWeek } from "./apis/popularApi.js";
 import { getTrendingMoviesToday } from "./apis/homeApi.js";
@@ -25,6 +29,7 @@ window.addEventListener('popstate', (e)=>{
 })
 
 document.addEventListener("DOMContentLoaded", async (e) => {
+
   if (location.pathname == "/index.html" || location.pathname == "/") {
     Promise.all([
       getTrendingMoviesToday(),
@@ -50,20 +55,13 @@ document.addEventListener("DOMContentLoaded", async (e) => {
     location.pathname == "popularMovie.html"
   ) {
     let formHandler = document.querySelector(".form__search");
-    FilteredMovies(formHandler,displayPopular);
+    FilteredMovies(formHandler,displayPopular,selectCardsAndGivingIds);
     getPopularMoviesWeek()
       .then((data) => {
         displayPopular(data);
       })
       .then((data) => {
-        let cards = document.querySelectorAll(".card__img__poster");
-        cards.forEach((card) => {
-          card.addEventListener("click", (e) => {
-            let id = e.target.id;
-            history.pushState({ id }, null, "movie.html");
-            location.reload();
-          });
-        });
+        selectCardsAndGivingIds()
       });
   } else if (location.pathname == "/movie.html" ||
   location.pathname == "movie.html" ) {

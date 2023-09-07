@@ -8,7 +8,7 @@
 
 .tab {
   margin-top: 30px;
-  padding-left: 110px;
+  padding-left: 30px;
   padding-right: 40px;
   overflow: hidden;
   display: flex;
@@ -23,7 +23,7 @@
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.6em;
 }
 
 .tab .tab-header {
@@ -36,7 +36,14 @@ h2 {
   border-radius: 40px;
 }
 
+.tab .nav-pills {
+  border: 1px solid rgb(0, 37, 139);
+  border-radius: 40px;
+}
+
 .tab button {
+  color: #081c22;
+  font-weight: 500;
   background-color: #fff;
   float: left;
   border: none;
@@ -44,17 +51,17 @@ h2 {
   cursor: pointer;
   padding: 0px 32.6px 0px 20px;
   transition: 0.5s;
-  font-size: 13px;
+  font-size: 0.9rem;
   border-radius: 40px;
 }
 
-.tab button.active {
+.tab button.nav-link.active {
   background-color: rgb(0, 37, 139);
-  color: rgb(0, 251, 255);
-  padding: 5.5px 25.9px;
+  color: rgb(2, 255, 209);
+  /* padding: 5.5px 25.9px; */
 }
 
- .card__wrapper {
+.card__wrapper {
   min-height: 0;
   position: relative;
   height: auto;
@@ -69,7 +76,7 @@ h2 {
 
 
 
- .movie__card {
+.movie__card {
   padding: 6px 12px;
   border-top: none;
   background-color: transparent;
@@ -83,11 +90,13 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
- 
+
 }
-.movie__card img{
+
+.movie__card img {
   width: 100%;
 }
+
 @keyframes fadeEffect {
   from {
     opacity: 0;
@@ -107,7 +116,7 @@ h2 {
   display: none;
 }
 
-.latest  .card_box .latest-box {
+.latest .card_box .latest-box {
   align-items: center;
   margin: 30px 10px;
   border-radius: 10px;
@@ -116,22 +125,23 @@ h2 {
   background-color: none;
 }
 
- .movie__card .card_box .latest-box .latest-b-img {
+.movie__card .card_box .latest-box .latest-b-img {
   border-radius: 10px;
   width: 100%;
   height: 250px;
 }
 
- .movie__card .card_box .latest-box .latest-b-img img {
+.movie__card .card_box .latest-box .latest-b-img img {
   border-radius: 10px;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
- .movie__card .card_box .latest-box .latest-b-text {
+.movie__card .card_box .latest-box .latest-b-text {
   background-color: transparent;
 }
+
 .movie__card .card_box .latest-box .latest-b-text a strong {
   font-size: 0.9rem;
   font-weight: bold;
@@ -139,11 +149,11 @@ h2 {
   margin: 0px;
 }
 
- .movie__card .card_box .latest-box .latest-b-text a strong:hover {
+.movie__card .card_box .latest-box .latest-b-text a strong:hover {
   color: blue;
 }
 
- .movie__card .card_box .latest-box .latest-b-text {
+.movie__card .card_box .latest-box .latest-b-text {
   width: 100%;
   display: flex;
   justify-content: start;
@@ -153,7 +163,11 @@ h2 {
   background-color: none;
 }
 
- .movie__card .card_box .latest-box .latest-b-text p {
+.movie__card .card_box .latest-box .latest-b-text a {
+  text-decoration: none;
+}
+
+.movie__card .card_box .latest-box .latest-b-text p {
   color: rgb(105, 105, 105);
   margin: 0px;
 }
@@ -277,7 +291,12 @@ h2 {
   margin-left: 10px;
 }
 
-.card__list__today, .card__list__week{
+.card__list__today,
+.card__list__week {
   flex-wrap: nowrap !important;
 }
 
+.card__list__tv,
+.card__list__theater {
+  flex-wrap: nowrap !important;
+}

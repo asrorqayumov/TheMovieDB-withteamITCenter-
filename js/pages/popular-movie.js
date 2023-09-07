@@ -1,17 +1,40 @@
 import { getPopularMoviesWeek } from "../apis/popularApi.js";
-import { filterMovies } from "../apis/popularApi.js";
+import { filterMovies , searchMovies} from "../apis/popularApi.js";
 import config from "../tools/config.js";
 let formHandler = document.querySelector('.form__search');
 
-export function FilteredMovies(formHandler, displayPopular) {
-  formHandler.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    console.log(e.target.sortBy.value);
-    await filterMovies(e.target.sortBy.value).then((data) => {
-      displayPopular(data);
+
+export function selectCardsAndGivingIds() {
+  let cards = document.querySelectorAll(".card__img__poster");
+  cards.forEach((card) => {
+    card.addEventListener("click", (e) => {
+      let id = e.target.id;
+      history.pushState({ id }, null, "movie.html");
+      location.reload();
     });
   });
 }
+export function FilteredMovies(formHandler, displayPopular, selectCardsAndGivingIds) {
+  formHandler.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    let sortByValue = e.target.sortBy.value;
+    let searchMovie = e.target.searchInput.value;
+    if (sortByValue != '') {
+      await filterMovies(sortByValue).then((data) => {
+        displayPopular(data);
+        selectCardsAndGivingIds()
+      });
+    }
+    if (searchMovie != '') {
+      await searchMovies(searchMovie).then((data) => {
+        displayPopular(data);
+        selectCardsAndGivingIds()
+      });
+    }
+
+  });
+}
+
 
 export function displayPopular(getPopularMoviesWeek) {
   let cardsWrapper = document.querySelector(".card__list__popularmovie__page");
