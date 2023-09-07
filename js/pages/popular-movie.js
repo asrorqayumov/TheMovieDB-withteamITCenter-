@@ -1,5 +1,5 @@
 import { getPopularMoviesWeek } from "../apis/popularApi.js";
-import { filterMovies , searchMovies} from "../apis/popularApi.js";
+import { filterMovies, searchMovies } from "../apis/popularApi.js";
 import config from "../tools/config.js";
 let formHandler = document.querySelector('.form__search');
 
@@ -44,7 +44,7 @@ export function displayPopular(getPopularMoviesWeek) {
       movie;
     let vote = Math.round(vote_average * 10);
     html += `
-    <div class="col">
+    <div class="col mb-100 ">
       <div class="movie__card">
       <div class="card_box">
         <div class="latest-box">
@@ -106,3 +106,13 @@ export function displayPopular(getPopularMoviesWeek) {
   });
   cardsWrapper.innerHTML = html;
 }
+
+let button_ = document.querySelectorAll(`.form__select__button`)
+console.log(button_);
+button_.forEach(button => {
+  button.addEventListener('click', (e) => {
+
+    e.target.classList.toggle('bg-blue')
+  })
+
+})
