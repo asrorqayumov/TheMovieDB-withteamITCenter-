@@ -17,12 +17,19 @@ import { getTrendingMoviesWeek } from "./apis/homeApi.js";
 import { getTvSeriesListMoviesTv } from "./apis/homeApi.js";
 import { getTvSeriesListMoviesTheater } from "./apis/homeApi.js";
 import { getMovieDetails } from "./apis/movieApi.js";
+import { displayMoviesDetails } from "./pages/movieImport.js";
+import { getMoviesPeoples } from "./apis/movieApi.js";
+import { displayMoviesPeople } from "./pages/movieImport.js";
+import { getMoviesSocialReview } from "./apis/movieApi.js";
+import { displayMoviesSocialReview } from "./pages/movieImport.js";
+
 
 window.addEventListener('popstate', (e)=>{
     location.reload()
 })
 
 document.addEventListener("DOMContentLoaded", async (e) => {
+
   if (location.pathname == "/index.html" || location.pathname == "/") {
     Promise.all([
       getTrendingMoviesToday(),
@@ -56,8 +63,21 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       .then((data) => {
         selectCardsAndGivingIds()
       });
-  } else if (location.pathname == "/movie.html") {
-    // ...
+  } else if (location.pathname == "/movie.html" ||
+  location.pathname == "movie.html" ) {
+    getMovieDetails(history.state.id).then((data)=>{
+      displayMoviesDetails(data)
+      console.log(data);
+    });
+
+    getMoviesPeoples().then((data)=>{
+      displayMoviesPeople(data)
+      console.log(data);
+    });
+
+    getMoviesSocialReview().then((data)=>{
+      displayMoviesSocialReview(data)
+    });
     
   }
 

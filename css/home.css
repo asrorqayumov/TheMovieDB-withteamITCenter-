@@ -25,7 +25,7 @@ header {
 
 }
 
-header .diva {
+/* header .diva {
     background-color: #41b1da;
     width: 55px;
     height: 21px;
@@ -46,10 +46,16 @@ header h1 {
     background: linear-gradient(50deg, #4efaa7, #01a0db);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+} */
+
+header a img {
+    height: 20px;
+    width: 160px;
 }
 
 header ul {
     display: flex;
+    margin-top: 15px;
 }
 
 header ul li a {
@@ -57,11 +63,14 @@ header ul li a {
     font-size: 16px;
     list-style: none;
     color: aliceblue;
+    text-decoration: none;
+
 }
 
 header ul li i {
     color: #41b1da;
     font-size: 21px;
+    text-decoration: none;
 }
 
 header .ul2 .a2 {
@@ -79,7 +88,7 @@ header .ul2 .a2 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-header .tm {
+/* header .tm {
     display: none;
 }
 
@@ -145,840 +154,10 @@ header .tm .h13 {
     margin-left: 146px;
     color: #41b1da;
     font-size: 20px;
-}
+} */
 
-body {
-    /* background-color: rgb(2, 26, 56); */
-
-}
-
-body .container {
-    background-color: white;
-}
-
-body .container .image {
-    background-image: linear-gradient(rgb(2, 26, 56, 0.75), rgb(2, 26, 56, 0.75), rgb(2, 26, 56, 0.75)), url(../img/hidden-strike.jpg);
-    height: 310px;
-    width: 88%;
-    margin-left: 90px;
-    background-size: cover;
-    background-position-y: center;
-    margin-top: 60px;
-}
-
-body .container .image h1 {
-    color: aliceblue;
-    font-size: 50px;
-    padding-top: 60px;
-    margin-left: 40px;
-}
-
-body .container .image h2 {
-    color: aliceblue;
-    font-size: 30px;
-    margin-left: 40px;
-}
-
-body .container .image .h21 {
-    margin-left: 53%;
-    margin-top: -38px;
-}
-
-body .container .image input {
-    width: 89%;
-    height: 50px;
-    margin-left: 40px;
-    margin-top: 50px;
-    border-radius: 50px;
-    border: none;
-    font-size: 16px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body .container .image button {
-    width: 110px;
-    height: 51px;
-    border-radius: 50px;
-    margin-left: -50px;
-    padding-top: 3px;
-    text-align: center;
-    font-size: 15px;
-    background: linear-gradient(90deg, #4efaa7, #01a0db);
-    color: aliceblue;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border: 0px;
-}
-
-body .container .image button:hover {
-    color: black;
-}
-
-footer {
-    padding: 15px 9%;
-    transition: 0.2s;
-    background-color: rgb(2, 26, 56);
-    color: white;
-    margin-top: 30px;
-    padding-left: 290px;
-}
-
-footer .h1a {
-    color: aliceblue;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 35px;
-    background: linear-gradient(40deg, #4efaa7, #01a0db);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-top: 10px;
-}
-
-footer .div1 {
-    background-color: #41b1da;
-    width: 50px;
-    height: 26px;
-    border-radius: 50px;
-    margin-top: -33px;
-    margin-left: 83px;
-}
-
-footer .h1b {
-    background: linear-gradient(40deg, #4efaa7, #41b1da);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-top: -10px;
-}
-
-footer .div2 {
-    background: linear-gradient(40deg, #4efaa7, #41b1da);
-    width: 26px;
-    height: 26px;
-    border-radius: 100px;
-    margin-top: -33px;
-    margin-left: 35px;
-}
-
-footer .h12 {
-    margin-top: -53px;
-    margin-left: 65px;
-    background: linear-gradient(40deg, #41d7da, #41b1da);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-footer .div3 {
-    background: linear-gradient(40deg, #4efaa7, #01a0db);
-    width: 75px;
-    height: 26px;
-    border-radius: 50px;
-    margin-top: -10px;
-}
-
-footer .h13 {
-    margin-top: -33px;
-    margin-left: 80px;
-    color: #41b1da;
-}
-
-footer button {
-    width: 230px;
-    height: 45px;
-    background-color: white;
-    color: rgb(104, 206, 250);
-    border-radius: 7px;
-    margin-left: -90px;
-    margin-top: 30px;
-    font-size: 17px;
-    font-weight: 700;
-}
-
-footer .hey {
-    width: 140px;
-    height: 45px;
-    background-color: white;
+header .tmd {
     display: none;
-    color: rgb(104, 206, 250);
-    border-radius: 7px;
-    margin-left: -90px;
-    margin-top: 30px;
-    font-size: 17px;
-    font-weight: 700;
-}
-
-footer .coll {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-footer .xxx .bbb,
-.xxx a {
-    color: white;
-}
-
-footer .xxx h1:hover,
-.xxx:hover {
-    transform: translateY(-2px);
-    transition: all.3s ease;
-}
-
-footer .coll .bbb {
-    font-size: 20px;
-}
-
-footer .coll {
-    margin-left: 150px;
-    margin-top: -140px;
-}
-
-@media (max-width: 1100px) {
-
-    header h1,
-    .diva {
-        display: none;
-    }
-
-    header .ul2 .a2 {
-        margin-left: 255px;
-        position: fixed;
-        margin-top: -15px;
-    }
-
-    header .ul2 i {
-        position: fixed;
-        margin-left: 305px;
-        margin-top: -8px;
-        font-size: 23px;
-    }
-
-    body .container .image {
-        width: 100%;
-        margin-left: 0px;
-    }
-
-    body .container .image h1 {
-        margin-top: -40px;
-        margin-left: -1px;
-        margin-left: 18px;
-        font-size: 40px;
-
-    }
-
-    body .container .image h2 {
-        margin-left: -1px;
-        margin-left: 18px;
-        font-size: 29px;
-        width: 90%;
-    }
-
-    body .container .image .h21 {
-        margin-top: 1px;
-        position: absolute;
-        right: 20px;
-    }
-
-    body .container .image input {
-        height: 45px;
-        margin-top: 50px;
-        position: absolute;
-        right: 60px;
-        width: 80%;
-        padding-left: 20px;
-    }
-
-    body .container .image button {
-        position: absolute;
-        margin-top: 50px;
-        margin-left: 280px;
-        height: 45px;
-        width: 90px;
-    }
-
-    footer .foot {
-        display: none;
-    }
-
-    footer .coll {
-        display: contents;
-    }
-
-    footer .coll .xxx {
-        margin: 30px;
-        width: 250px;
-        margin-left: -230px;
-    }
-
-    footer button {
-        display: none;
-    }
-
-    footer .hey {
-        display: block;
-        margin-top: -5px;
-        margin-left: -230px;
-    }
-}
-
-
-
-
-body {
-    margin: 0;
-}
-
-.topnav {
-    overflow: hidden;
-}
-
-.topnav a {
-    float: right;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 16px;
-    margin-left: -15px;
-}
-
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    margin-top: 60px;
-    margin-left: -10px;
-    border-radius: 5px;
-    width: 180px;
-    height: 130px;
-}
-
-/* Style the links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    text-decoration: none;
-    font-size: 15px;
-    display: block;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-    z-index: 10;
-}
-
-.dropdown-content .ac {
-    position: absolute;
-    margin-left: 4px;
-    margin-top: 0px;
-}
-
-.dropdown-content .ac1 {
-    position: fixed;
-    margin-left: 4px;
-    margin-top: 5px;
-}
-
-.dropdown-content .ac2 {
-    position: absolute;
-    margin-left: 4px;
-    margin-top: 10px;
-}
-
-.dropdown-content .ac3 {
-    position: absolute;
-    margin-left: 4px;
-    margin-top: -5px;
-}
-
-
-.dropdown-content1 {
-    display: none;
-    position: absolute;
-    background-color: white;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    margin-top: 60px;
-    margin-left: -10px;
-    border-radius: 5px;
-    width: 180px;
-    height: 130px;
-}
-
-/* Style the links inside the dropdown */
-.dropdown-content1 a {
-    color: black;
-    text-decoration: none;
-    font-size: 15px;
-    display: block;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown1:hover .dropdown-content1 {
-    display: block;
-}
-
-.dropdown-content1 .ab {
-    position: absolute;
-    margin-left: 4px;
-    margin-top: 0px;
-}
-
-.dropdown-content1 .ab1 {
-    position: fixed;
-    margin-left: 4px;
-    margin-top: 5px;
-}
-
-.dropdown-content1 .ab2 {
-    position: absolute;
-    margin-left: 4px;
-    margin-top: 10px;
-}
-
-.dropdown-content1 .ab3 {
-    position: absolute;
-    margin-left: 4px;
-    margin-top: -5px;
-}
-
-
-.dropdown-content2 {
-    display: none;
-    position: absolute;
-    background-color: white;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    margin-top: 60px;
-    margin-left: -10px;
-    border-radius: 5px;
-    width: 180px;
-    height: 45px;
-}
-
-/* Style the links inside the dropdown */
-.dropdown-content2 a {
-    color: black;
-    text-decoration: none;
-    font-size: 15px;
-    display: block;
-    margin-top: -2px;
-    margin-left: 0px;
-    position: absolute;
-}
-
-
-
-/* Show the dropdown menu on hover */
-.dropdown2:hover .dropdown-content2 {
-    display: block;
-}
-
-
-.dropdown-content3 {
-    display: none;
-    position: absolute;
-    background-color: white;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    margin-top: 60px;
-    margin-left: -10px;
-    border-radius: 5px;
-    width: 180px;
-    height: 130px;
-}
-
-/* Style the links inside the dropdown */
-.dropdown-content3 a {
-    color: black;
-    text-decoration: none;
-    font-size: 15px;
-    display: block;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown3:hover .dropdown-content3 {
-    display: block;
-}
-
-.dropdown-content3 .ad {
-    position: absolute;
-    margin-left: 4px;
-    margin-top: 0px;
-}
-
-.dropdown-content3 .ad1 {
-    position: fixed;
-    margin-left: 4px;
-    margin-top: 5px;
-}
-
-.dropdown-content3 .ad2 {
-    position: absolute;
-    margin-left: 4px;
-    margin-top: 10px;
-}
-
-.dropdown-content3 .ad3 {
-    position: absolute;
-    margin-left: 4px;
-    margin-top: -5px;
-}
-
-
-.topnav .icon {
-    display: none;
-}
-
-header .bib {
-    display: none;
-}
-
-@media screen and (max-width: 1100px) {
-    .topnav a {
-        display: none;
-        top: 40px;
-    }
-
-    .topnav a.icon {
-        float: right;
-        display: block;
-        font-size: 25px;
-        position: fixed;
-        margin-top: -30px;
-        margin-left: -20px;
-    }
-}
-
-@media screen and (max-width: 1100px) {
-    .topnav.responsive {
-        position: absolute;
-        width: 100%;
-        margin-top: 1300px;
-        margin-left: -40px;
-        opacity: 0.5px;
-        height: 1000px;
-    }
-
-    .topnav.responsive .icon {
-        position: fixed;
-        right: 325px;
-        top: 0;
-        margin-top: 10px;
-        font-size: 25px;
-        background-color: rgb(2, 26, 56);
-        height: 50px;
-        width: 50px;
-    }
-
-    .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-        background-color: rgb(3, 34, 72);
-        width: 90%;
-    }
-
-    .topnav.responsive ul li {
-        position: relative;
-        display: flex;
-        margin-top: 40px;
-
-    }
-
-    .topnav.responsive .mo1 {
-        position: fixed;
-        margin-left: 5px;
-        margin-top: 30px;
-        font-size: 24px;
-        background-color: rgb(3, 34, 72);
-        height: 60px;
-        width: 90%;
-    }
-
-    .topnav.responsive .mo2 {
-        position: fixed;
-        margin-left: 5px;
-        margin-top: 80px;
-        font-size: 24px;
-        background-color: rgb(3, 34, 72);
-        height: 60px;
-        width: 90%;
-    }
-
-    .topnav.responsive .mo3 {
-        position: fixed;
-        font-size: 24px;
-        background-color: rgb(3, 34, 72);
-        height: 60px;
-        width: 90%;
-        margin-left: 5px;
-        margin-top: 130px;
-
-    }
-
-    .topnav.responsive .mo4 {
-        position: fixed;
-        font-size: 24px;
-        margin-left: 5px;
-        margin-top: 180px;
-        background-color: rgb(3, 34, 72);
-        height: 60px;
-        width: 90%;
-    }
-
-    header .bib {
-        display: block;
-        color: rgb(154, 154, 154);
-        padding-top: 20px;
-
-
-    }
-
-    header .bib a {
-        color: rgb(154, 154, 154);
-        font-weight: 500;
-        margin-left: 6px;
-    }
-
-    .dropdown-content {
-        display: none;
-    }
-
-    .dropdown-content1 {
-        display: none;
-        overflow: hidden;
-    }
-
-    header .tm {
-        display: block;
-    }
-
-    header .tm .h1a {
-        color: aliceblue;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 20px;
-        background: linear-gradient(40deg, #4efaa7, #01a0db);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        position: fixed;
-        margin-top: -30px;
-        margin-left: 110px;
-        display: block;
-        position: fixed;
-    }
-
-    header .tm .div1 {
-        width: 35px;
-        height: 16px;
-        border-radius: 50px;
-        margin-top: -26px;
-        margin-left: 155px;
-        display: block;
-        position: fixed;
-    }
-
-    header .tm .h1b {
-        margin-top: -13px;
-        font-size: 20px;
-        margin-left: 110px;
-        display: block;
-        position: fixed;
-    }
-
-    header .tm .div2 {
-        background: linear-gradient(40deg, #4efaa7, #41b1da);
-        width: 16px;
-        height: 16px;
-        border-radius: 100px;
-        margin-top: -7px;
-        margin-left: 132px;
-        display: block;
-        position: fixed;
-    }
-
-    header .tm .h12 {
-        margin-top: -33px;
-        margin-left: 65px;
-        background: linear-gradient(40deg, #41d7da, #41b1da);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 20px;
-        margin-top: -12px;
-        margin-left: 148px;
-        display: block;
-        position: fixed;
-    }
-
-    header .tm .div3 {
-        background: linear-gradient(40deg, #4efaa7, #01a0db);
-        width: 45px;
-        height: 16px;
-        border-radius: 50px;
-        margin-left: 110px;
-        display: block;
-        position: fixed;
-        margin-top: 12px;
-    }
-
-    header .tm .h13 {
-        margin-top: 5px;
-        margin-left: 156px;
-        color: #41b1da;
-        font-size: 20px;
-        display: block;
-        position: fixed;
-    }
-}* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-padding-top: 2rem;
-    list-style: none;
-    text-decoration: none;
-    scroll-behavior: smooth;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-header {
-    position: fixed;
-    width: 100%;
-    height: 8.5vh;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    padding: 15px 9%;
-    transition: 0.2s;
-    background-color: rgb(2, 26, 56);
-    color: white;
-
-}
-
-header .diva {
-    background-color: #41b1da;
-    width: 55px;
-    height: 21px;
-    border-radius: 50px;
-    margin-top: 5px;
-    margin-right: 10px;
-}
-
-header h1 {
-    display: flex;
-    text-align: center;
-    font-size: 28px;
-    font-weight: 550;
-    margin-right: 7px;
-    font-weight: bolder;
-    animation: h1 5s infinite linear;
-    justify-content: space-between;
-    background: linear-gradient(50deg, #4efaa7, #01a0db);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-header ul {
-    display: flex;
-}
-
-header ul li a {
-    margin: 15px;
-    font-size: 16px;
-    list-style: none;
-    color: aliceblue;
-    text-decoration: none;
-
-}
-
-header ul li i {
-    color: #41b1da;
-    font-size: 21px;
-    text-decoration: none;
-}
-
-header .ul2 .a2 {
-    margin-left: 660px;
-    color: white;
-    background-color: #32b9de;
-    padding-left: 13px;
-    padding-right: 13px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 100px;
-    font-size: small;
-    text-align: center;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-header .tm {
-    display: none;
-}
-
-header .tm .h1a {
-    color: aliceblue;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
-    background: linear-gradient(40deg, #4efaa7, #01a0db);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-top: 50px;
-    margin-left: 100px;
-}
-
-header .tm .div1 {
-    background-color: #41b1da;
-    width: 37px;
-    height: 16px;
-    border-radius: 50px;
-    margin-top: -18px;
-    margin-left: 150px;
-}
-
-header .tm .h1b {
-    background: linear-gradient(40deg, #4efaa7, #41b1da);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-top: -3px;
-    font-size: 20px;
-    margin-left: 100px;
-}
-
-header .tm .div2 {
-    background: linear-gradient(40deg, #4efaa7, #41b1da);
-    width: 16px;
-    height: 16px;
-    border-radius: 100px;
-    margin-top: -20px;
-    margin-left: 122px;
-}
-
-header .tm .h12 {
-    margin-top: -33px;
-    margin-left: 65px;
-    background: linear-gradient(40deg, #41d7da, #41b1da);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 20px;
-    margin-top: -22px;
-    margin-left: 138px;
-}
-
-header .tm .div3 {
-    background: linear-gradient(40deg, #4efaa7, #01a0db);
-    width: 45px;
-    height: 16px;
-    border-radius: 50px;
-    margin-left: 100px;
-}
-
-header .tm .h13 {
-    margin-top: -22px;
-    margin-left: 146px;
-    color: #41b1da;
-    font-size: 20px;
 }
 
 body {
@@ -993,8 +172,8 @@ body .container {
 body .container .image {
     background-image: linear-gradient(rgb(2, 26, 56, 0.75), rgb(2, 26, 56, 0.75), rgb(2, 26, 56, 0.75)), url(../img-home/hidden-strike.jpg);
     height: 310px;
-    width: 88%;
-    margin-left: 90px;
+    width: 100%;
+    /* margin-left: 90px; */
     background-size: cover;
     background-position-y: center;
     margin-top: 60px;
@@ -1014,8 +193,8 @@ body .container .image h2 {
 }
 
 body .container .image .h21 {
-    margin-left: 53%;
-    margin-top: -38px;
+    margin-left: 52%;
+    margin-top: -44px;
 }
 
 body .container .image input {
@@ -1057,13 +236,19 @@ footer {
     padding-left: 290px;
 }
 
-footer .h1a {
+footer .foot img {
+    height: 200px;
+    width: 200px;
+}
+
+/* footer .h1a {
     color: aliceblue;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 35px;
     background: linear-gradient(40deg, #4efaa7, #01a0db);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-top: 10px;
 }
 
 footer .div1 {
@@ -1071,7 +256,7 @@ footer .div1 {
     width: 50px;
     height: 26px;
     border-radius: 50px;
-    margin-top: -33px;
+    margin-top: -40px;
     margin-left: 83px;
 }
 
@@ -1079,6 +264,7 @@ footer .h1b {
     background: linear-gradient(40deg, #4efaa7, #41b1da);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 35px;
 }
 
 footer .div2 {
@@ -1086,16 +272,17 @@ footer .div2 {
     width: 26px;
     height: 26px;
     border-radius: 100px;
-    margin-top: -33px;
+    margin-top: -40px;
     margin-left: 35px;
 }
 
 footer .h12 {
-    margin-top: -33px;
+    margin-top: -35px;
     margin-left: 65px;
     background: linear-gradient(40deg, #41d7da, #41b1da);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 35px;
 }
 
 footer .div3 {
@@ -1106,10 +293,11 @@ footer .div3 {
 }
 
 footer .h13 {
-    margin-top: -33px;
+    margin-top: -36px;
     margin-left: 80px;
     color: #41b1da;
-}
+    font-size: 35px;
+} */
 
 footer button {
     width: 230px;
@@ -1117,8 +305,8 @@ footer button {
     background-color: white;
     color: rgb(104, 206, 250);
     border-radius: 7px;
-    margin-left: -90px;
-    margin-top: 30px;
+    margin-left: -50px;
+    /* margin-top: 30px; */
     font-size: 17px;
     font-weight: 700;
 }
@@ -1170,21 +358,19 @@ footer .coll {
     }
 
     header .ul2 .a2 {
-        margin-left: 255px;
-        position: fixed;
+        margin-left: 420px;
+        position: relative;
         margin-top: -15px;
     }
 
     header .ul2 i {
-        position: fixed;
-        margin-left: 305px;
-        margin-top: -8px;
+        position: relative;
         font-size: 23px;
     }
 
     body .container .image {
-        width: 100%;
-        margin-left: 0px;
+        width: 106%;
+        margin-left: -11px;
     }
 
     body .container .image h1 {
@@ -1236,7 +422,7 @@ footer .coll {
     footer .coll .xxx {
         margin: 30px;
         width: 250px;
-        margin-left: -230px;
+        margin-left: -290px;
     }
 
     footer button {
@@ -1245,8 +431,7 @@ footer .coll {
 
     footer .hey {
         display: block;
-        margin-top: -5px;
-        margin-left: -230px;
+        margin-left: -260px;
     }
 }
 
@@ -1283,7 +468,7 @@ body {
     margin-left: -10px;
     border-radius: 5px;
     width: 180px;
-    height: 130px;
+    height: 530px;
 }
 
 /* Style the links inside the dropdown */
@@ -1307,8 +492,12 @@ body {
 
 .dropdown-content .ac1 {
     position: fixed;
-    margin-left: 4px;
+    margin-left: -0px;
     margin-top: 5px;
+    background-color: white;
+    height: 40px;
+    width: 180px;
+    text-align: start;
 }
 
 .dropdown-content .ac2 {
@@ -1520,7 +709,7 @@ header .bib {
 
     .topnav.responsive .mo1 {
         position: fixed;
-        margin-left: 5px;
+        margin-left: -28px;
         margin-top: 30px;
         font-size: 24px;
         background-color: rgb(3, 34, 72);
@@ -1530,7 +719,7 @@ header .bib {
 
     .topnav.responsive .mo2 {
         position: fixed;
-        margin-left: 5px;
+        margin-left: -28px;
         margin-top: 80px;
         font-size: 24px;
         background-color: rgb(3, 34, 72);
@@ -1544,7 +733,7 @@ header .bib {
         background-color: rgb(3, 34, 72);
         height: 60px;
         width: 90%;
-        margin-left: 5px;
+        margin-left: -28px;
         margin-top: 130px;
 
     }
@@ -1552,7 +741,7 @@ header .bib {
     .topnav.responsive .mo4 {
         position: fixed;
         font-size: 24px;
-        margin-left: 5px;
+        margin-left: -28px;
         margin-top: 180px;
         background-color: rgb(3, 34, 72);
         height: 60px;
@@ -1565,6 +754,10 @@ header .bib {
         padding-top: 20px;
 
 
+    }
+
+    header a img {
+        display: none;
     }
 
     header .bib a {
@@ -1582,7 +775,11 @@ header .bib {
         overflow: hidden;
     }
 
-    header .tm {
+    header .ul2 {
+        margin-left: -230px;
+    }
+
+    /* header .tm {
         display: block;
     }
 
@@ -1659,6 +856,14 @@ header .bib {
         color: #41b1da;
         font-size: 20px;
         display: block;
+        position: fixed;
+    } */
+
+    header .tmd {
+        display: block;
+        width: 100px;
+        height: 100px;
+        margin-left: 100px;
         position: fixed;
     }
 }
