@@ -4,10 +4,11 @@ import {
   displayTvSeriesListMoviesTv,
   displayTvSeriesListMoviesTheater,
 } from "./pages/home.js";
-import { displayPopular,
-         FilteredMovies, 
-         selectCardsAndGivingIds,
-         } from "./pages/popular-movie.js";
+import {
+  displayPopular,
+  FilteredMovies,
+  selectCardsAndGivingIds,
+} from "./pages/popular-movie.js";
 
 
 
@@ -18,8 +19,8 @@ import { getTvSeriesListMoviesTv } from "./apis/homeApi.js";
 import { getTvSeriesListMoviesTheater } from "./apis/homeApi.js";
 import { getMovieDetails } from "./apis/movieApi.js";
 
-window.addEventListener('popstate', (e)=>{
-    location.reload()
+window.addEventListener('popstate', (e) => {
+  location.reload()
 })
 
 document.addEventListener("DOMContentLoaded", async (e) => {
@@ -49,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
     location.pathname == "popularMovie.html"
   ) {
     let formHandler = document.querySelector(".form__search");
-    FilteredMovies(formHandler,displayPopular,selectCardsAndGivingIds);
+    FilteredMovies(formHandler, displayPopular, selectCardsAndGivingIds);
     getPopularMoviesWeek()
       .then((data) => {
         displayPopular(data);
@@ -59,7 +60,11 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       });
   } else if (location.pathname == "/movie.html") {
     // ...
-    
+
+  } else if (location.pathname == "/popularPeople.html" ||
+    location.pathname == "/popularPeople.html") {
+   
+
   }
 
 });
