@@ -20,8 +20,12 @@ import { getMovieDetails } from "./apis/movieApi.js";
 import { displayMoviesDetails } from "./pages/movieImport.js";
 import { getMoviesPeoples } from "./apis/movieApi.js";
 import { displayMoviesPeople } from "./pages/movieImport.js";
-import { getMoviesSocialReview } from "./apis/movieApi.js";
-import { displayMoviesSocialReview } from "./pages/movieImport.js";
+// import { getMoviesSocialReview } from "./apis/movieApi.js";
+// import { displayMoviesSocialReview } from "./pages/movieImport.js";
+
+import { getMovieRecommandations } from "./apis/movieApi.js";
+import { displayMoviesRecommandation } from "./pages/movieImport.js";
+
 
 
 window.addEventListener('popstate', (e)=>{
@@ -70,15 +74,21 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       console.log(data);
     });
 
-    getMoviesPeoples().then((data)=>{
+    getMoviesPeoples(history.state.id).then((data)=>{
       displayMoviesPeople(data)
       console.log(data);
     });
 
-    getMoviesSocialReview().then((data)=>{
-      displayMoviesSocialReview(data)
-    });
+    // getMoviesSocialReview().then((data)=>{
+    //   displayMoviesSocialReview(data)
+    // });
     
+    
+    getMovieRecommandations(history.state.id).then((data)=>{
+      displayMoviesRecommandation(data)
+      console.log(data);
+    });
+
   }
 
 });
