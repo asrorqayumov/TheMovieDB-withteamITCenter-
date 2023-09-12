@@ -4,12 +4,19 @@ import {
   displayTvSeriesListMoviesTv,
   displayTvSeriesListMoviesTheater,
 } from "./pages/home.js";
-import { displayPopular,
-         FilteredMovies, 
-         selectCardsAndGivingIds,
-         } from "./pages/popular-movie.js";
+import {
+  displayPopular,
+  FilteredMovies,
+  selectCardsAndGivingIds,
+} from "./pages/popular-movie.js";
+
+import {
+  displayPopularperson
+
+} from "./pages/person.js";
 
 
+import { getPopularpersonbiography } from "./apis/personApi.js";
 
 import { getPopularMoviesWeek } from "./apis/popularApi.js";
 import { getTrendingMoviesToday } from "./apis/homeApi.js";
@@ -21,11 +28,11 @@ import { displayMoviesDetails } from "./pages/movieImport.js";
 import { getMoviesPeoples } from "./apis/movieApi.js";
 import { displayMoviesPeople } from "./pages/movieImport.js";
 import { getMoviesSocialReview } from "./apis/movieApi.js";
-import { displayMoviesSocialReview } from "./pages/movieImport.js";
+// import { displayMoviesSocialReview } from "./pages/movieImport.js";
 
 
-window.addEventListener('popstate', (e)=>{
-    location.reload()
+window.addEventListener('popstate', (e) => {
+  location.reload()
 })
 
 document.addEventListener("DOMContentLoaded", async (e) => {
@@ -55,7 +62,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
     location.pathname == "popularMovie.html"
   ) {
     let formHandler = document.querySelector(".form__search");
-    FilteredMovies(formHandler,displayPopular,selectCardsAndGivingIds);
+    FilteredMovies(formHandler, displayPopular, selectCardsAndGivingIds);
     getPopularMoviesWeek()
       .then((data) => {
         displayPopular(data);
@@ -64,21 +71,27 @@ document.addEventListener("DOMContentLoaded", async (e) => {
         selectCardsAndGivingIds()
       });
   } else if (location.pathname == "/movie.html" ||
-  location.pathname == "movie.html" ) {
-    getMovieDetails(history.state.id).then((data)=>{
+    location.pathname == "movie.html") {
+    getMovieDetails(history.state.id).then((data) => {
       displayMoviesDetails(data)
       console.log(data);
     });
 
-    getMoviesPeoples().then((data)=>{
+    getMoviesPeoples().then((data) => {
       displayMoviesPeople(data)
       console.log(data);
     });
 
-    getMoviesSocialReview().then((data)=>{
+    getMoviesSocialReview().then((data) => {
       displayMoviesSocialReview(data)
     });
-    
+
   }
+  else if (location.pathname == "/person.html" ||
+    location.pathname == "person.html") {
+      getPopularpersonbiography()
+      console.log(history.state);
+  }
+
 
 });
