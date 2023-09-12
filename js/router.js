@@ -27,8 +27,13 @@ import { getMovieDetails } from "./apis/movieApi.js";
 import { displayMoviesDetails } from "./pages/movieImport.js";
 import { getMoviesPeoples } from "./apis/movieApi.js";
 import { displayMoviesPeople } from "./pages/movieImport.js";
+
 import { getMoviesSocialReview } from "./apis/movieApi.js";
 // import { displayMoviesSocialReview } from "./pages/movieImport.js";
+
+import { getMovieRecommandations } from "./apis/movieApi.js";
+import { displayMoviesRecommandation } from "./pages/movieImport.js";
+
 
 
 window.addEventListener('popstate', (e) => {
@@ -77,20 +82,36 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       console.log(data);
     });
 
-    getMoviesPeoples().then((data) => {
+    getMoviesPeoples(history.state.id).then((data)=>{
       displayMoviesPeople(data)
       console.log(data);
     });
 
-    getMoviesSocialReview().then((data) => {
+    getMoviesSocialReview(history.state.id).then((data)=>{
       displayMoviesSocialReview(data)
+      console.log(data);
+    });
+    
+    
+
+    function anathermoviepage() {
+      let cards = document.querySelectorAll(".recommandation_img");
+      cards.forEach((card) => {
+        card.addEventListener("click", (e) => {
+          let id = e.target.id;
+          history.pushState({ id }, null, "movie.html");
+          location.reload();
+        });
+      });
+    }
+
+    getMovieRecommandations(history.state.id, anathermoviepage).then((data)=>{
+      displayMoviesRecommandation(data);
+      console.log(data);
+      anathermoviepage();
+      console.log(anathermoviepage);
     });
 
-  }
-  else if (location.pathname == "/person.html" ||
-    location.pathname == "person.html") {
-      getPopularpersonbiography()
-      console.log(history.state);
   }
 
 

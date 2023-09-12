@@ -25,29 +25,6 @@ header {
 
 }
 
-/* header .diva {
-    background-color: #41b1da;
-    width: 55px;
-    height: 21px;
-    border-radius: 50px;
-    margin-top: 5px;
-    margin-right: 10px;
-}
-
-header h1 {
-    display: flex;
-    text-align: center;
-    font-size: 28px;
-    font-weight: 550;
-    margin-right: 7px;
-    font-weight: bolder;
-    animation: h1 5s infinite linear;
-    justify-content: space-between;
-    background: linear-gradient(50deg, #4efaa7, #01a0db);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-} */
-
 header a img {
     height: 20px;
     width: 160px;
@@ -88,74 +65,6 @@ header .ul2 .a2 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* header .tm {
-    display: none;
-}
-
-header .tm .h1a {
-    color: aliceblue;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
-    background: linear-gradient(40deg, #4efaa7, #01a0db);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-top: 50px;
-    margin-left: 100px;
-}
-
-header .tm .div1 {
-    background-color: #41b1da;
-    width: 37px;
-    height: 16px;
-    border-radius: 50px;
-    margin-top: -18px;
-    margin-left: 150px;
-}
-
-header .tm .h1b {
-    background: linear-gradient(40deg, #4efaa7, #41b1da);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-top: -3px;
-    font-size: 20px;
-    margin-left: 100px;
-}
-
-header .tm .div2 {
-    background: linear-gradient(40deg, #4efaa7, #41b1da);
-    width: 16px;
-    height: 16px;
-    border-radius: 100px;
-    margin-top: -20px;
-    margin-left: 122px;
-}
-
-header .tm .h12 {
-    margin-top: -33px;
-    margin-left: 65px;
-    background: linear-gradient(40deg, #41d7da, #41b1da);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 20px;
-    margin-top: -22px;
-    margin-left: 138px;
-}
-
-header .tm .div3 {
-    background: linear-gradient(40deg, #4efaa7, #01a0db);
-    width: 45px;
-    height: 16px;
-    border-radius: 50px;
-    margin-left: 100px;
-}
-
-header .tm .h13 {
-    margin-top: -22px;
-    margin-left: 146px;
-    color: #41b1da;
-    font-size: 20px;
-} */
-
 header .tmd {
     display: none;
 }
@@ -173,7 +82,6 @@ body .container .image {
     background-image: linear-gradient(rgb(2, 26, 56, 0.75), rgb(2, 26, 56, 0.75), rgb(2, 26, 56, 0.75)), url(../img-home/hidden-strike.jpg);
     height: 310px;
     width: 100%;
-    /* margin-left: 90px; */
     background-size: cover;
     background-position-y: center;
     margin-top: 60px;
@@ -240,64 +148,6 @@ footer .foot img {
     height: 200px;
     width: 200px;
 }
-
-/* footer .h1a {
-    color: aliceblue;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 35px;
-    background: linear-gradient(40deg, #4efaa7, #01a0db);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-top: 10px;
-}
-
-footer .div1 {
-    background-color: #41b1da;
-    width: 50px;
-    height: 26px;
-    border-radius: 50px;
-    margin-top: -40px;
-    margin-left: 83px;
-}
-
-footer .h1b {
-    background: linear-gradient(40deg, #4efaa7, #41b1da);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 35px;
-}
-
-footer .div2 {
-    background: linear-gradient(40deg, #4efaa7, #41b1da);
-    width: 26px;
-    height: 26px;
-    border-radius: 100px;
-    margin-top: -40px;
-    margin-left: 35px;
-}
-
-footer .h12 {
-    margin-top: -35px;
-    margin-left: 65px;
-    background: linear-gradient(40deg, #41d7da, #41b1da);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 35px;
-}
-
-footer .div3 {
-    background: linear-gradient(40deg, #4efaa7, #01a0db);
-    width: 75px;
-    height: 26px;
-    border-radius: 50px;
-}
-
-footer .h13 {
-    margin-top: -36px;
-    margin-left: 80px;
-    color: #41b1da;
-    font-size: 35px;
-} */
 
 footer button {
     width: 230px;
@@ -460,7 +310,7 @@ body {
 
 .dropdown-content {
     display: none;
-    position: absolute;
+    position: fixed;
     background-color: white;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -468,7 +318,7 @@ body {
     margin-left: -10px;
     border-radius: 5px;
     width: 180px;
-    height: 530px;
+    height: 45px;
 }
 
 /* Style the links inside the dropdown */
@@ -477,6 +327,9 @@ body {
     text-decoration: none;
     font-size: 15px;
     display: block;
+    margin-top: -2px;
+    margin-left: 0px;
+    position: absolute;
 }
 
 /* Show the dropdown menu on hover */
@@ -484,34 +337,11 @@ body {
     display: block;
 }
 
-.dropdown-content .ac {
+/* .dropdown-content a {
     position: absolute;
     margin-left: 4px;
     margin-top: 0px;
-}
-
-.dropdown-content .ac1 {
-    position: fixed;
-    margin-left: -0px;
-    margin-top: 5px;
-    background-color: white;
-    height: 40px;
-    width: 180px;
-    text-align: start;
-}
-
-.dropdown-content .ac2 {
-    position: absolute;
-    margin-left: 4px;
-    margin-top: 10px;
-}
-
-.dropdown-content .ac3 {
-    position: absolute;
-    margin-left: 4px;
-    margin-top: -5px;
-}
-
+} */
 
 .dropdown-content1 {
     display: none;
@@ -588,13 +418,10 @@ body {
     position: absolute;
 }
 
-
-
 /* Show the dropdown menu on hover */
 .dropdown2:hover .dropdown-content2 {
     display: block;
 }
-
 
 .dropdown-content3 {
     display: none;
@@ -778,86 +605,6 @@ header .bib {
     header .ul2 {
         margin-left: -230px;
     }
-
-    /* header .tm {
-        display: block;
-    }
-
-    header .tm .h1a {
-        color: aliceblue;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 20px;
-        background: linear-gradient(40deg, #4efaa7, #01a0db);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        position: fixed;
-        margin-top: -30px;
-        margin-left: 110px;
-        display: block;
-        position: fixed;
-    }
-
-    header .tm .div1 {
-        width: 35px;
-        height: 16px;
-        border-radius: 50px;
-        margin-top: -26px;
-        margin-left: 155px;
-        display: block;
-        position: fixed;
-    }
-
-    header .tm .h1b {
-        margin-top: -13px;
-        font-size: 20px;
-        margin-left: 110px;
-        display: block;
-        position: fixed;
-    }
-
-    header .tm .div2 {
-        background: linear-gradient(40deg, #4efaa7, #41b1da);
-        width: 16px;
-        height: 16px;
-        border-radius: 100px;
-        margin-top: -7px;
-        margin-left: 132px;
-        display: block;
-        position: fixed;
-    }
-
-    header .tm .h12 {
-        margin-top: -33px;
-        margin-left: 65px;
-        background: linear-gradient(40deg, #41d7da, #41b1da);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 20px;
-        margin-top: -12px;
-        margin-left: 148px;
-        display: block;
-        position: fixed;
-    }
-
-    header .tm .div3 {
-        background: linear-gradient(40deg, #4efaa7, #01a0db);
-        width: 45px;
-        height: 16px;
-        border-radius: 50px;
-        margin-left: 110px;
-        display: block;
-        position: fixed;
-        margin-top: 12px;
-    }
-
-    header .tm .h13 {
-        margin-top: 5px;
-        margin-left: 156px;
-        color: #41b1da;
-        font-size: 20px;
-        display: block;
-        position: fixed;
-    } */
 
     header .tmd {
         display: block;
