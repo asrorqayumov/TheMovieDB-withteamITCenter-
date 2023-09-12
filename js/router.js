@@ -10,7 +10,13 @@ import {
   selectCardsAndGivingIds,
 } from "./pages/popular-movie.js";
 
+import {
+  displayPopularperson
 
+} from "./pages/person.js";
+
+
+import { getPopularpersonbiography } from "./apis/personApi.js";
 
 import { getPopularMoviesWeek } from "./apis/popularApi.js";
 import { getTrendingMoviesToday } from "./apis/homeApi.js";
@@ -23,15 +29,16 @@ import { getMoviesPeoples } from "./apis/movieApi.js";
 import { displayMoviesPeople } from "./pages/movieImport.js";
 
 import { getMoviesSocialReview } from "./apis/movieApi.js";
-import { displayMoviesSocialReview } from "./pages/movieImport.js";
+// import { displayMoviesSocialReview } from "./pages/movieImport.js";
 
 import { getMovieRecommandations } from "./apis/movieApi.js";
 import { displayMoviesRecommandation } from "./pages/movieImport.js";
-
-
-
 import { getPopularPeople } from "./apis/popularPeopleApi.js";
 import { displayPopularPeople } from "./pages/popularPeople.js";
+
+
+
+
 
 window.addEventListener('popstate', (e) => {
   location.reload()
@@ -72,15 +79,9 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       .then((data) => {
         selectCardsAndGivingIds()
       });
-  }  else if (location.pathname == "/popularPeople.html" ||
-    location.pathname == "/popularPeople.html") {
-   getPopularPeople().then((data)=>{
-    displayPopularPeople(data)
-    console.log(data);
-   })
-  } else if (location.pathname == "/movie.html" ||
-  location.pathname == "movie.html" ) {
-    getMovieDetails(history.state.id).then((data)=>{
+
+  } else if (location.pathname == "/movie.html") {
+    getMovieDetails(history.state.id).then((data) => {
       displayMoviesDetails(data)
       console.log(data);
     });
@@ -114,6 +115,21 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       anathermoviepage();
       console.log(anathermoviepage);
     });
+
+  } else if (location.pathname == "/popularPeople.html" ||
+    location.pathname == "/popularPeople.html") {
+   getPopularPeople().then((data)=>{
+    displayPopularPeople(data)
+    console.log(data);
+    let cards = document.querySelectorAll(".people_page");
+      cards.forEach((card) => {
+        card.addEventListener("click", (e) => {
+          let id = e.target.id;
+          history.pushState({ id }, null, "/person.html");
+          location.reload();
+        });
+      });
+   })
 
   }
 
