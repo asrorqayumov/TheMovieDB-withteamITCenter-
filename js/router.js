@@ -17,6 +17,17 @@ import { getTrendingMoviesWeek } from "./apis/homeApi.js";
 import { getTvSeriesListMoviesTv } from "./apis/homeApi.js";
 import { getTvSeriesListMoviesTheater } from "./apis/homeApi.js";
 import { getMovieDetails } from "./apis/movieApi.js";
+import { displayMoviesDetails } from "./pages/movieImport.js";
+import { getMoviesPeoples } from "./apis/movieApi.js";
+import { displayMoviesPeople } from "./pages/movieImport.js";
+
+import { getMoviesSocialReview } from "./apis/movieApi.js";
+import { displayMoviesSocialReview } from "./pages/movieImport.js";
+
+import { getMovieRecommandations } from "./apis/movieApi.js";
+import { displayMoviesRecommandation } from "./pages/movieImport.js";
+
+
 
 window.addEventListener('popstate', (e)=>{
     location.reload()
@@ -57,9 +68,43 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       .then((data) => {
         selectCardsAndGivingIds()
       });
-  } else if (location.pathname == "/movie.html") {
-    // ...
+  } else if (location.pathname == "/movie.html" ||
+  location.pathname == "movie.html" ) {
+    getMovieDetails(history.state.id).then((data)=>{
+      displayMoviesDetails(data)
+      console.log(data);
+    });
+
+    getMoviesPeoples(history.state.id).then((data)=>{
+      displayMoviesPeople(data)
+      console.log(data);
+    });
+
+    getMoviesSocialReview(history.state.id).then((data)=>{
+      displayMoviesSocialReview(data)
+      console.log(data);
+    });
     
+    
+
+    function anathermoviepage() {
+      let cards = document.querySelectorAll(".recommandation_img");
+      cards.forEach((card) => {
+        card.addEventListener("click", (e) => {
+          let id = e.target.id;
+          history.pushState({ id }, null, "movie.html");
+          location.reload();
+        });
+      });
+    }
+
+    getMovieRecommandations(history.state.id, anathermoviepage).then((data)=>{
+      displayMoviesRecommandation(data);
+      console.log(data);
+      anathermoviepage();
+      console.log(anathermoviepage);
+    });
+
   }
 
 });

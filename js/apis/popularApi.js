@@ -52,7 +52,7 @@ export async function searchMovies(value) {
       }
     };
     let request = await fetch(
-      `${Config.BASE_URL}search/movie?query=harry&include_adult=false&language=en-US&page=1&sort_by=${value}`, options)
+      `${Config.BASE_URL}search/movie?query=${value}&include_adult=false&language=en-US&page=1&sort_by`, options)
       ;
     let response = await request.json();
     return response.results;
