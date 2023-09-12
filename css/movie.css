@@ -572,12 +572,12 @@ a[data-tooltip]:hover::after {
 /* //////////////////////////////////////////////////////////////////////////////////////////////// */
 
 .reviews .content {
-    width: 1300px;
+    width: 110%;
     height: auto;
     border-radius: 10px;
     position: relative;
     top: 80px;
-    left: -10px;
+    left: -90px;
 }
 
 .reviews .card {
