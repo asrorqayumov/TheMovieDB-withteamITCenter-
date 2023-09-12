@@ -11,7 +11,7 @@ export function displayMoviesDetails(getMovieRequestDetailes) {
         let html;
         genres.forEach((data) => {
             html += `
-           <span><a href="#">${data.name}</a></span>
+           <span><a href="#">${data.name},</a></span>
            `;
 
         })
@@ -61,33 +61,7 @@ export function displayMoviesDetails(getMovieRequestDetailes) {
                         <span><i class="fa fa-bookmark" aria-hidden="true"></i></span>
                         <span><i class="fa fa-star" aria-hidden="true">
                                 <div class="star-main">
-                                    <fieldset class="rating">
-                                        <input type="radio" id="star5" name="rating" value="5" /><label
-                                            class="full" for="star5" title="Awesome - 5 stars"></label>
-                                        <input type="radio" id="star4half" name="rating"
-                                            value="4 and a half" /><label class="half" for="star4half"
-                                            title="Pretty good - 4.5 stars"></label>
-                                        <input type="radio" id="star4" name="rating" value="4" checked /><label
-                                            class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                        <input type="radio" id="star3half" name="rating"
-                                            value="3 and a half" /><label class="half" for="star3half"
-                                            title="Meh - 3.5 stars"></label>
-                                        <input type="radio" id="star3" name="rating" value="3" /><label
-                                            class="full" for="star3" title="Meh - 3 stars"></label>
-                                        <input type="radio" id="star2half" name="rating"
-                                            value="2 and a half" /><label class="half" for="star2half"
-                                            title="Kinda bad - 2.5 stars"></label>
-                                        <input type="radio" id="star2" name="rating" value="2" /><label
-                                            class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                        <input type="radio" id="star1half" name="rating"
-                                            value="1 and a half" /><label class="half" for="star1half"
-                                            title="Meh - 1.5 stars"></label>
-                                        <input type="radio" id="star1" name="rating" value="1" /><label
-                                            class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                        <input type="radio" id="starhalf" name="rating" value="half" /><label
-                                            class="half" for="starhalf"
-                                            title="Sucks big time - 0.5 stars"></label>
-                                    </fieldset>
+                                   
 
                                 </div>
                             </i></span>
@@ -145,7 +119,7 @@ export async function displayMoviesPeople(getMovieRequestPeople) {
           </div>
           <div class="actors-name">
               <h4><a href="">${name}</a></h4>
-              <p>${character}(voice)</p>
+              <p>${character}</p>
           </div>
       </div>
         `;
@@ -154,89 +128,106 @@ export async function displayMoviesPeople(getMovieRequestPeople) {
 }
 
 
-// export function displayMoviesSocialReview(getMovieRequestSocialReview) {
-//     let cardsWrapper = document.querySelector(".media_panel");
-//     console.log(getMovieRequestSocialReview);
-//     let html = "";
-//     // let {name, username, avatar_path, rating, content, created_at} =
-//     // getMovieRequestSocialReview;
-//     html += `
-//     <div class="content">
-//     <div class="original_content">
-//         <div class="review_container four">
-//             <div class="content four">
-//                 <div class="inner_content">
-//                     <div class="content">
-//                         <div class="inner_content">
-//                             <div class="card">
-//                                 <div class="grouped">
-//                                     <div class="avatar">
-//                                         <a href="/u/garethmb">
-//                                             <img loading="lazy" class="avatar"
-//                                                 src="https://secure.gravatar.com/avatar/3593437cbd05cebe0a4ee753965a8ad1.jpg?s=45"
-//                                                 srcset="https://secure.gravatar.com/avatar/3593437cbd05cebe0a4ee753965a8ad1.jpg?s=45 1x, https://secure.gravatar.com/avatar/3593437cbd05cebe0a4ee753965a8ad1.jpg?s=90 2x"
-//                                                 alt="garethmb">
-//                                         </a>
-//                                     </div>
+export function displayMoviesSocialReview(getMovieRequestSocialReview) {
+    let cardsWrapper = document.querySelector(".reviews");
+    console.log(getMovieRequestSocialReview);
+    let html = "";
+    let {avatar_path, username, name, rating, content} =
+    getMovieRequestSocialReview;
 
-//                                     <div class="info">
+    function looping(results) {
+        let html;
+        results.forEach((data) => {
+            html += `
+           `;
 
-//                                         <h3><a href="/review/64836616bf31f2505880d52a">A review by
-//                                                 garethmb</a></h3>
-//                                         <div class="flex">
-//                                             <div class="rounded rating"><span
-//                                                     class="glyphicons_v2 star invert svg"><i
-//                                                         class="fa fa-star" aria-hidden="true"></i>
-//                                                     </i></span> 8.0
-//                                             </div>
-//                                             <h5>Written by <a href="/u/garethmb">garethmb</a> on June 9,
-//                                                 2023</h5>
-//                                         </div>
-//                                     </div>
-//                                 </div>
+        })
+        return html
+    }
 
-//                                 <div class="teaser">
-//                                     <p>Finding your way in the world can be very difficult and even more
-//                                         so when you are a fire element with an explosive temper. In the
-//                                         new Pixar film "Elemental" audiences are introduced to Ember
-//                                         (Leah Lewis), a young flame being who lives with her mother and
-//                                         father in their combination home and business that caters to
-//                                         other fire beings. In a city where the various elements live and
-//                                         work can have its challenges, especially to the destructive
-//                                         nature of fire which causes some prejudice against them as well
-//                                         as their natural distrust of water.</p>
+    html += `
+    <div class="content">
+    <div class="inner_content">
+        <div class="card">
+            <div class="grouped">
+                <div class="avatar">
+                    <a href="/u/garethmb">
+                        <img loading="lazy" class="avatar"
+                            src="${config.BASE_IMG_URL}${avatar_path}"
+                            alt="garethmb">
+                    </a>
+                </div>
 
-//                                     <p>Ember is preparing for the day that she will take over th... <a
-//                                             class="underline"
-//                                             href="/review/64836616bf31f2505880d52a">read the rest.</a>
-//                                     </p>
+                <div class="info">
 
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </div>
-//                     <p class="new_button"><a href="/movie/976573-elemental/reviews">Read All Reviews</a>
-//                     </p>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
+                    <h3><a href="/review/64836616bf31f2505880d52a">A review by
+                            ${name}</a></h3>
+                    <div class="flex">
+                        <div class="rounded rating"><span
+                                class="glyphicons_v2 star invert svg"><i class="fa fa-star"
+                                    aria-hidden="true"></i>
+                                </i></span>${rating}
+                        </div>
+                        <h5>Written by <a href="/u/garethmb">${name}</a> on June 9,
+                            2023</h5>
+                    </div>
+                </div>
+            </div>
 
-// </div>
-//       `;
-//     cardsWrapper.innerHTML = html;
+            <div class="teaser">
+                <p>${content}</p>
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+      `;
+    cardsWrapper.innerHTML = html;
 
 
-// }
+}
 
 
+
+// export function selectCardsAndGivingIds() {
+//     let cards = document.querySelectorAll(".card__img__poster");
+//     cards.forEach((card) => {
+//       card.addEventListener("click", (e) => {
+//         let id = e.target.id;
+//         history.pushState({ id }, null, "movie.html");
+//         location.reload();
+//       });
+//     });
+//   }
+//   export function FilteredMovies(formHandler, displayPopular, selectCardsAndGivingIds) {
+//     formHandler.addEventListener("submit", async (e) => {
+//       e.preventDefault();
+//       let sortByValue = e.target.sortBy.value;
+//       let searchMovie = e.target.searchInput.value;
+//       if (sortByValue != '') {
+//         await filterMovies(sortByValue).then((data) => {
+//           displayPopular(data);
+//           selectCardsAndGivingIds()
+//         });
+//       }
+//       if (searchMovie != '') {
+//         await searchMovies(searchMovie).then((data) => {
+//           displayPopular(data);
+//           selectCardsAndGivingIds()
+//         });
+//       }
+  
+//     });
+//   }
 
 
 export async function displayMoviesRecommandation(getMovieRequestRecommandation) {
     let cardsWrapper = document.querySelector(".recommendation_waypoint");
     let html = "";
     getMovieRequestRecommandation.forEach((movie) => {
-        let { original_title, backdrop_path, release_date, vote_average} =
+        let { original_title, backdrop_path, release_date, vote_average } =
             movie;
         let vote = Math.round(vote_average * 10);
         html += `
@@ -247,7 +238,7 @@ export async function displayMoviesRecommandation(getMovieRequestRecommandation)
                             <div class="image_content">
                                 <a href="">
                                     <img loading="lazy" class="backdrop"
-                                        src="${config.BASE_IMG_URL}${backdrop_path}" class="card__img__poster"
+                                        src="${config.BASE_IMG_URL}${backdrop_path}" class="recommandation_img"
                                         alt="">
 
                                     <div class="meta">

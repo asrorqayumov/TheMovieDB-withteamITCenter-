@@ -56,7 +56,7 @@ export async function getMoviesSocialReview(id) {
             },
         };
         let request = await fetch(
-            `${Config.BASE_URL}movie/${id}?/reviews?language=en-US&page=1'`,
+            `${Config.BASE_URL}movie/${id}/reviews?language=en-US&page=1'`,
             options
         );
 
