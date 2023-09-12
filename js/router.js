@@ -4,10 +4,11 @@ import {
   displayTvSeriesListMoviesTv,
   displayTvSeriesListMoviesTheater,
 } from "./pages/home.js";
-import { displayPopular,
-         FilteredMovies, 
-         selectCardsAndGivingIds,
-         } from "./pages/popular-movie.js";
+import {
+  displayPopular,
+  FilteredMovies,
+  selectCardsAndGivingIds,
+} from "./pages/popular-movie.js";
 
 
 
@@ -29,8 +30,8 @@ import { displayMoviesRecommandation } from "./pages/movieImport.js";
 
 
 
-window.addEventListener('popstate', (e)=>{
-    location.reload()
+window.addEventListener('popstate', (e) => {
+  location.reload()
 })
 
 document.addEventListener("DOMContentLoaded", async (e) => {
@@ -60,7 +61,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
     location.pathname == "popularMovie.html"
   ) {
     let formHandler = document.querySelector(".form__search");
-    FilteredMovies(formHandler,displayPopular,selectCardsAndGivingIds);
+    FilteredMovies(formHandler, displayPopular, selectCardsAndGivingIds);
     getPopularMoviesWeek()
       .then((data) => {
         displayPopular(data);
@@ -69,40 +70,33 @@ document.addEventListener("DOMContentLoaded", async (e) => {
         selectCardsAndGivingIds()
       });
   } else if (location.pathname == "/movie.html" ||
-  location.pathname == "movie.html" ) {
-    getMovieDetails(history.state.id).then((data)=>{
+    location.pathname == "movie.html") {
+    getMovieDetails(history.state.id).then((data) => {
       displayMoviesDetails(data)
       console.log(data);
     });
 
-    getMoviesPeoples(history.state.id).then((data)=>{
+    getMoviesPeoples(history.state.id).then((data) => {
       displayMoviesPeople(data)
       console.log(data);
     });
 
-    getMoviesSocialReview(history.state.id).then((data)=>{
+    getMoviesSocialReview(history.state.id).then((data) => {
       displayMoviesSocialReview(data)
       console.log(data);
     });
-    
-    
 
-    function anathermoviepage() {
+    getMovieRecommandations(history.state.id).then((data) => {
+      displayMoviesRecommandation(data);
       let cards = document.querySelectorAll(".recommandation_img");
+      console.log(cards);
       cards.forEach((card) => {
         card.addEventListener("click", (e) => {
           let id = e.target.id;
-          history.pushState({ id }, null, "movie.html");
+          history.pushState({ id }, null, "/movie.html");
           location.reload();
         });
       });
-    }
-
-    getMovieRecommandations(history.state.id, anathermoviepage).then((data)=>{
-      displayMoviesRecommandation(data);
-      console.log(data);
-      anathermoviepage();
-      console.log(anathermoviepage);
     });
 
   }
