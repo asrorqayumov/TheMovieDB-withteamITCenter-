@@ -11,11 +11,11 @@ export  async function displayPopularPeople(getRequestPopularPeople) {
    
     <div class="boxx">
     <div class="menu-img">
-        <img src="${config.BASE_IMG_URL}${profile_path}" alt="">
+        <img src="${config.BASE_IMG_URL}${profile_path}" class="people_page" alt="">
     </div>
     <div class="text-box">
     <h5>${original_name}</h5>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, magni!</p>
+    <p></p>
   </div>
 </div>
       `;

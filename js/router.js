@@ -19,6 +19,9 @@ import { getTvSeriesListMoviesTv } from "./apis/homeApi.js";
 import { getTvSeriesListMoviesTheater } from "./apis/homeApi.js";
 import { getMovieDetails } from "./apis/movieApi.js";
 
+import { getPopularPeople } from "./apis/popularPeopleApi.js";
+import { displayPopularPeople } from "./pages/popularPeople.js";
+
 window.addEventListener('popstate', (e) => {
   location.reload()
 })
@@ -63,7 +66,10 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 
   } else if (location.pathname == "/popularPeople.html" ||
     location.pathname == "/popularPeople.html") {
-   
+   getPopularPeople().then((data)=>{
+    displayPopularPeople(data)
+    console.log(data);
+   })
 
   }
 
