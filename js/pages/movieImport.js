@@ -1,47 +1,50 @@
 import config from "../tools/config.js";
 
-import { getMovieDetails } from "./apis/movieApi.js";
-
 export function displayMoviesDetails(getMovieRequestDetailes) {
     let cardsWrapper = document.querySelector(".movie-card");
+    console.log(getMovieRequestDetailes);
     let html = "";
-    getMovieRequestDetailes.forEach((movie) => {
-        let { backdrop_path, name, poster_path, original_title, id, overview, popularity, origin_country } =
-            movie;
-        let vote = Math.round(vote_average * 10);
-        html += `
+    let { backdrop_path, poster_path, vote_average, original_title, genres, overview, release_date, runtime, tagline } =
+        getMovieRequestDetailes;
+    let vote = Math.round(vote_average * 10);
+    function looping(genres) {
+        let html;
+        genres.forEach((data) => {
+            html += `
+           <span><a href="#">${data.name},</a></span>
+           `;
+
+        })
+        return html
+    }
+    html += `
     <div class="container-movie">
 
         <a href="#"><img
-                src="${config.BASE_IMG_URL}${backdrop_path}"
+                src="${config.BASE_IMG_URL}${poster_path}"
                 alt="cover" class="cover" /></a>
 
         <div class="hero">
             <a href="#" class="hero-img"><img
-                    src="${config.BASE_IMG_URL}${poster_path}" /></a>
+                    src="${config.BASE_IMG_URL}${backdrop_path}" /></a>
 
             <div class="details">
 
-                <div class="title1"><a href="#">${original_title} </a><span>(2023)</span></div>
+                <div class="title1"><a href="#">${original_title}</a><span>(2023)</span></div>
 
                 <div class="title2"><span><i class="fa fa-picture-o" aria-hidden="true"></i></span>
-                    06/16/2023${origin_country} <span><i class="fa fa-circle" aria-hidden="true">
-                            <span><a href="#">Animation,</a></span>
-                            <span><a href="#">Comedy,</a></span>
-                            <span><a href="#">Family,</a></span>
-                            <span><a href="#">Fantasy,</a></span>
-                            <span><a href="#">Romance,</a></span>
+                ${release_date} (US) <span><i class="fa fa-circle" aria-hidden="true">
+                            ${looping(genres)}
                         </i></span>
                     <span><i class="fa fa-circle" aria-hidden="true">
-                            <p></p>
-                        </i>p1h 42m</span>
+                        </i>${runtime}</span>
                 </div>
 
                 <div class="circles-box">
                     <div class="circle-text">
                         <div class="circle-progressbar">
                             <div role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"
-                                style="--value: ${popularity}"></div>
+                                style="--value: ${vote}"></div>
                         </div>
                         <div class="latest-b-text">
                             <a href="#"><strong></strong></a>
@@ -58,40 +61,14 @@ export function displayMoviesDetails(getMovieRequestDetailes) {
                         <span><i class="fa fa-bookmark" aria-hidden="true"></i></span>
                         <span><i class="fa fa-star" aria-hidden="true">
                                 <div class="star-main">
-                                    <fieldset class="rating">
-                                        <input type="radio" id="star5" name="rating" value="5" /><label
-                                            class="full" for="star5" title="Awesome - 5 stars"></label>
-                                        <input type="radio" id="star4half" name="rating"
-                                            value="4 and a half" /><label class="half" for="star4half"
-                                            title="Pretty good - 4.5 stars"></label>
-                                        <input type="radio" id="star4" name="rating" value="4" checked /><label
-                                            class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                        <input type="radio" id="star3half" name="rating"
-                                            value="3 and a half" /><label class="half" for="star3half"
-                                            title="Meh - 3.5 stars"></label>
-                                        <input type="radio" id="star3" name="rating" value="3" /><label
-                                            class="full" for="star3" title="Meh - 3 stars"></label>
-                                        <input type="radio" id="star2half" name="rating"
-                                            value="2 and a half" /><label class="half" for="star2half"
-                                            title="Kinda bad - 2.5 stars"></label>
-                                        <input type="radio" id="star2" name="rating" value="2" /><label
-                                            class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                        <input type="radio" id="star1half" name="rating"
-                                            value="1 and a half" /><label class="half" for="star1half"
-                                            title="Meh - 1.5 stars"></label>
-                                        <input type="radio" id="star1" name="rating" value="1" /><label
-                                            class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                        <input type="radio" id="starhalf" name="rating" value="half" /><label
-                                            class="half" for="starhalf"
-                                            title="Sucks big time - 0.5 stars"></label>
-                                    </fieldset>
+                                   
 
                                 </div>
                             </i></span>
                     </div>
                 </div>
 
-                <p class="title3">Opposites react.</p>
+                <p class="title3">${tagline}</p>
 
                 <h2>Overwiev</h2>
                 <p class="text">
@@ -99,15 +76,15 @@ export function displayMoviesDetails(getMovieRequestDetailes) {
                 </p>
 
                 <div class="about-title">
-                    <div>
+                    <div class="about-title-name">
                         <a href="">Peter Sohn</a>
                         <p>Director story</p>
                     </div>
-                    <div>
+                    <div class="about-title-name">
                         <a href="">John Hoberg</a>
                         <p>Screenplay, Story</p>
                     </div>
-                    <div>
+                    <div class="about-title-name">
                         <a href="">Kat Likkel</a>
                         <p>Screenplay, Story</p>
                     </div>
@@ -122,27 +99,186 @@ export function displayMoviesDetails(getMovieRequestDetailes) {
     </div>
 
       `;
-    });
     cardsWrapper.innerHTML = html;
 
 
 }
-displayMoviesDetails(getMovieRequestDetailes)
-
 
 
 export async function displayMoviesPeople(getMovieRequestPeople) {
-    let cardsWrapper = document.querySelector("");
+    let cardsWrapper = document.querySelector(".about-actors");
     let html = "";
     getMovieRequestPeople.forEach((movie) => {
-        let { original_title, release_date, vote_average, backdrop_path, id } =
+        let { name, character, profile_path } =
             movie;
-        let vote = Math.round(vote_average * 10);
         html += `
-       
+      <div class="actors-card">
+          <div class="actors-img">
+              <img src="${config.BASE_IMG_URL}${profile_path}"
+                  alt="">
+          </div>
+          <div class="actors-name">
+              <h4><a href="">${name}</a></h4>
+              <p>${character}</p>
+          </div>
+      </div>
         `;
     });
+    cardsWrapper.innerHTML = html;
+}
+
+
+export function displayMoviesSocialReview(getMovieRequestSocialReview) {
+    let cardsWrapper = document.querySelector(".reviews");
+    console.log(getMovieRequestSocialReview);
+    let html = "";
+    let {avatar_path, username, name, rating, content} =
+    getMovieRequestSocialReview;
+
+    function looping(results) {
+        let html;
+        results.forEach((data) => {
+            html += `
+           `;
+
+        })
+        return html
+    }
+
+    html += `
+    <div class="content">
+    <div class="inner_content">
+        <div class="card">
+            <div class="grouped">
+                <div class="avatar">
+                    <a href="/u/garethmb">
+                        <img loading="lazy" class="avatar"
+                            src="${config.BASE_IMG_URL}${avatar_path}"
+                            alt="garethmb">
+                    </a>
+                </div>
+
+                <div class="info">
+
+                    <h3><a href="/review/64836616bf31f2505880d52a">A review by
+                            ${name}</a></h3>
+                    <div class="flex">
+                        <div class="rounded rating"><span
+                                class="glyphicons_v2 star invert svg"><i class="fa fa-star"
+                                    aria-hidden="true"></i>
+                                </i></span>${rating}
+                        </div>
+                        <h5>Written by <a href="/u/garethmb">${name}</a> on June 9,
+                            2023</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="teaser">
+                <p>${content}</p>
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+      `;
     cardsWrapper.innerHTML = html;
 
 
 }
+
+
+
+// export function selectCardsAndGivingIds() {
+//     let cards = document.querySelectorAll(".card__img__poster");
+//     cards.forEach((card) => {
+//       card.addEventListener("click", (e) => {
+//         let id = e.target.id;
+//         history.pushState({ id }, null, "movie.html");
+//         location.reload();
+//       });
+//     });
+//   }
+//   export function FilteredMovies(formHandler, displayPopular, selectCardsAndGivingIds) {
+//     formHandler.addEventListener("submit", async (e) => {
+//       e.preventDefault();
+//       let sortByValue = e.target.sortBy.value;
+//       let searchMovie = e.target.searchInput.value;
+//       if (sortByValue != '') {
+//         await filterMovies(sortByValue).then((data) => {
+//           displayPopular(data);
+//           selectCardsAndGivingIds()
+//         });
+//       }
+//       if (searchMovie != '') {
+//         await searchMovies(searchMovie).then((data) => {
+//           displayPopular(data);
+//           selectCardsAndGivingIds()
+//         });
+//       }
+  
+//     });
+//   }
+
+
+export async function displayMoviesRecommandation(getMovieRequestRecommandation) {
+    let cardsWrapper = document.querySelector(".recommendation_waypoint");
+    let html = "";
+    getMovieRequestRecommandation.forEach((movie) => {
+        let { original_title, backdrop_path, release_date, vote_average } =
+            movie;
+        let vote = Math.round(vote_average * 10);
+        html += `
+      <div id="recommendation_scroller" class="scroller_wrap should_fade is_fading">
+                    <div class="scroller">
+
+                        <div class="item mini backdrop mini_card">
+                            <div class="image_content">
+                                <a href="">
+                                    <img loading="lazy" class="backdrop"
+                                        src="${config.BASE_IMG_URL}${backdrop_path}" class="recommandation_img"
+                                        alt="">
+
+                                    <div class="meta">
+                                        <span class="release_date"><span class="glyphicons_v2 calendar"></span>
+                                            ${release_date}</span>
+                                        <span>
+                                            <span id="rating_5f0cbd05498ef90036861a5f"
+                                                class="glyphicons_v2 star right rating"></span>
+                                            <span id="favourite_5f0cbd05498ef90036861a5f"
+                                                class="glyphicons_v2 heart favourite list_action"
+                                                data-media-type="movie"></span>
+                                            <span id="favourite_5f0cbd05498ef90036861a5f_value" class="hide">Add to your
+                                                favorite list</span>
+                                            <span id="watchlist_5f0cbd05498ef90036861a5f"
+                                                class="glyphicons_v2 bookmark watchlist list_action"
+                                                data-media-type="movie"></span>
+                                            <span id="watchlist_5f0cbd05498ef90036861a5f_value" class="hide">Add to your
+                                                watchlist</span>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                            <p class="movie flex">
+                                <a class="title" href="" title=""
+                                    alt=""><bdi>${original_title}</bdi></a>
+                                <span class="vote_average">${vote}%</span>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+        `;
+    });
+    cardsWrapper.innerHTML = html;
+}
+
+
+
+
+
+
+
+
