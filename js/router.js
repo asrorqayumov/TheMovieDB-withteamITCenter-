@@ -10,7 +10,13 @@ import {
   selectCardsAndGivingIds,
 } from "./pages/popular-movie.js";
 
+import {
+  displayPopularperson
 
+} from "./pages/person.js";
+
+
+import { getPopularpersonbiography } from "./apis/personApi.js";
 
 import { getPopularMoviesWeek } from "./apis/popularApi.js";
 import { getTrendingMoviesToday } from "./apis/homeApi.js";
@@ -79,6 +85,15 @@ document.addEventListener("DOMContentLoaded", async (e) => {
     getMoviesPeoples(history.state.id).then((data) => {
       displayMoviesPeople(data)
       console.log(data);
+      let cards = document.querySelectorAll(".people_img");
+      console.log(cards);
+      cards.forEach((card) => {
+        card.addEventListener("click", (e) => {
+          let id = e.target.id;
+          history.pushState({ id }, null, "/person.html");
+          location.reload();
+        });
+      });
     });
 
     getMoviesSocialReview(history.state.id).then((data) => {
@@ -100,5 +115,6 @@ document.addEventListener("DOMContentLoaded", async (e) => {
     });
 
   }
+
 
 });

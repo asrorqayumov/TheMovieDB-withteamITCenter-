@@ -109,13 +109,13 @@ export async function displayMoviesPeople(getMovieRequestPeople) {
     let cardsWrapper = document.querySelector(".about-actors");
     let html = "";
     getMovieRequestPeople.forEach((movie) => {
-        let { name, character, profile_path } =
+        let { name, character, profile_path , id} =
             movie;
         html += `
       <div class="actors-card">
           <div class="actors-img">
-              <img src="${config.BASE_IMG_URL}${profile_path}"
-                  alt="">
+              <img src="${config.BASE_IMG_URL}${profile_path}" class="people_img" id="${id}"
+                  alt=""> 
           </div>
           <div class="actors-name">
               <h4><a href="">${name}</a></h4>
