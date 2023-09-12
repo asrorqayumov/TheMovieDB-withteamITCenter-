@@ -108,7 +108,7 @@ export function displayPopular(getPopularMoviesWeek) {
 }
 
 let button_ = document.querySelectorAll(`.form__select__button`)
-console.log(button_);
+// console.log(button_);
 button_.forEach(button => {
   button.addEventListener('click', (e) => {
 
