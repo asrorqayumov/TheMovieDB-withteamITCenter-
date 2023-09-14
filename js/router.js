@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       displayMoviesPeople(data)
       console.log(data);
       let cards = document.querySelectorAll(".people_img");
-      console.log(cards);
+      // console.log(cards);
       cards.forEach((card) => {
         card.addEventListener("click", (e) => {
           let id = e.target.id;
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
     getMovieRecommandations(history.state.id).then((data) => {
       displayMoviesRecommandation(data);
       let cards = document.querySelectorAll(".recommandation_img");
-      console.log(cards);
+      // console.log(cards);
       cards.forEach((card) => {
         card.addEventListener("click", (e) => {
           let id = e.target.id;
