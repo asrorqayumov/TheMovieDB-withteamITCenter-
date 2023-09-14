@@ -109,13 +109,13 @@ export async function displayMoviesPeople(getMovieRequestPeople) {
     let cardsWrapper = document.querySelector(".about-actors");
     let html = "";
     getMovieRequestPeople.forEach((movie) => {
-        let { name, character, profile_path } =
+        let { name, character, profile_path , id} =
             movie;
         html += `
       <div class="actors-card">
           <div class="actors-img">
-              <img src="${config.BASE_IMG_URL}${profile_path}"
-                  alt="">
+              <img src="${config.BASE_IMG_URL}${profile_path}" class="people_img" id="${id}"
+                  alt=""> 
           </div>
           <div class="actors-name">
               <h4><a href="">${name}</a></h4>
@@ -128,22 +128,16 @@ export async function displayMoviesPeople(getMovieRequestPeople) {
 }
 
 
-export function displayMoviesSocialReview(getMovieRequestSocialReview) {
+export function displayMoviesSocialReview(data) {
     let cardsWrapper = document.querySelector(".reviews");
-    console.log(getMovieRequestSocialReview);
     let html = "";
-    let {avatar_path, username, name, rating, content} =
-    getMovieRequestSocialReview;
-
-    function looping(results) {
-        let html;
-        results.forEach((data) => {
-            html += `
-           `;
-
-        })
-        return html
-    }
+    // let random = Math.random();
+    function random(max) {
+        return Math.floor(Math.random() * max);
+      }
+    let {avatar_path, username, name, author,  rating, content} =
+    data[random(3)];
+   
 
     html += `
     <div class="content">
@@ -161,7 +155,7 @@ export function displayMoviesSocialReview(getMovieRequestSocialReview) {
                 <div class="info">
 
                     <h3><a href="/review/64836616bf31f2505880d52a">A review by
-                            ${name}</a></h3>
+                            ${author}</a></h3>
                     <div class="flex">
                         <div class="rounded rating"><span
                                 class="glyphicons_v2 star invert svg"><i class="fa fa-star"
@@ -191,43 +185,14 @@ export function displayMoviesSocialReview(getMovieRequestSocialReview) {
 
 
 
-// export function selectCardsAndGivingIds() {
-//     let cards = document.querySelectorAll(".card__img__poster");
-//     cards.forEach((card) => {
-//       card.addEventListener("click", (e) => {
-//         let id = e.target.id;
-//         history.pushState({ id }, null, "movie.html");
-//         location.reload();
-//       });
-//     });
-//   }
-//   export function FilteredMovies(formHandler, displayPopular, selectCardsAndGivingIds) {
-//     formHandler.addEventListener("submit", async (e) => {
-//       e.preventDefault();
-//       let sortByValue = e.target.sortBy.value;
-//       let searchMovie = e.target.searchInput.value;
-//       if (sortByValue != '') {
-//         await filterMovies(sortByValue).then((data) => {
-//           displayPopular(data);
-//           selectCardsAndGivingIds()
-//         });
-//       }
-//       if (searchMovie != '') {
-//         await searchMovies(searchMovie).then((data) => {
-//           displayPopular(data);
-//           selectCardsAndGivingIds()
-//         });
-//       }
-  
-//     });
-//   }
+
 
 
 export async function displayMoviesRecommandation(getMovieRequestRecommandation) {
     let cardsWrapper = document.querySelector(".recommendation_waypoint");
     let html = "";
     getMovieRequestRecommandation.forEach((movie) => {
-        let { original_title, backdrop_path, release_date, vote_average } =
+        let { original_title, backdrop_path, id, release_date, vote_average } =
             movie;
         let vote = Math.round(vote_average * 10);
         html += `
@@ -237,9 +202,8 @@ export async function displayMoviesRecommandation(getMovieRequestRecommandation)
                         <div class="item mini backdrop mini_card">
                             <div class="image_content">
                                 <a href="">
-                                    <img loading="lazy" class="backdrop"
-                                        src="${config.BASE_IMG_URL}${backdrop_path}" class="recommandation_img"
-                                        alt="">
+                                    <img loading="lazy" class="backdrop recommandation_img" src="${config.BASE_IMG_URL}${backdrop_path}" 
+                                        alt="" id="${id}">
 
                                     <div class="meta">
                                         <span class="release_date"><span class="glyphicons_v2 calendar"></span>
