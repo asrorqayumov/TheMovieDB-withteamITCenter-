@@ -118,7 +118,6 @@ document.addEventListener("DOMContentLoaded", async (e) => {
  
 else if (location.pathname == "/person.html" ||
 location.pathname == "person.html"){
-    console.log(history.state);
   getPopularpersonbiography(history.state.id).then(data=>{
     displayPopularperson_biography(data)
 
