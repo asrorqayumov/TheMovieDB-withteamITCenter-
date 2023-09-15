@@ -11,7 +11,7 @@ import {
 } from "./pages/popular-movie.js";
 
 import {
-  displayPopularperson
+  displayPopularperson, displayPopularperson_biography
 
 } from "./pages/person.js";
 
@@ -134,6 +134,17 @@ document.addEventListener("DOMContentLoaded", async (e) => {
    })
 
   }
+ 
+else if (location.pathname == "/person.html" ||
+location.pathname == "person.html"){
+  getPopularpersonbiography(history.state.id).then(data=>{
+    displayPopularperson_biography(data)
 
+<<<<<<< HEAD
+=======
+  })
+
+}
+>>>>>>> d24c867ef5763ac8cdfe017a0c1470dc38a2a5dd
 });
 
