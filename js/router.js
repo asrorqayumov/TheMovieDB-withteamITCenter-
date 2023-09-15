@@ -23,7 +23,7 @@ import { getTrendingMoviesToday } from "./apis/homeApi.js";
 import { getTrendingMoviesWeek } from "./apis/homeApi.js";
 import { getTvSeriesListMoviesTv } from "./apis/homeApi.js";
 import { getTvSeriesListMoviesTheater } from "./apis/homeApi.js";
-import { getMovieDetails } from "./apis/movieApi.js";
+import { favouriteRequest, getMovieDetails } from "./apis/movieApi.js";
 import { displayMoviesDetails } from "./pages/movieImport.js";
 import { getMoviesPeoples } from "./apis/movieApi.js";
 import { displayMoviesPeople } from "./pages/movieImport.js";
@@ -33,6 +33,7 @@ import { displayMoviesSocialReview } from "./pages/movieImport.js";
 
 import { getMovieRecommandations } from "./apis/movieApi.js";
 import { displayMoviesRecommandation } from "./pages/movieImport.js";
+import config from "./tools/config.js";
 
 
 
@@ -77,6 +78,8 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       });
   } else if (location.pathname == "/movie.html" ||
     location.pathname == "movie.html") {
+  favouriteRequest(config.ACCAUNT_ID)
+
     getMovieDetails(history.state.id).then((data) => {
       displayMoviesDetails(data)
       console.log(data);

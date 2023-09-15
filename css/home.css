@@ -69,11 +69,6 @@ header .tmd {
     display: none;
 }
 
-body {
-    /* background-color: rgb(2, 26, 56); */
-
-}
-
 body .container {
     background-color: white;
 }
