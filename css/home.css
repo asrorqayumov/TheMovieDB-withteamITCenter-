@@ -588,14 +588,14 @@ header .bib {
         margin-left: 6px;
     }
 
-    .dropdown-content {
+    /* .dropdown-content {
         display: none;
     }
 
     .dropdown-content1 {
         display: none;
         overflow: hidden;
-    }
+    } */
 
     header .ul2 {
         margin-left: -230px;

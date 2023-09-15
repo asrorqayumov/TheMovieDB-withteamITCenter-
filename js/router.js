@@ -33,7 +33,10 @@ import { displayMoviesSocialReview } from "./pages/movieImport.js";
 
 import { getMovieRecommandations } from "./apis/movieApi.js";
 import { displayMoviesRecommandation } from "./pages/movieImport.js";
-import config from "./tools/config.js";
+import { getPopularPeople } from "./apis/popularPeopleApi.js";
+import { displayPopularPeople } from "./pages/popularPeople.js";
+
+
 
 
 
@@ -76,10 +79,8 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       .then((data) => {
         selectCardsAndGivingIds()
       });
-  } else if (location.pathname == "/movie.html" ||
-    location.pathname == "movie.html") {
-  favouriteRequest(config.ACCAUNT_ID)
 
+  } else if (location.pathname == "/movie.html") {
     getMovieDetails(history.state.id).then((data) => {
       displayMoviesDetails(data)
       console.log(data);
@@ -117,7 +118,22 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       });
     });
 
+  } else if (location.pathname == "/popularPeople.html" ||
+    location.pathname == "/popularPeople.html") {
+   getPopularPeople().then((data)=>{
+    displayPopularPeople(data)
+    console.log(data);
+    let cards = document.querySelectorAll(".people_page");
+      cards.forEach((card) => {
+        card.addEventListener("click", (e) => {
+          let id = e.target.id;
+          history.pushState({ id }, null, "/person.html");
+          location.reload();
+        });
+      });
+   })
+
   }
 
-
 });
+
