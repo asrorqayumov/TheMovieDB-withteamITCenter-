@@ -128,5 +128,5 @@ function myFunction() {
 }
 
 
-myBtn.addEventListener('click', myFunction)
+// myBtn.addEventListener('click', myFunction)
 

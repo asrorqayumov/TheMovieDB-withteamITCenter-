@@ -57,7 +57,7 @@ export function displayMoviesDetails(getMovieRequestDetailes) {
                     </span>
                     <div class="different-circles">
                         <span><i class="fa fa-list" aria-hidden="true"></i></span>
-                        <span><i class="fa fa-heart" aria-hidden="true"></i></span>
+                        <span class="like"><i class="fa fa-heart" aria-hidden="true"></i></span>
                         <span><i class="fa fa-bookmark" aria-hidden="true"></i></span>
                         <span><i class="fa fa-star" aria-hidden="true">
                                 <div class="star-main">

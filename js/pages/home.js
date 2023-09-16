@@ -10,7 +10,7 @@ export  async function displayTodayTrendingMovies(getMovieRequestToday) {
     let vote = Math.round(vote_average * 10);
     html += `
    
-      <div class="movie__card">
+      <div class="movie__card" type="movie">
       <div class="card_box">
         <div class="latest-box">
           <div class="latest-b-img">
@@ -85,7 +85,7 @@ export  async function displayTodayTrendingMoviesweek(getMovieRequestWeek) {
     let vote = Math.round(vote_average * 10);
     html += `
     <div class="col">
-      <div class="movie__card">
+      <div class="movie__card" type="movie">
       <div class="card_box">
         <div class="latest-box">
           <div class="latest-b-img">
@@ -156,7 +156,7 @@ export  async function displayTvSeriesListMoviesTv(getMovieRequestOnTv) {
     let vote = Math.round(vote_average * 10);
     html += `
     
-      <div class="movie__card">
+      <div class="movie__card" type="tv">
       <div class="card_box">
         <div class="latest-box">
           <div class="latest-b-img">
@@ -227,7 +227,7 @@ export  async function displayTvSeriesListMoviesTheater(getMovieRequestTheater) 
     let vote = Math.round(vote_average * 10);
     html += `
     
-      <div class="movie__card">
+      <div class="movie__card" type="movie">
       <div class="card_box">
         <div class="latest-box">
           <div class="latest-b-img">
