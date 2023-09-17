@@ -11,12 +11,12 @@ import {
 } from "./pages/popular-movie.js";
 
 import {
-  displayPopularperson, displayPopularperson_biography
-
+   displayPopularperson_biography,
+   displayPopularperson
 } from "./pages/person.js";
 
 
-import { getPopularpersonbiography } from "./apis/personApi.js";
+import { getPopularPersonMovie, getPopularpersonbiography } from "./apis/personApi.js";
 
 import { getPopularMoviesWeek } from "./apis/popularApi.js";
 import { getTrendingMoviesToday } from "./apis/homeApi.js";
@@ -33,6 +33,10 @@ import { displayMoviesSocialReview } from "./pages/movieImport.js";
 
 import { getMovieRecommandations } from "./apis/movieApi.js";
 import { displayMoviesRecommandation } from "./pages/movieImport.js";
+import { getPopularPeople } from "./apis/popularPeopleApi.js";
+import { displayPopularPeople } from "./pages/popularPeople.js";
+
+
 
 
 
@@ -75,8 +79,8 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       .then((data) => {
         selectCardsAndGivingIds()
       });
-  } else if (location.pathname == "/movie.html" ||
-    location.pathname == "movie.html") {
+
+  } else if (location.pathname == "/movie.html") {
     getMovieDetails(history.state.id).then((data) => {
       displayMoviesDetails(data)
       console.log(data);
@@ -114,14 +118,40 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       });
     });
 
+  } else if (location.pathname == "/popularPeople.html" ||
+    location.pathname == "/popularPeople.html") {
+    getPopularPeople().then((data) => {
+      displayPopularPeople(data)
+      console.log(data);
+      let cards = document.querySelectorAll(".people_page");
+      cards.forEach((card) => {
+        card.addEventListener("click", (e) => {
+          let id = e.target.id;
+          history.pushState({ id }, null, "/person.html");
+          location.reload();
+        });
+      });
+    })
+
   }
- 
-else if (location.pathname == "/person.html" ||
-location.pathname == "person.html"){
-  getPopularpersonbiography(history.state.id).then(data=>{
-    displayPopularperson_biography(data)
 
-  })
+  else if (location.pathname == "/person.html" ||
+    location.pathname == "person.html") {
+    getPopularpersonbiography(history.state.id).then(data => {
+      displayPopularperson_biography(data)
 
-}
-});
+    });
+    getPopularPersonMovie(history.state.id).then((data)=>{
+      displayPopularperson(data);
+      let moviecard = document.querySelectorAll(".img_movie");
+      moviecard.forEach((card) => {
+        card.addEventListener("click", (e) => {
+          let id = e.target.id;
+          history.pushState({ id }, null, "movie.html");
+          location.reload();
+        });
+      });      
+    })
+
+  }
+})
