@@ -23,7 +23,7 @@ import { getTrendingMoviesToday } from "./apis/homeApi.js";
 import { getTrendingMoviesWeek } from "./apis/homeApi.js";
 import { getTvSeriesListMoviesTv } from "./apis/homeApi.js";
 import { getTvSeriesListMoviesTheater } from "./apis/homeApi.js";
-import { getMovieDetails } from "./apis/movieApi.js";
+import { favouriteRequest, getMovieDetails } from "./apis/movieApi.js";
 import { displayMoviesDetails } from "./pages/movieImport.js";
 import { getMoviesPeoples } from "./apis/movieApi.js";
 import { displayMoviesPeople } from "./pages/movieImport.js";
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       displayMoviesPeople(data)
       console.log(data);
       let cards = document.querySelectorAll(".people_img");
-      console.log(cards);
+      // console.log(cards);
       cards.forEach((card) => {
         card.addEventListener("click", (e) => {
           let id = e.target.id;
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
     getMovieRecommandations(history.state.id).then((data) => {
       displayMoviesRecommandation(data);
       let cards = document.querySelectorAll(".recommandation_img");
-      console.log(cards);
+      // console.log(cards);
       cards.forEach((card) => {
         card.addEventListener("click", (e) => {
           let id = e.target.id;
@@ -135,6 +135,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 
   }
 
+<<<<<<< HEAD
   else if (location.pathname == "/person.html" ||
     location.pathname == "person.html") {
     getPopularpersonbiography(history.state.id).then(data => {
@@ -152,6 +153,15 @@ document.addEventListener("DOMContentLoaded", async (e) => {
         });
       });      
     })
+=======
+<<<<<<< HEAD
+=======
+  })
+
+}
+>>>>>>> d24c867ef5763ac8cdfe017a0c1470dc38a2a5dd
+});
+>>>>>>> ef95ff67ea5fe86a8f9fdd3618754ab3997336f0
 
   }
 })

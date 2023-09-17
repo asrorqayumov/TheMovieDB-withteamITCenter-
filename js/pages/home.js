@@ -5,7 +5,7 @@ export  async function displayTodayTrendingMovies(getMovieRequestToday) {
   let cardsWrapper = document.querySelector(".card__list__today");
   let html = "";
   getMovieRequestToday.forEach((movie) => {
-    let { original_title, release_date, vote_average, backdrop_path, id } =
+    let { original_title, release_date, vote_average, id, poster_path } =
       movie;
     let vote = Math.round(vote_average * 10);
     html += `
@@ -46,7 +46,7 @@ export  async function displayTodayTrendingMovies(getMovieRequestToday) {
                 </a>
               </div>
             </div>
-            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" id="${id}" class="card__img__poster" />
+            <img src="${config.BASE_IMG_URL}${poster_path}" alt="" id="${id}" class="card__img__poster" />
           </div>
           <div class="circle-text">
           <div class="circle-progressbar">
@@ -80,7 +80,7 @@ export  async function displayTodayTrendingMoviesweek(getMovieRequestWeek) {
   let cardsWrapper = document.querySelector(".card__list__week");
   let html = "";
   getMovieRequestWeek.forEach((movie) => {
-    let { original_title, release_date, vote_average, backdrop_path, id } =
+    let { original_title, release_date, vote_average, poster_path, id } =
       movie;
     let vote = Math.round(vote_average * 10);
     html += `
@@ -121,7 +121,7 @@ export  async function displayTodayTrendingMoviesweek(getMovieRequestWeek) {
                 </a>
               </div>
             </div>
-            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" id="${id}" class="card__img__poster" />
+            <img src="${config.BASE_IMG_URL}${poster_path}" alt="" id="${id}" class="card__img__poster" />
           </div>
           <div class="circle-text">
           <div class="circle-progressbar">
@@ -151,7 +151,7 @@ export  async function displayTvSeriesListMoviesTv(getMovieRequestOnTv) {
   let cardsWrapper = document.querySelector(".card__list__tv");
   let html = "";
   getMovieRequestOnTv.forEach((movie) => {
-    let { original_name, first_air_date, vote_average, backdrop_path, id } =
+    let { original_name, first_air_date, vote_average, poster_path, id } =
       movie;
     let vote = Math.round(vote_average * 10);
     html += `
@@ -192,7 +192,7 @@ export  async function displayTvSeriesListMoviesTv(getMovieRequestOnTv) {
                 </a>
               </div>
             </div>
-            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" id="${id}" class="card__img__poster" />
+            <img src="${config.BASE_IMG_URL}${poster_path}" alt="" id="${id}" class="card__img__poster" />
           </div>
           <div class="circle-text">
           <div class="circle-progressbar">
@@ -221,7 +221,7 @@ export  async function displayTvSeriesListMoviesTheater(getMovieRequestTheater) 
   let cardsWrapper = document.querySelector(".card__list__theater");
   let html = "";
   getMovieRequestTheater.forEach((movie) => {
-    let { original_name, first_air_date, vote_average, backdrop_path, id } =
+    let { original_name, first_air_date, vote_average, poster_path, id } =
       movie;
       console.log(id);
     let vote = Math.round(vote_average * 10);
@@ -263,7 +263,7 @@ export  async function displayTvSeriesListMoviesTheater(getMovieRequestTheater) 
                 </a>
               </div>
             </div>
-            <img src="${config.BASE_IMG_URL}${backdrop_path}" alt="" id="${id}" class="card__img__poster" />
+            <img src="${config.BASE_IMG_URL}${poster_path}" alt="" id="${id}" class="card__img__poster" />
           </div>
           <div class="circle-text">
           <div class="circle-progressbar">
