@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 
   }
 
-<<<<<<< HEAD
+
   else if (location.pathname == "/person.html" ||
     location.pathname == "person.html") {
     getPopularpersonbiography(history.state.id).then(data => {
@@ -153,15 +153,5 @@ document.addEventListener("DOMContentLoaded", async (e) => {
         });
       });      
     })
-=======
-<<<<<<< HEAD
-=======
-  })
-
-}
->>>>>>> d24c867ef5763ac8cdfe017a0c1470dc38a2a5dd
-});
->>>>>>> ef95ff67ea5fe86a8f9fdd3618754ab3997336f0
-
   }
 })
