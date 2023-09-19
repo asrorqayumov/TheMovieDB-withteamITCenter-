@@ -155,3 +155,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
     })
   }
 })
+
+if (condition) {
+  
+}
