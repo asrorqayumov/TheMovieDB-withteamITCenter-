@@ -29,7 +29,7 @@ import { getMoviesPeoples } from "./apis/movieApi.js";
 import { displayMoviesPeople } from "./pages/movieImport.js";
 
 import { getMoviesSocialReview } from "./apis/movieApi.js";
-// import { displayMoviesSocialReview } from "./pages/movieImport.js";
+import { displayMoviesSocialReview } from "./pages/movieImport.js";
 
 import { getMovieRecommandations } from "./apis/movieApi.js";
 import { displayMoviesRecommandation } from "./pages/movieImport.js";
@@ -86,34 +86,36 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       console.log(data);
     });
 
-    getMoviesPeoples(history.state.id).then((data)=>{
+    getMoviesPeoples(history.state.id).then((data) => {
       displayMoviesPeople(data)
       console.log(data);
-    });
-
-    getMoviesSocialReview(history.state.id).then((data)=>{
-      displayMoviesSocialReview(data)
-      console.log(data);
-    });
-    
-    
-
-    function anathermoviepage() {
-      let cards = document.querySelectorAll(".recommandation_img");
+      let cards = document.querySelectorAll(".people_img");
+      console.log(cards);
       cards.forEach((card) => {
         card.addEventListener("click", (e) => {
           let id = e.target.id;
-          history.pushState({ id }, null, "movie.html");
+          history.pushState({ id }, null, "/person.html");
           location.reload();
         });
       });
-    }
+    });
 
-    getMovieRecommandations(history.state.id, anathermoviepage).then((data)=>{
-      displayMoviesRecommandation(data);
+    getMoviesSocialReview(history.state.id).then((data) => {
+      displayMoviesSocialReview(data)
       console.log(data);
-      anathermoviepage();
-      console.log(anathermoviepage);
+    });
+
+    getMovieRecommandations(history.state.id).then((data) => {
+      displayMoviesRecommandation(data);
+      let cards = document.querySelectorAll(".recommandation_img");
+      console.log(cards);
+      cards.forEach((card) => {
+        card.addEventListener("click", (e) => {
+          let id = e.target.id;
+          history.pushState({ id }, null, "/movie.html");
+          location.reload();
+        });
+      });
     });
 
   } else if (location.pathname == "/popularPeople.html" ||
