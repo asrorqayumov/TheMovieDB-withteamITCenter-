@@ -79,7 +79,7 @@ export async function getTvSeriesListMoviesTheater() {
       },
     };
     let request = await fetch(
-      `${Config.BASE_URL}/tv/popular?language=en-US&page=1`,
+      `${Config.BASE_URL}tv/top_rated?language=en-US&page=1`,
       options
     );
 

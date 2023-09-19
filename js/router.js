@@ -11,19 +11,19 @@ import {
 } from "./pages/popular-movie.js";
 
 import {
-  displayPopularperson
-
+   displayPopularperson_biography,
+   displayPopularperson
 } from "./pages/person.js";
 
 
-import { getPopularpersonbiography } from "./apis/personApi.js";
+import { getPopularPersonMovie, getPopularpersonbiography } from "./apis/personApi.js";
 
 import { getPopularMoviesWeek } from "./apis/popularApi.js";
 import { getTrendingMoviesToday } from "./apis/homeApi.js";
 import { getTrendingMoviesWeek } from "./apis/homeApi.js";
 import { getTvSeriesListMoviesTv } from "./apis/homeApi.js";
 import { getTvSeriesListMoviesTheater } from "./apis/homeApi.js";
-import { getMovieDetails } from "./apis/movieApi.js";
+import { favouriteRequest, getMovieDetails } from "./apis/movieApi.js";
 import { displayMoviesDetails } from "./pages/movieImport.js";
 import { getMoviesPeoples } from "./apis/movieApi.js";
 import { displayMoviesPeople } from "./pages/movieImport.js";
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       displayMoviesPeople(data)
       console.log(data);
       let cards = document.querySelectorAll(".people_img");
-      console.log(cards);
+      // console.log(cards);
       cards.forEach((card) => {
         card.addEventListener("click", (e) => {
           let id = e.target.id;
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
     getMovieRecommandations(history.state.id).then((data) => {
       displayMoviesRecommandation(data);
       let cards = document.querySelectorAll(".recommandation_img");
-      console.log(cards);
+      // console.log(cards);
       cards.forEach((card) => {
         card.addEventListener("click", (e) => {
           let id = e.target.id;
@@ -120,10 +120,10 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 
   } else if (location.pathname == "/popularPeople.html" ||
     location.pathname == "/popularPeople.html") {
-   getPopularPeople().then((data)=>{
-    displayPopularPeople(data)
-    console.log(data);
-    let cards = document.querySelectorAll(".people_page");
+    getPopularPeople().then((data) => {
+      displayPopularPeople(data)
+      console.log(data);
+      let cards = document.querySelectorAll(".people_page");
       cards.forEach((card) => {
         card.addEventListener("click", (e) => {
           let id = e.target.id;
@@ -131,9 +131,27 @@ document.addEventListener("DOMContentLoaded", async (e) => {
           location.reload();
         });
       });
-   })
+    })
 
   }
 
-});
 
+  else if (location.pathname == "/person.html" ||
+    location.pathname == "person.html") {
+    getPopularpersonbiography(history.state.id).then(data => {
+      displayPopularperson_biography(data)
+
+    });
+    getPopularPersonMovie(history.state.id).then((data)=>{
+      displayPopularperson(data);
+      let moviecard = document.querySelectorAll(".img_movie");
+      moviecard.forEach((card) => {
+        card.addEventListener("click", (e) => {
+          let id = e.target.id;
+          history.pushState({ id }, null, "movie.html");
+          location.reload();
+        });
+      });      
+    })
+  }
+})
