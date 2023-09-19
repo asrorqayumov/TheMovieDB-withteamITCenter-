@@ -9,7 +9,6 @@ export  async function displayTodayTrendingMovies(getMovieRequestToday) {
       movie;
     let vote = Math.round(vote_average * 10);
     html += `
-   
       <div class="movie__card">
       <div class="card_box">
         <div class="latest-box">
@@ -66,7 +65,6 @@ export  async function displayTodayTrendingMovies(getMovieRequestToday) {
         </div>
       </div>
     </div>
-  
       `;
   });
   cardsWrapper.innerHTML = html;

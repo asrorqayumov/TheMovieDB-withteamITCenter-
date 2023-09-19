@@ -905,3 +905,9 @@ div.item span.rating {
 .card__list__week {
     flex-wrap: nowrap !important;
 }
+
+/* 
+.bg-red{
+    background-color:red;
+    color: white;
+} */

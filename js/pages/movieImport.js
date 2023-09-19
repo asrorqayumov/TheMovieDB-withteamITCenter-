@@ -57,8 +57,8 @@ export function displayMoviesDetails(getMovieRequestDetailes) {
                     </span>
                     <div class="different-circles">
                         <span><i class="fa fa-list" aria-hidden="true"></i></span>
-                        <span><i class="fa fa-heart" aria-hidden="true"></i></span>
-                        <span><i class="fa fa-bookmark" aria-hidden="true"></i></span>
+                        <span class="like" id="like"><i class="fa fa-heart" aria-hidden="true"></i></span>
+                        <span class="bookmark"><i class="fa fa-bookmark" aria-hidden="true"></i></span>
                         <span><i class="fa fa-star" aria-hidden="true">
                                 <div class="star-main">
                                    
@@ -112,6 +112,7 @@ export async function displayMoviesPeople(getMovieRequestPeople) {
         let { name, character, profile_path , id} =
             movie;
         html += `
+        <a href="">
       <div class="actors-card">
           <div class="actors-img">
               <img src="${config.BASE_IMG_URL}${profile_path}" class="people_img" id="${id}"
@@ -122,6 +123,7 @@ export async function displayMoviesPeople(getMovieRequestPeople) {
               <p>${character}</p>
           </div>
       </div>
+      </a>
         `;
     });
     cardsWrapper.innerHTML = html;
