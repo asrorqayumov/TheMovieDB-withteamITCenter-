@@ -61,7 +61,8 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       cards.forEach((card) => {
         card.addEventListener("click", (e) => {
           let id = e.target.id;
-          history.pushState({ id }, null, "movie.html");
+          let type = e.target.type
+          history.pushState({ id, type }, null, "movie.html");
           location.reload();
         });
       });
@@ -80,8 +81,8 @@ document.addEventListener("DOMContentLoaded", async (e) => {
         selectCardsAndGivingIds()
       });
 
-  } else if (location.pathname == "/movie.html"||
-  location.pathname == "movie.html") {
+  } else if (location.pathname == "/movie.html" ||
+    location.pathname == "movie.html") {
     Promise.all([
       getMovieDetails(history.state.id),
       getMoviesPeoples(history.state.id),
@@ -108,26 +109,42 @@ document.addEventListener("DOMContentLoaded", async (e) => {
           location.reload();
         });
       });
-    });
 
+      let like = document.querySelector(".like");
+      console.log(like);
+      like.addEventListener("click", () => {
+        if (like.value = "click") {
+          like.style.color = "Red";
+          // like.classList.add('Red')
+        }
+        else {
+          // like.style.color.diplay = "none"
+          like.remove('style')
+        }
 
-    let like = document.querySelector(".like");
-    console.log(like);
-    like.forEach((liked) => {
-      liked.addEventListener("click", (e) => {
-        let id = e.target.id;
-        history.pushState({ id, type }, null );
-        console.log(liked);
+      });
+
+      let bookmark = document.querySelector(".bookmark");
+      console.log(bookmark);
+      bookmark.addEventListener("click", () => {
+        if (bookmark.value = "click") {
+          bookmark.style.color = "Black";
+          // like.classList.add('Red')
+        }
+        else {
+          // bookmark.style.color.diplay = "none"
+          like.remove(style)
+        }
+
       });
     });
 
-    
   } else if (location.pathname == "/popularPeople.html" ||
     location.pathname == "/popularPeople.html") {
-   getPopularPeople().then((data)=>{
-    displayPopularPeople(data)
-    console.log(data);
-    let cards = document.querySelectorAll(".people_page");
+    getPopularPeople().then((data) => {
+      displayPopularPeople(data)
+      console.log(data);
+      let cards = document.querySelectorAll(".people_page");
       cards.forEach((card) => {
         card.addEventListener("click", (e) => {
           let id = e.target.id;
@@ -135,17 +152,17 @@ document.addEventListener("DOMContentLoaded", async (e) => {
           location.reload();
         });
       });
-   })
+    })
 
   }
- 
-else if (location.pathname == "/person.html" ||
-location.pathname == "person.html"){
-  getPopularpersonbiography(history.state.id).then(data=>{
-    displayPopularperson_biography(data)
 
-  })
+  else if (location.pathname == "/person.html" ||
+    location.pathname == "person.html") {
+    getPopularpersonbiography(history.state.id).then(data => {
+      displayPopularperson_biography(data)
 
-}
+    })
+
+  }
 });
 
