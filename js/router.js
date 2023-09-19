@@ -112,31 +112,16 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 
       let like = document.querySelector(".like");
       console.log(like);
-      like.addEventListener("click", () => {
-        if (like.value = "click") {
-          like.style.color = "Red";
-          // like.classList.add('Red')
-        }
-        else {
-          // like.style.color.diplay = "none"
-          like.remove('style')
-        }
+      like.addEventListener("click", (e) => {
+        e.target.classList.toggle('bg-red')
 
       });
 
-      let bookmark = document.querySelector(".bookmark");
-      console.log(bookmark);
-      bookmark.addEventListener("click", () => {
-        if (bookmark.value = "click") {
-          bookmark.style.color = "Black";
-          // like.classList.add('Red')
-        }
-        else {
-          // bookmark.style.color.diplay = "none"
-          like.remove(style)
-        }
-
-      });
+      // let bookmark = document.querySelector(".bookmark");
+      // console.log(bookmark);
+      // bookmark.addEventListener("click", (e) => {
+      //   e.target.classList.toggle('bg-black')
+      // });
     });
 
   } else if (location.pathname == "/popularPeople.html" ||
