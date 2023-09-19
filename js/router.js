@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
         displayPopular(data);
       })
       .then((data) => {
-        selectCardsAndGivingIds()
+        selectCardsAndGivingIds(data)
       });
 
   } else if (location.pathname == "/movie.html") {
