@@ -131,13 +131,11 @@ export async function displayMoviesPeople(getMovieRequestPeople) {
 export function displayMoviesSocialReview(data) {
     let cardsWrapper = document.querySelector(".reviews");
     let html = "";
-    // let random = Math.random();
     function random(max) {
         return Math.floor(Math.random() * max);
       }
-    let {avatar_path, username, name, author,  rating, content} =
-    data[random(3)];
-   
+    let {avatar_path, author,  author_details, content, updated_at} =
+    data[random(data.length)];
 
     html += `
     <div class="content">
@@ -145,25 +143,23 @@ export function displayMoviesSocialReview(data) {
         <div class="card">
             <div class="grouped">
                 <div class="avatar">
-                    <a href="/u/garethmb">
+                    <a href="">
                         <img loading="lazy" class="avatar"
                             src="${config.BASE_IMG_URL}${avatar_path}"
-                            alt="garethmb">
+                            alt="">
                     </a>
                 </div>
 
                 <div class="info">
 
-                    <h3><a href="/review/64836616bf31f2505880d52a">A review by
+                    <h3><a href="">A review by
                             ${author}</a></h3>
                     <div class="flex">
                         <div class="rounded rating"><span
-                                class="glyphicons_v2 star invert svg"><i class="fa fa-star"
-                                    aria-hidden="true"></i>
-                                </i></span>${rating}
+                                class="glyphicons_v2 star invert svg"><i class="fa fa-star" aria-hidden="true"></i>
+                          </span>${author_details.rating}.0
                         </div>
-                        <h5>Written by <a href="/u/garethmb">${name}</a> on June 9,
-                            2023</h5>
+                        <h5>Written by <a href="">${author}</a> on ${updated_at}</h5>
                     </div>
                 </div>
             </div>
