@@ -906,8 +906,11 @@ div.item span.rating {
     flex-wrap: nowrap !important;
 }
 
-/* 
+
 .bg-red{
-    background-color:red;
-    color: white;
-} */
+    color: red;
+}
+
+.bg-black{
+    color: black;
+}
