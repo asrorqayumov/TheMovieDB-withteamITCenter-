@@ -61,7 +61,8 @@ document.addEventListener("DOMContentLoaded", async (e) => {
       cards.forEach((card) => {
         card.addEventListener("click", (e) => {
           let id = e.target.id;
-          history.pushState({ id }, null, "movie.html");
+          let type = e.target.type
+          history.pushState({ id, type }, null, "movie.html");
           location.reload();
         });
       });
@@ -77,44 +78,64 @@ document.addEventListener("DOMContentLoaded", async (e) => {
         displayPopular(data);
       })
       .then((data) => {
-        selectCardsAndGivingIds()
+        selectCardsAndGivingIds(data)
       });
 
-  } else if (location.pathname == "/movie.html") {
-    getMovieDetails(history.state.id).then((data) => {
-      displayMoviesDetails(data)
-      console.log(data);
-    });
-
-    getMoviesPeoples(history.state.id).then((data) => {
-      displayMoviesPeople(data)
-      console.log(data);
-      let cards = document.querySelectorAll(".people_img");
-      // console.log(cards);
-      cards.forEach((card) => {
+  } else if (location.pathname == "/movie.html" ||
+    location.pathname == "movie.html") {
+    Promise.all([
+      getMovieDetails(history.state.id),
+      getMoviesPeoples(history.state.id),
+      getMoviesSocialReview(history.state.id),
+      getMovieRecommandations(history.state.id),
+    ]).then((data) => {
+      displayMoviesDetails(data[0]);
+      displayMoviesPeople(data[1]);
+      displayMoviesSocialReview(data[2]);
+      displayMoviesRecommandation(data[3]);
+      let peoplecard = document.querySelectorAll(".people_img");
+      peoplecard.forEach((card) => {
         card.addEventListener("click", (e) => {
           let id = e.target.id;
           history.pushState({ id }, null, "/person.html");
           location.reload();
         });
       });
-    });
-
-    getMoviesSocialReview(history.state.id).then((data) => {
-      displayMoviesSocialReview(data)
-      console.log(data);
-    });
-
-    getMovieRecommandations(history.state.id).then((data) => {
-      displayMoviesRecommandation(data);
-      let cards = document.querySelectorAll(".recommandation_img");
-      // console.log(cards);
-      cards.forEach((card) => {
+      let recommandationcard = document.querySelectorAll(".recommandation_img");
+      recommandationcard.forEach((card) => {
         card.addEventListener("click", (e) => {
           let id = e.target.id;
           history.pushState({ id }, null, "/movie.html");
           location.reload();
         });
+      });
+
+      let like = document.querySelector(".like");
+      console.log(like);
+      like.addEventListener("click", () => {
+        if (like.value = "click") {
+          like.style.color = "Red";
+          // like.classList.add('Red')
+        }
+        else {
+          // like.style.color.diplay = "none"
+          like.remove('style')
+        }
+
+      });
+
+      let bookmark = document.querySelector(".bookmark");
+      console.log(bookmark);
+      bookmark.addEventListener("click", () => {
+        if (bookmark.value = "click") {
+          bookmark.style.color = "Black";
+          // like.classList.add('Red')
+        }
+        else {
+          // bookmark.style.color.diplay = "none"
+          like.remove(style)
+        }
+
       });
     });
 
@@ -155,3 +176,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
     })
   }
 })
+
+if (condition) {
+  
+}
