@@ -11,12 +11,12 @@ import {
 } from "./pages/popular-movie.js";
 
 import {
-  displayPopularperson, displayPopularperson_biography
-
+   displayPopularperson_biography,
+   displayPopularperson
 } from "./pages/person.js";
 
 
-import { getPopularpersonbiography } from "./apis/personApi.js";
+import { getPopularPersonMovie, getPopularpersonbiography } from "./apis/personApi.js";
 
 import { getPopularMoviesWeek } from "./apis/popularApi.js";
 import { getTrendingMoviesToday } from "./apis/homeApi.js";
@@ -156,13 +156,23 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 
   }
 
+
   else if (location.pathname == "/person.html" ||
     location.pathname == "person.html") {
     getPopularpersonbiography(history.state.id).then(data => {
       displayPopularperson_biography(data)
 
+    });
+    getPopularPersonMovie(history.state.id).then((data)=>{
+      displayPopularperson(data);
+      let moviecard = document.querySelectorAll(".img_movie");
+      moviecard.forEach((card) => {
+        card.addEventListener("click", (e) => {
+          let id = e.target.id;
+          history.pushState({ id }, null, "movie.html");
+          location.reload();
+        });
+      });      
     })
-
   }
-});
-
+})
